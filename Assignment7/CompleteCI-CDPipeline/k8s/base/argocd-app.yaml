@@ -1,5 +1,5 @@
 # ==============================================================
-# ArgoCD Application - GitOps workflow for Kubernetes
+# ArgoCD Application - GitOps workflow for Kubernetes (Helm)
 # ==============================================================
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -11,7 +11,10 @@ spec:
   source:
     repoURL: https://github.com/LycanTech/Chikwex-Infra.git
     targetRevision: main
-    path: Assignment7/CompleteCI-CDPipeline/k8s/base
+    path: Assignment7/CompleteCI-CDPipeline/helm/chikwex-eshopz
+    helm:
+      valueFiles:
+        - values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: chikwex-eshopz
