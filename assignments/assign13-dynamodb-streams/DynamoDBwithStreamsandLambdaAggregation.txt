@@ -1,0 +1,20 @@
+Task:Build real-time analytics using DynamoDB Streams.
+What to Do:
+●    Create DynamoDB table Orders:
+●    PK: orderId
+●    Attributes: customerId, amount, status, timestamp
+●    Enable DynamoDB Streams
+●    Create Lambda function triggered by stream that:
+●    Aggregates total sales per customer
+●    Stores aggregates in second table CustomerStats
+●    Updates running total
+●    Create second Lambda to insert 50 random orders
+●    Enable TTL on Orders table (expire after 7 days)
+●    Query CustomerStats to see real-time aggregations
+●    Add GSI on status field
+●    Query all orders by status
+Success Criteria:
+●    Streams process within seconds
+●    Aggregations are accurate
+●    GSI queries work correctly
+●    Can see aggregate updating in real-time

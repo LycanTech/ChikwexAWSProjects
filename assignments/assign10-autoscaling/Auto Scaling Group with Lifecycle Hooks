@@ -1,0 +1,20 @@
+Task:
+Create ASG that automatically installs and configures web server using lifecycle hooks.
+What to Do:
+●    Create Launch Template with Amazon Linux 2023
+●    Create ASG
+●    Add lifecycle hook on instance launch
+●    Create Lambda function that:
+●    Gets triggered by lifecycle hook
+●    Uses SSM Run Command to:
+●    Install httpd
+●    Create custom index.html with instance metadata
+●    Start httpd service
+●    Completes lifecycle action
+●    Create CloudWatch alarm to trigger scale-out at CPU > 60%
+●    Use stress command to trigger scaling
+●    Verify new instances are configured automatically
+Success Criteria:
+●    New instances automatically have working web server
+●    Scale-out happens within 5 minutes of high CPU
+●    All instances show unique metadata on web page

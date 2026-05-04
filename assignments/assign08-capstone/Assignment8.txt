@@ -1,0 +1,32 @@
+Network Security and VPC Architecture
+Topics Covered: VPC, Transit Gateway, PrivateLink, VPN, Direct Connect, Network Firewall
+Scenario:
+Design and implement a secure multi-VPC architecture for enterprise workloads.
+Requirements:
+●    Multi-VPC Design:
+    Create 3 VPCs (production, staging, shared services)
+    Design proper CIDR blocks without overlap
+    Implement VPC peering and Transit Gateway
+●    Connectivity:
+    Configure Site-to-Site VPN for on-premises
+    Set up VPC endpoints for AWS services
+    Implement PrivateLink for service sharing
+●    Security:
+    Deploy AWS Network Firewall
+    Configure NACL and Security Groups layered defense
+    Enable VPC Flow Logs and analyze traffic
+    Implement Traffic Mirroring for inspection
+●    Routing:
+    Design complex route tables
+    Implement route propagation
+    Configure Transit Gateway route tables
+●    Monitoring:
+    Analyze VPC Flow Logs using Athena
+    Create CloudWatch Insights queries
+    Set up alerts for unusual traffic patterns
+●    Deliverables:
+    Network architecture diagram
+    Terraform/CloudFormation code
+    Security analysis report
+    Traffic flow documentation
+    Troubleshooting guide

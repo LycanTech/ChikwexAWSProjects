@@ -1,4 +1,4 @@
-# Claude Code
+﻿# Claude Code
 .claude/
 
 # Ansible
@@ -58,3 +58,11 @@ temp/
 # Cache
 .cache/
 fact_cache/
+
+# Large binaries
+argocd.exe
+*.exe
+
+# SSH private keys (never commit)
+assign15-key
+**/assign15-key

@@ -1,0 +1,24 @@
+Task:
+Analyze VPC traffic using Flow Logs and Athena.
+What to Do:
+●    Create VPC with public and private subnets
+●    Launch 2 EC2 instances (one in each subnet)
+●    Enable VPC Flow Logs → S3 bucket (Parquet format)
+●    Generate traffic:
+●    SSH to public instance
+●    Ping between instances
+●    Wget external websites
+●    Attempt connection to blocked port
+●    Create Athena table for Flow Logs
+●    Write SQL queries to find:
+●    Top 10 source IPs by traffic volume
+●    All REJECT actions
+●    Traffic between specific IPs
+●    Connections to port 22
+●    Traffic by protocol (TCP/UDP/ICMP)
+●    Create saved queries for common patterns
+●    Calculate cost of data processed
+Success Criteria:
+●    Flow logs appear in S3 within 10 minutes
+●    Athena queries return accurate results
+●    Can identify security events from logs

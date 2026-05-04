@@ -1,0 +1,12 @@
+# Terraform state
+terraform/.terraform/
+terraform/*.tfstate
+terraform/*.tfstate.backup
+terraform/*.tfplan
+terraform/*.zip
+
+# Python packages bundled into Lambda dirs
+lambda/rotation/*.dist-info/
+lambda/rotation/PyMySQL*/
+lambda/app/*.dist-info/
+lambda/app/PyMySQL*/

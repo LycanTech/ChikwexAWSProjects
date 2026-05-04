@@ -1,0 +1,20 @@
+Task:
+Implement automatic password rotation for RDS database.
+What to Do:
+●    Create RDS MySQL instance (smallest size, free tier)
+●    Store master password in Secrets Manager
+●    Create Lambda rotation function that:
+●    Generates new random password
+●    Creates new DB user with new password
+●    Tests connection with new credentials
+●    Updates secret with new password
+●    Deletes old DB user after success
+●    Configure automatic rotation every 7 days
+●    Create second Lambda that reads secret and connects to RDS
+●    Trigger rotation manually and verify connection still works
+●    Check CloudWatch logs for rotation process
+Success Criteria:
+●    Rotation completes without errors
+●    Application Lambda can still connect after rotation
+●    Old password no longer works
+●    Rotation takes < 2 minutes

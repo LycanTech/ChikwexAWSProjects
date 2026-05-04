@@ -1,0 +1,25 @@
+Task:
+Create advanced log analysis and alerting system.
+What to Do:
+●    Create Lambda function that generates various log types:
+●    INFO: Successful operations
+●    WARN: Slow operations (>500ms)
+●    ERROR: Failed operations with error codes
+●    Run function 100 times with random outcomes
+●    Create CloudWatch Logs Insights queries to find:
+●    Error rate per minute
+●    Average response time
+●    Top 5 error codes
+●    Failed requests by user_id
+●    Create metric filter to extract custom metrics:
+●    Count of 500 errors
+●    Count of slow requests
+●    Extract response time as metric
+●    Create CloudWatch alarm that triggers when:
+●    Error rate > 5% in 5 minutes
+●    Average response time > 1000ms
+●    Send alarm to SNS → your email
+Success Criteria:
+●    Insights queries return correct results
+●    Alarms trigger when thresholds breached
+●    Custom metrics appear in CloudWatch
