@@ -1,0 +1,52 @@
+﻿{
+    "Configuration": {
+        "FunctionName": "chikwex-assign17-consumer",
+        "FunctionArn": "arn:aws:lambda:us-east-1:866934333672:function:chikwex-assign17-consumer",
+        "Runtime": "python3.12",
+        "Role": "arn:aws:iam::866934333672:role/chikwex-assign17-consumer-role",
+        "Handler": "handler.handler",
+        "CodeSize": 964,
+        "Description": "",
+        "Timeout": 30,
+        "MemorySize": 128,
+        "LastModified": "2026-05-06T13:51:10.324+0000",
+        "CodeSha256": "k1d8+9DNL0RSAS4ycxbTlO8dAI9abUTxpV/A9r79XLE=",
+        "Version": "$LATEST",
+        "Environment": {
+            "Variables": {
+                "FAIL_RATE": "0.20"
+            }
+        },
+        "TracingConfig": {
+            "Mode": "PassThrough"
+        },
+        "RevisionId": "12d2d2d1-4f94-419d-9000-c8ef73209f76",
+        "State": "Active",
+        "LastUpdateStatus": "Successful",
+        "PackageType": "Zip",
+        "Architectures": [
+            "x86_64"
+        ],
+        "EphemeralStorage": {
+            "Size": 512
+        },
+        "SnapStart": {
+            "ApplyOn": "None",
+            "OptimizationStatus": "Off"
+        },
+        "RuntimeVersionConfig": {
+            "RuntimeVersionArn": "arn:aws:lambda:us-east-1::runtime:e4ab553846c4e081013ff7d1d608a5358d5b956bb5b81c83c66d2a31da8f6244"
+        },
+        "LoggingConfig": {
+            "LogFormat": "Text",
+            "LogGroup": "/aws/lambda/chikwex-assign17-consumer"
+        }
+    },
+    "Code": {
+        "RepositoryType": "S3",
+        "Location": "https://prod-iad-c1-djusa-tasks.s3.us-east-1.amazonaws.com/snapshots/866934333672/chikwex-assign17-consumer-525364ed-9eaa-4b5e-88d4-2bf4f2531744?versionId=IEZsUWfI5h2iK4cp3PUUWyS4XJXgeqjg&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQDDJh5BvGPf6XmWqeTrL6TyFjM9fYBTRzXw4nh0izoDQgIgLTBSs%2BMpX7zCxD%2FDza%2FjoDw%2FebqqkamhxFmMGZy6q2IqlAIInv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAEGgw0NzkyMzMwMjUzNzkiDNlUblTwXb0WfcbHoiroAdk2KztnJbBvm5%2FWodI0we8M4ITev%2B1NteLW%2BOcrBn%2FzOXbBpfqLNy9WrY%2BVVCckD5U%2FOLnKscLZdqpPYGi2%2BqqLcT%2Bdk4cag4U6GtXUm3l4%2Fh8cl7kwwNdWbY%2F6YT4euBvgS5%2FZCuxcdxPIUALvYAJ252Bo1GSyP9qxtrNzIhjWQU%2B6Nr%2FAPPVUCUnxUuTPhiAIK7XfigdwtG9J08LGAK%2FirWCHS8Vr0ckA9%2BJXCCe21PuOJvPhUVWiVKIfDr2uBedolrdo5%2F52g3dqthm5k52nQKHRqdc8C%2B6Wm6GC4u9URyIqPn6ZBdowu%2F%2FszwY6jQEjzoucqq8NYRoGYpLlr%2Fq8IMQ5kmNPASBO4ncCF39fOCwFoTqGmA%2Fh6xpGqtHAGmYmIFYdoqqLwhhdKBIgPap6%2FwFizvy8pLlbnkt%2FMyDQQZDKl2rxvPdbFHedg7YvAf7O2%2FUG8W4dm4CMJm5kl0LsKuSUb5WaFO1rNMs7wi%2BzrylpYz%2FnlaWu3k84ck0%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20260506T135420Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Credential=ASIAW7FEDUVRTHU7XB25%2F20260506%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=39fdbc70185bb065e20f4307afe158ac31bcc236d524ae0e912f71944ce3e8cb"
+    },
+    "Tags": {
+        "Name": "chikwex-assign17-consumer"
+    }
+}

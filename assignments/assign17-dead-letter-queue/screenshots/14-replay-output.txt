@@ -1,0 +1,20 @@
+﻿# Replay Script Output - assign17 Dead Letter Queue
+
+## Run timestamp: 2026-05-06
+
+## Before replay
+- DLQ depth: 10 (from 50-message test batch, ~20% failure rate)
+- Main queue depth: 0
+
+## Replay execution
+Draining DLQ: https://sqs.us-east-1.amazonaws.com/866934333672/chikwex-assign17-failed-messages
+  fetched 10 so far...
+Fetched 10 messages from DLQ.
+  OK replayed [message IDs]...
+
+## After replay
+- DLQ depth: 0
+- Main queue depth: 0 (consumer Lambda re-processed replayed messages immediately)
+
+## Result
+Replayed: 10  Failed: 0

@@ -1,0 +1,982 @@
+﻿[
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]554405c614584b04876f13e8f4da37a9",
+        "timestamp":  1778079799526,
+        "message":  "INIT_START Runtime Version: python:3.12.mainlinev2.v7\tRuntime Version ARN: arn:aws:lambda:us-east-1::runtime:e4ab553846c4e081013ff7d1d608a5358d5b956bb5b81c83c66d2a31da8f6244\n",
+        "ingestionTime":  1778079805869,
+        "eventId":  "39652504551883737467423252856649713869782857424514908160"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079799545,
+        "message":  "INIT_START Runtime Version: python:3.12.mainlinev2.v7\tRuntime Version ARN: arn:aws:lambda:us-east-1::runtime:e4ab553846c4e081013ff7d1d608a5358d5b956bb5b81c83c66d2a31da8f6244\n",
+        "ingestionTime":  1778079803854,
+        "eventId":  "39652504552307451626195334693903037972891568254132289536"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]554405c614584b04876f13e8f4da37a9",
+        "timestamp":  1778079799851,
+        "message":  "[INFO]\t2026-05-06T15:03:19.851Z\t\tFound credentials in environment variables.\n",
+        "ingestionTime":  1778079805869,
+        "eventId":  "39652504559131479656945705377648822308393574913958543361"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079799869,
+        "message":  "[INFO]\t2026-05-06T15:03:19.869Z\t\tFound credentials in environment variables.\n",
+        "ingestionTime":  1778079803854,
+        "eventId":  "39652504559532893070519256591760610693229637382069944321"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]554405c614584b04876f13e8f4da37a9",
+        "timestamp":  1778079799983,
+        "message":  "START RequestId: f12d4a64-7cf2-5310-820f-2811269788c7 Version: $LATEST\n",
+        "ingestionTime":  1778079805869,
+        "eventId":  "39652504562075178023151747632331537120383158632747958274"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]554405c614584b04876f13e8f4da37a9",
+        "timestamp":  1778079799984,
+        "message":  "[INFO]\t2026-05-06T15:03:19.984Z\tf12d4a64-7cf2-5310-820f-2811269788c7\tDLQ_ARRIVAL messageId=5cb3c03e-74bc-48fc-a675-25200d5dd2e7 receiveCount=4 category=inventory sentAt=1778079709265\n",
+        "ingestionTime":  1778079805869,
+        "eventId":  "39652504562097478768350278255473072838655806994253938691"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]554405c614584b04876f13e8f4da37a9",
+        "timestamp":  1778079799984,
+        "message":  "[INFO]\t2026-05-06T15:03:19.984Z\tf12d4a64-7cf2-5310-820f-2811269788c7\tDLQ_SUMMARY count=1 categories={\u0027inventory\u0027: 1} messageIds=[\u00275cb3c03e-74bc-48fc-a675-25200d5dd2e7\u0027]\n",
+        "ingestionTime":  1778079805869,
+        "eventId":  "39652504562097478768350278255473072838655806994253938692"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079800005,
+        "message":  "START RequestId: 106b3415-ee3e-5c81-a43c-5660b45b83f9 Version: $LATEST\n",
+        "ingestionTime":  1778079803854,
+        "eventId":  "39652504562565794417519421339009468378309814546883280898"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079800006,
+        "message":  "[INFO]\t2026-05-06T15:03:20.006Z\t106b3415-ee3e-5c81-a43c-5660b45b83f9\tDLQ_ARRIVAL messageId=40cbaa3d-f2a6-4416-919e-f0039bb38254 receiveCount=4 category=orders sentAt=1778079709262\n",
+        "ingestionTime":  1778079803854,
+        "eventId":  "39652504562588095162717951962151004096582462908389261315"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079800006,
+        "message":  "[INFO]\t2026-05-06T15:03:20.006Z\t106b3415-ee3e-5c81-a43c-5660b45b83f9\tDLQ_SUMMARY count=1 categories={\u0027orders\u0027: 1} messageIds=[\u002740cbaa3d-f2a6-4416-919e-f0039bb38254\u0027]\n",
+        "ingestionTime":  1778079803854,
+        "eventId":  "39652504562588095162717951962151004096582462908389261316"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079800077,
+        "message":  "INIT_START Runtime Version: python:3.12.mainlinev2.v7\tRuntime Version ARN: arn:aws:lambda:us-east-1::runtime:e4ab553846c4e081013ff7d1d608a5358d5b956bb5b81c83c66d2a31da8f6244\n",
+        "ingestionTime":  1778079803781,
+        "eventId":  "39652504564171448071813626205111953448628360606360207360"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079800286,
+        "message":  "[INFO]\t2026-05-06T15:03:20.286Z\t106b3415-ee3e-5c81-a43c-5660b45b83f9\tSNS alert published to arn:aws:sns:us-east-1:866934333672:chikwex-assign17-dlq-alerts\n",
+        "ingestionTime":  1778079803854,
+        "eventId":  "39652504568832303818306526441781005212924004130063777797"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]554405c614584b04876f13e8f4da37a9",
+        "timestamp":  1778079800287,
+        "message":  "[INFO]\t2026-05-06T15:03:20.287Z\tf12d4a64-7cf2-5310-820f-2811269788c7\tSNS alert published to arn:aws:sns:us-east-1:866934333672:chikwex-assign17-dlq-alerts\n",
+        "ingestionTime":  1778079805869,
+        "eventId":  "39652504568854604563505057067358395475268260530566004741"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079800297,
+        "message":  "END RequestId: 106b3415-ee3e-5c81-a43c-5660b45b83f9\n",
+        "ingestionTime":  1778079803854,
+        "eventId":  "39652504569077612015490363296337898113923136106629562374"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079800297,
+        "message":  "REPORT RequestId: 106b3415-ee3e-5c81-a43c-5660b45b83f9\tDuration: 291.35 ms\tBilled Duration: 748 ms\tMemory Size: 128 MB\tMax Memory Used: 86 MB\tInit Duration: 456.23 ms\t\n",
+        "ingestionTime":  1778079803854,
+        "eventId":  "39652504569077612015490363296337898113923136106629562375"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079800302,
+        "message":  "START RequestId: a97f98c4-58be-5b12-8313-fab102db08e8 Version: $LATEST\n",
+        "ingestionTime":  1778079803854,
+        "eventId":  "39652504569189115741483016412045576705286377914159464456"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]554405c614584b04876f13e8f4da37a9",
+        "timestamp":  1778079800306,
+        "message":  "END RequestId: f12d4a64-7cf2-5310-820f-2811269788c7\n",
+        "ingestionTime":  1778079805869,
+        "eventId":  "39652504569278318722277138907047574122448579399179632646"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]554405c614584b04876f13e8f4da37a9",
+        "timestamp":  1778079800306,
+        "message":  "REPORT RequestId: f12d4a64-7cf2-5310-820f-2811269788c7\tDuration: 322.01 ms\tBilled Duration: 777 ms\tMemory Size: 128 MB\tMax Memory Used: 86 MB\tInit Duration: 454.16 ms\t\n",
+        "ingestionTime":  1778079805869,
+        "eventId":  "39652504569278318722277138907047574122448579399179632647"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079800315,
+        "message":  "[INFO]\t2026-05-06T15:03:20.315Z\ta97f98c4-58be-5b12-8313-fab102db08e8\tDLQ_ARRIVAL messageId=48817fed-9e03-4e4c-b1da-7b54fe7a07d5 receiveCount=4 category=inventory sentAt=1778079709268\n",
+        "ingestionTime":  1778079803854,
+        "eventId":  "39652504569479025429063914512885541042830806613737209865"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079800315,
+        "message":  "[INFO]\t2026-05-06T15:03:20.315Z\ta97f98c4-58be-5b12-8313-fab102db08e8\tDLQ_SUMMARY count=1 categories={\u0027inventory\u0027: 1} messageIds=[\u002748817fed-9e03-4e4c-b1da-7b54fe7a07d5\u0027]\n",
+        "ingestionTime":  1778079803854,
+        "eventId":  "39652504569479025429063914512885541042830806613737209866"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079800355,
+        "message":  "[INFO]\t2026-05-06T15:03:20.355Z\ta97f98c4-58be-5b12-8313-fab102db08e8\tSNS alert published to arn:aws:sns:us-east-1:866934333672:chikwex-assign17-dlq-alerts\n",
+        "ingestionTime":  1778079803854,
+        "eventId":  "39652504570371055237005139438546969773736741073976426507"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]9c12425b2486486e8dd5f5e167f52cb7",
+        "timestamp":  1778079800361,
+        "message":  "INIT_START Runtime Version: python:3.12.mainlinev2.v7\tRuntime Version ARN: arn:aws:lambda:us-east-1::runtime:e4ab553846c4e081013ff7d1d608a5358d5b956bb5b81c83c66d2a31da8f6244\n",
+        "ingestionTime":  1778079805658,
+        "eventId":  "39652504570504859708196323179577220017207794989987856384"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079800376,
+        "message":  "END RequestId: a97f98c4-58be-5b12-8313-fab102db08e8\n",
+        "ingestionTime":  1778079803854,
+        "eventId":  "39652504570839370886174282524519219857462356665602015244"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079800376,
+        "message":  "REPORT RequestId: a97f98c4-58be-5b12-8313-fab102db08e8\tDuration: 73.66 ms\tBilled Duration: 74 ms\tMemory Size: 128 MB\tMax Memory Used: 86 MB\t\n",
+        "ingestionTime":  1778079803854,
+        "eventId":  "39652504570839370886174282524519219857462356665602015245"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079800438,
+        "message":  "[INFO]\t2026-05-06T15:03:20.437Z\t\tFound credentials in environment variables.\n",
+        "ingestionTime":  1778079803781,
+        "eventId":  "39652504572222017088483181159206347745054419110019137537"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079800508,
+        "message":  "START RequestId: c61cfa0f-198d-50f0-b081-987a43eb104c Version: $LATEST\n",
+        "ingestionTime":  1778079803854,
+        "eventId":  "39652504573783069252380324779201934669451940384391430158"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079800508,
+        "message":  "[INFO]\t2026-05-06T15:03:20.508Z\tc61cfa0f-198d-50f0-b081-987a43eb104c\tDLQ_ARRIVAL messageId=644d4417-34e3-41ad-a602-89953374ff1b receiveCount=4 category=inventory sentAt=1778079709315\n",
+        "ingestionTime":  1778079803854,
+        "eventId":  "39652504573783069252380324779201934669451940384391430159"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079800509,
+        "message":  "[INFO]\t2026-05-06T15:03:20.508Z\tc61cfa0f-198d-50f0-b081-987a43eb104c\tDLQ_SUMMARY count=1 categories={\u0027inventory\u0027: 1} messageIds=[\u0027644d4417-34e3-41ad-a602-89953374ff1b\u0027]\n",
+        "ingestionTime":  1778079803854,
+        "eventId":  "39652504573805369997578855402343470387724588745897410576"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079800523,
+        "message":  "[INFO]\t2026-05-06T15:03:20.523Z\tc61cfa0f-198d-50f0-b081-987a43eb104c\tSNS alert published to arn:aws:sns:us-east-1:866934333672:chikwex-assign17-dlq-alerts\n",
+        "ingestionTime":  1778079803854,
+        "eventId":  "39652504574117580430358284126324970443541665806981136401"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079800536,
+        "message":  "END RequestId: c61cfa0f-198d-50f0-b081-987a43eb104c\n",
+        "ingestionTime":  1778079803854,
+        "eventId":  "39652504574407490117939182227164934781086094506558881810"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079800536,
+        "message":  "REPORT RequestId: c61cfa0f-198d-50f0-b081-987a43eb104c\tDuration: 27.53 ms\tBilled Duration: 28 ms\tMemory Size: 128 MB\tMax Memory Used: 86 MB\t\n",
+        "ingestionTime":  1778079803854,
+        "eventId":  "39652504574407490117939182227164934781086094506558881811"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079800575,
+        "message":  "START RequestId: e1942109-aacc-5039-8b81-437cf0a9365e Version: $LATEST\n",
+        "ingestionTime":  1778079803781,
+        "eventId":  "39652504575277219180681876529596741148407244636338454530"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079800576,
+        "message":  "[INFO]\t2026-05-06T15:03:20.576Z\te1942109-aacc-5039-8b81-437cf0a9365e\tDLQ_ARRIVAL messageId=8cf2b35b-61bd-43f0-82a9-2d9db6eafc23 receiveCount=4 category=payments sentAt=1778079709255\n",
+        "ingestionTime":  1778079803781,
+        "eventId":  "39652504575299519925880407152738276866679892997844434947"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079800576,
+        "message":  "[INFO]\t2026-05-06T15:03:20.576Z\te1942109-aacc-5039-8b81-437cf0a9365e\tDLQ_SUMMARY count=1 categories={\u0027payments\u0027: 1} messageIds=[\u00278cf2b35b-61bd-43f0-82a9-2d9db6eafc23\u0027]\n",
+        "ingestionTime":  1778079803781,
+        "eventId":  "39652504575299519925880407152738276866679892997844434948"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]9c12425b2486486e8dd5f5e167f52cb7",
+        "timestamp":  1778079800714,
+        "message":  "[INFO]\t2026-05-06T15:03:20.714Z\t\tFound credentials in environment variables.\n",
+        "ingestionTime":  1778079805658,
+        "eventId":  "39652504578377022763277633148539328567452666601598943233"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079800864,
+        "message":  "[INFO]\t2026-05-06T15:03:20.864Z\te1942109-aacc-5039-8b81-437cf0a9365e\tSNS alert published to arn:aws:sns:us-east-1:866934333672:chikwex-assign17-dlq-alerts\n",
+        "ingestionTime":  1778079803781,
+        "eventId":  "39652504581722134543057226617500563729202621111566794757"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079800879,
+        "message":  "END RequestId: e1942109-aacc-5039-8b81-437cf0a9365e\n",
+        "ingestionTime":  1778079803781,
+        "eventId":  "39652504582056645721035185964623599503292346534156500998"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079800879,
+        "message":  "REPORT RequestId: e1942109-aacc-5039-8b81-437cf0a9365e\tDuration: 302.58 ms\tBilled Duration: 798 ms\tMemory Size: 128 MB\tMax Memory Used: 85 MB\tInit Duration: 494.72 ms\t\n",
+        "ingestionTime":  1778079803781,
+        "eventId":  "39652504582056645721035185964623599503292346534156500999"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079804399,
+        "message":  "START RequestId: 1ed705f2-0b07-56bf-87f2-6787517fcd68 Version: $LATEST\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504660555268819862979434481894685630395086933327872"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079804400,
+        "message":  "[INFO]\t2026-05-06T15:03:24.400Z\t1ed705f2-0b07-56bf-87f2-6787517fcd68\tDLQ_ARRIVAL messageId=4e67e82c-b467-4560-a96f-ff3cf5bf92dd receiveCount=4 category=analytics sentAt=1778079709314\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504660577569565061510057623430403903043448439308289"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079804400,
+        "message":  "[INFO]\t2026-05-06T15:03:24.400Z\t1ed705f2-0b07-56bf-87f2-6787517fcd68\tDLQ_SUMMARY count=1 categories={\u0027analytics\u0027: 1} messageIds=[\u00274e67e82c-b467-4560-a96f-ff3cf5bf92dd\u0027]\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504660577569565061510057623430403903043448439308290"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079804418,
+        "message":  "[INFO]\t2026-05-06T15:03:24.418Z\t1ed705f2-0b07-56bf-87f2-6787517fcd68\tSNS alert published to arn:aws:sns:us-east-1:866934333672:chikwex-assign17-dlq-alerts\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504660978982978635061274171073332810713955546955779"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079804438,
+        "message":  "END RequestId: 1ed705f2-0b07-56bf-87f2-6787517fcd68\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504661424997882605673737001787698263681185666564100"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079804438,
+        "message":  "REPORT RequestId: 1ed705f2-0b07-56bf-87f2-6787517fcd68\tDuration: 38.82 ms\tBilled Duration: 39 ms\tMemory Size: 128 MB\tMax Memory Used: 85 MB\t\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504661424997882605673737001787698263681185666564101"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079804933,
+        "message":  "START RequestId: 2f8b14dc-b97e-5ebd-8a1f-76a9e3062d47 Version: $LATEST\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504672463866755878332192061968243224620131126870022"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079804934,
+        "message":  "[INFO]\t2026-05-06T15:03:24.934Z\t2f8b14dc-b97e-5ebd-8a1f-76a9e3062d47\tDLQ_ARRIVAL messageId=3cb718d8-e3f9-4f40-893c-0068638ca6f9 receiveCount=4 category=orders sentAt=1778079709315\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504672486167501076862815203503961497268492632850439"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079804934,
+        "message":  "[INFO]\t2026-05-06T15:03:24.934Z\t2f8b14dc-b97e-5ebd-8a1f-76a9e3062d47\tDLQ_SUMMARY count=1 categories={\u0027orders\u0027: 1} messageIds=[\u00273cb718d8-e3f9-4f40-893c-0068638ca6f9\u0027]\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504672486167501076862815203503961497268492632850440"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079804949,
+        "message":  "[INFO]\t2026-05-06T15:03:24.949Z\t2f8b14dc-b97e-5ebd-8a1f-76a9e3062d47\tSNS alert published to arn:aws:sns:us-east-1:866934333672:chikwex-assign17-dlq-alerts\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504672820678679054822162326539735586993915222556681"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079804958,
+        "message":  "END RequestId: 2f8b14dc-b97e-5ebd-8a1f-76a9e3062d47\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504673021385385841597770600361200040829168776380426"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079804958,
+        "message":  "REPORT RequestId: 2f8b14dc-b97e-5ebd-8a1f-76a9e3062d47\tDuration: 24.20 ms\tBilled Duration: 25 ms\tMemory Size: 128 MB\tMax Memory Used: 85 MB\t\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504673021385385841597770600361200040829168776380427"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079804994,
+        "message":  "START RequestId: a3aef82d-66ad-5c4d-a054-9a583cd1779a Version: $LATEST\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504673824212212988700203695647057856170182991675404"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079804994,
+        "message":  "[INFO]\t2026-05-06T15:03:24.994Z\ta3aef82d-66ad-5c4d-a054-9a583cd1779a\tDLQ_ARRIVAL messageId=568c418e-c839-47a3-9e4c-82bf5a92c865 receiveCount=4 category=shipping sentAt=1778079709372\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504673824212212988700203695647057856170182991675405"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079804994,
+        "message":  "[INFO]\t2026-05-06T15:03:24.994Z\ta3aef82d-66ad-5c4d-a054-9a583cd1779a\tDLQ_SUMMARY count=1 categories={\u0027shipping\u0027: 1} messageIds=[\u0027568c418e-c839-47a3-9e4c-82bf5a92c865\u0027]\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504673824212212988700203695647057856170182991675406"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079805009,
+        "message":  "[INFO]\t2026-05-06T15:03:25.009Z\ta3aef82d-66ad-5c4d-a054-9a583cd1779a\tSNS alert published to arn:aws:sns:us-east-1:866934333672:chikwex-assign17-dlq-alerts\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504674158723390966659550818682831945895605581381647"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079805018,
+        "message":  "END RequestId: a3aef82d-66ad-5c4d-a054-9a583cd1779a\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504674359430097753435159092504296399730859135205392"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079805018,
+        "message":  "REPORT RequestId: a3aef82d-66ad-5c4d-a054-9a583cd1779a\tDuration: 24.05 ms\tBilled Duration: 25 ms\tMemory Size: 128 MB\tMax Memory Used: 85 MB\t\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504674359430097753435159092504296399730859135205393"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079805191,
+        "message":  "START RequestId: d5507473-d8b9-5677-8f50-160682c166cb Version: $LATEST\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504678217459017099232962578183557567897399669817362"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079805191,
+        "message":  "[INFO]\t2026-05-06T15:03:25.191Z\td5507473-d8b9-5677-8f50-160682c166cb\tDLQ_ARRIVAL messageId=a3374232-b834-4804-88d4-b1a312dd02be receiveCount=4 category=orders sentAt=1778079709409\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504678217459017099232962578183557567897399669817363"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079805191,
+        "message":  "[INFO]\t2026-05-06T15:03:25.191Z\td5507473-d8b9-5677-8f50-160682c166cb\tDLQ_SUMMARY count=1 categories={\u0027orders\u0027: 1} messageIds=[\u0027a3374232-b834-4804-88d4-b1a312dd02be\u0027]\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504678217459017099232962578183557567897399669817364"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079805210,
+        "message":  "[INFO]\t2026-05-06T15:03:25.210Z\td5507473-d8b9-5677-8f50-160682c166cb\tSNS alert published to arn:aws:sns:us-east-1:866934333672:chikwex-assign17-dlq-alerts\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504678641173175871314802267362204748216268283445269"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079805218,
+        "message":  "END RequestId: d5507473-d8b9-5677-8f50-160682c166cb\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504678819579137459559787399647950929403160331288598"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079805218,
+        "message":  "REPORT RequestId: d5507473-d8b9-5677-8f50-160682c166cb\tDuration: 26.90 ms\tBilled Duration: 27 ms\tMemory Size: 128 MB\tMax Memory Used: 85 MB\t\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504678819579137459559787399647950929403160331288599"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079805276,
+        "message":  "START RequestId: 7921fedf-cdf6-509d-a730-9caa978b8b4a Version: $LATEST\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504680113022358974335929608719610743008127678152728"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079805276,
+        "message":  "[INFO]\t2026-05-06T15:03:25.276Z\t7921fedf-cdf6-509d-a730-9caa978b8b4a\tDLQ_ARRIVAL messageId=9f850f8d-f628-49bc-b8e2-482addb00ba3 receiveCount=4 category=payments sentAt=1778079709372\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504680113022358974335929608719610743008127678152729"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079805276,
+        "message":  "[INFO]\t2026-05-06T15:03:25.276Z\t7921fedf-cdf6-509d-a730-9caa978b8b4a\tDLQ_SUMMARY count=1 categories={\u0027payments\u0027: 1} messageIds=[\u00279f850f8d-f628-49bc-b8e2-482addb00ba3\u0027]\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504680113022358974335929608719610743008127678152730"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079805298,
+        "message":  "[INFO]\t2026-05-06T15:03:25.298Z\t7921fedf-cdf6-509d-a730-9caa978b8b4a\tSNS alert published to arn:aws:sns:us-east-1:866934333672:chikwex-assign17-dlq-alerts\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504680603638753342009638722505412741272080809721883"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079805318,
+        "message":  "END RequestId: 7921fedf-cdf6-509d-a730-9caa978b8b4a\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504681049653657312622101553219778194239310929330204"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079805318,
+        "message":  "REPORT RequestId: 7921fedf-cdf6-509d-a730-9caa978b8b4a\tDuration: 41.88 ms\tBilled Duration: 42 ms\tMemory Size: 128 MB\tMax Memory Used: 85 MB\t\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504681049653657312622101553219778194239310929330205"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079805339,
+        "message":  "START RequestId: d09a1ac6-1463-51eb-b1b5-78b34e1e8157 Version: $LATEST\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504681517969306481765187525469861919854902554918942"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079805339,
+        "message":  "[INFO]\t2026-05-06T15:03:25.339Z\td09a1ac6-1463-51eb-b1b5-78b34e1e8157\tDLQ_ARRIVAL messageId=0a8b3ded-6cd4-4023-8511-c73566a88ad2 receiveCount=4 category=inventory sentAt=1778079709373\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504681517969306481765187525469861919854902554918943"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079805339,
+        "message":  "[INFO]\t2026-05-06T15:03:25.339Z\td09a1ac6-1463-51eb-b1b5-78b34e1e8157\tDLQ_SUMMARY count=1 categories={\u0027inventory\u0027: 1} messageIds=[\u00270a8b3ded-6cd4-4023-8511-c73566a88ad2\u0027]\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504681517969306481765187525469861919854902554918944"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079805371,
+        "message":  "START RequestId: 4a220860-6eef-57ca-9f98-6a1534925430 Version: $LATEST\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504682231593152834745129225946880259370132000079872"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079805371,
+        "message":  "[INFO]\t2026-05-06T15:03:25.371Z\t4a220860-6eef-57ca-9f98-6a1534925430\tDLQ_ARRIVAL messageId=b135a08e-2e2a-47b2-a557-9cdbda6d08f0 receiveCount=4 category=notifications sentAt=1778079709373\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504682231593152834745129225946880259370132000079873"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079805371,
+        "message":  "[INFO]\t2026-05-06T15:03:25.371Z\t4a220860-6eef-57ca-9f98-6a1534925430\tDLQ_SUMMARY count=1 categories={\u0027notifications\u0027: 1} messageIds=[\u0027b135a08e-2e2a-47b2-a557-9cdbda6d08f0\u0027]\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504682231593152834745129225946880259370132000079874"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079805372,
+        "message":  "[INFO]\t2026-05-06T15:03:25.372Z\td09a1ac6-1463-51eb-b1b5-78b34e1e8157\tSNS alert published to arn:aws:sns:us-east-1:866934333672:chikwex-assign17-dlq-alerts\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504682253893898033275751196148564917250832252272673"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079805378,
+        "message":  "END RequestId: d09a1ac6-1463-51eb-b1b5-78b34e1e8157\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504682387698369224459490045362874553141001288155170"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079805378,
+        "message":  "REPORT RequestId: d09a1ac6-1463-51eb-b1b5-78b34e1e8157\tDuration: 39.04 ms\tBilled Duration: 40 ms\tMemory Size: 128 MB\tMax Memory Used: 85 MB\t\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504682387698369224459490045362874553141001288155171"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079805390,
+        "message":  "[INFO]\t2026-05-06T15:03:25.390Z\t4a220860-6eef-57ca-9f98-6a1534925430\tSNS alert published to arn:aws:sns:us-east-1:866934333672:chikwex-assign17-dlq-alerts\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504682655307311606826968915125527439689000613707779"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079805396,
+        "message":  "END RequestId: 4a220860-6eef-57ca-9f98-6a1534925430\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504682789111782798010707764339837075579169649590276"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079805396,
+        "message":  "REPORT RequestId: 4a220860-6eef-57ca-9f98-6a1534925430\tDuration: 24.62 ms\tBilled Duration: 25 ms\tMemory Size: 128 MB\tMax Memory Used: 86 MB\t\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504682789111782798010707764339837075579169649590277"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079805579,
+        "message":  "START RequestId: 396ee0cf-f2dd-5205-933f-82baa8a43462 Version: $LATEST\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504686870148154129114742665376280970229325244006406"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079805579,
+        "message":  "[INFO]\t2026-05-06T15:03:25.579Z\t396ee0cf-f2dd-5205-933f-82baa8a43462\tDLQ_ARRIVAL messageId=1dceb9c2-2629-41cc-b195-fa76a170563b receiveCount=4 category=analytics sentAt=1778079709539\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504686870148154129114742665376280970229325244006407"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079805579,
+        "message":  "[INFO]\t2026-05-06T15:03:25.579Z\t396ee0cf-f2dd-5205-933f-82baa8a43462\tDLQ_SUMMARY count=1 categories={\u0027analytics\u0027: 1} messageIds=[\u00271dceb9c2-2629-41cc-b195-fa76a170563b\u0027]\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504686870148154129114742665376280970229325244006408"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079805595,
+        "message":  "[INFO]\t2026-05-06T15:03:25.595Z\t396ee0cf-f2dd-5205-933f-82baa8a43462\tSNS alert published to arn:aws:sns:us-east-1:866934333672:chikwex-assign17-dlq-alerts\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504687226960077305604712929947773332603109339693065"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079805616,
+        "message":  "END RequestId: 396ee0cf-f2dd-5205-933f-82baa8a43462\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504687695275726474747798902197857058218700965281802"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079805616,
+        "message":  "REPORT RequestId: 396ee0cf-f2dd-5205-933f-82baa8a43462\tDuration: 36.57 ms\tBilled Duration: 37 ms\tMemory Size: 128 MB\tMax Memory Used: 86 MB\t\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504687695275726474747798902197857058218700965281803"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079805618,
+        "message":  "START RequestId: 704edaea-48f1-5569-92be-b89f128c4693 Version: $LATEST\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504687739877216871809044013935259988747762723455012"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079805619,
+        "message":  "[INFO]\t2026-05-06T15:03:25.618Z\t704edaea-48f1-5569-92be-b89f128c4693\tDLQ_ARRIVAL messageId=1016ca43-1395-427d-94fe-b416bc9b5cfb receiveCount=4 category=payments sentAt=1778079709576\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504687762177962070339667155470978261396124229435429"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079805619,
+        "message":  "[INFO]\t2026-05-06T15:03:25.619Z\t704edaea-48f1-5569-92be-b89f128c4693\tDLQ_SUMMARY count=1 categories={\u0027payments\u0027: 1} messageIds=[\u00271016ca43-1395-427d-94fe-b416bc9b5cfb\u0027]\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504687762177962070339667155470978261396124229435430"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079805638,
+        "message":  "[INFO]\t2026-05-06T15:03:25.638Z\t704edaea-48f1-5569-92be-b89f128c4693\tSNS alert published to arn:aws:sns:us-east-1:866934333672:chikwex-assign17-dlq-alerts\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504688185892120842421506844649625441714992843063335"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079805658,
+        "message":  "END RequestId: 704edaea-48f1-5569-92be-b89f128c4693\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504688631907024813033969675363990894682222962671656"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079805658,
+        "message":  "REPORT RequestId: 704edaea-48f1-5569-92be-b89f128c4693\tDuration: 39.68 ms\tBilled Duration: 40 ms\tMemory Size: 128 MB\tMax Memory Used: 85 MB\t\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504688631907024813033969675363990894682222962671657"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079805670,
+        "message":  "START RequestId: 7f39467c-223f-5357-9e16-240978429880 Version: $LATEST\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504688899515967195401447373792610166462561034436650"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079805670,
+        "message":  "[INFO]\t2026-05-06T15:03:25.670Z\t7f39467c-223f-5357-9e16-240978429880\tDLQ_ARRIVAL messageId=1649d488-fdd3-455e-a21d-5a43ba6f1ae2 receiveCount=4 category=shipping sentAt=1778079709470\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504688899515967195401447373792610166462561034436651"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079805677,
+        "message":  "[INFO]\t2026-05-06T15:03:25.670Z\t7f39467c-223f-5357-9e16-240978429880\tDLQ_SUMMARY count=1 categories={\u0027shipping\u0027: 1} messageIds=[\u00271649d488-fdd3-455e-a21d-5a43ba6f1ae2\u0027]\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504689055621183585115809364542638075001091576299564"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079805698,
+        "message":  "[INFO]\t2026-05-06T15:03:25.698Z\t7f39467c-223f-5357-9e16-240978429880\tSNS alert published to arn:aws:sns:us-east-1:866934333672:chikwex-assign17-dlq-alerts\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504689523936832754258895336792721800616683201888301"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079805718,
+        "message":  "END RequestId: 7f39467c-223f-5357-9e16-240978429880\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504689969951736724871358167507087253583913321496622"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079805718,
+        "message":  "REPORT RequestId: 7f39467c-223f-5357-9e16-240978429880\tDuration: 47.84 ms\tBilled Duration: 48 ms\tMemory Size: 128 MB\tMax Memory Used: 85 MB\t\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504689969951736724871358167507087253583913321496623"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079806194,
+        "message":  "START RequestId: 48ea16c8-6aeb-5c59-8101-74bd3096878e Version: $LATEST\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504700585106451225447973538508985034203990168174640"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079806195,
+        "message":  "[INFO]\t2026-05-06T15:03:26.195Z\t48ea16c8-6aeb-5c59-8101-74bd3096878e\tDLQ_ARRIVAL messageId=b786946d-6da0-456a-9807-b31bd5ff4253 receiveCount=4 category=notifications sentAt=1778079709472\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504700607407196423978596680044703306852351674155057"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079806195,
+        "message":  "[INFO]\t2026-05-06T15:03:26.195Z\t48ea16c8-6aeb-5c59-8101-74bd3096878e\tDLQ_SUMMARY count=1 categories={\u0027notifications\u0027: 1} messageIds=[\u0027b786946d-6da0-456a-9807-b31bd5ff4253\u0027]\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504700607407196423978596680044703306852351674155058"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079806208,
+        "message":  "START RequestId: ac7e5f05-28eb-5b44-b66b-3d70729628be Version: $LATEST\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504700897316884004876698691343074466048712505688076"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079806208,
+        "message":  "[INFO]\t2026-05-06T15:03:26.208Z\tac7e5f05-28eb-5b44-b66b-3d70729628be\tDLQ_ARRIVAL messageId=11ad8790-aacf-4c66-b856-1d1af2172d6e receiveCount=4 category=orders sentAt=1778079709374\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504700897316884004876698691343074466048712505688077"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079806208,
+        "message":  "[INFO]\t2026-05-06T15:03:26.208Z\tac7e5f05-28eb-5b44-b66b-3d70729628be\tDLQ_SUMMARY count=1 categories={\u0027orders\u0027: 1} messageIds=[\u002711ad8790-aacf-4c66-b856-1d1af2172d6e\u0027]\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504700897316884004876698691343074466048712505688078"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079806217,
+        "message":  "[INFO]\t2026-05-06T15:03:26.217Z\t48ea16c8-6aeb-5c59-8101-74bd3096878e\tSNS alert published to arn:aws:sns:us-east-1:866934333672:chikwex-assign17-dlq-alerts\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504701098023590791652305793830505305116304805724211"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079806219,
+        "message":  "END RequestId: 48ea16c8-6aeb-5c59-8101-74bd3096878e\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504701142625081188713552076901941850413027817685044"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fecc227963a648dcac93bc71594bce34",
+        "timestamp":  1778079806219,
+        "message":  "REPORT RequestId: 48ea16c8-6aeb-5c59-8101-74bd3096878e\tDuration: 24.16 ms\tBilled Duration: 25 ms\tMemory Size: 128 MB\tMax Memory Used: 85 MB\t\n",
+        "ingestionTime":  1778079813420,
+        "eventId":  "39652504701142625081188713552076901941850413027817685045"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079806227,
+        "message":  "[INFO]\t2026-05-06T15:03:26.227Z\tac7e5f05-28eb-5b44-b66b-3d70729628be\tSNS alert published to arn:aws:sns:us-east-1:866934333672:chikwex-assign17-dlq-alerts\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504701321031042776958538380521721646367581119315983"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079806236,
+        "message":  "END RequestId: ac7e5f05-28eb-5b44-b66b-3d70729628be\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504701521737749563734146654343186100202834673139728"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079806236,
+        "message":  "REPORT RequestId: ac7e5f05-28eb-5b44-b66b-3d70729628be\tDuration: 27.50 ms\tBilled Duration: 28 ms\tMemory Size: 128 MB\tMax Memory Used: 86 MB\t\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504701521737749563734146654343186100202834673139729"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079807663,
+        "message":  "START RequestId: d7398361-d0c5-567e-987b-e1148ab876c2 Version: $LATEST\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504733344901147866933369625813161169414703707193362"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079807663,
+        "message":  "[INFO]\t2026-05-06T15:03:27.663Z\td7398361-d0c5-567e-987b-e1148ab876c2\tDLQ_ARRIVAL messageId=3615b03f-8f44-4cd8-adaf-74752c8d973f receiveCount=4 category=shipping sentAt=1778079709576\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504733344901147866933369625813161169414703707193363"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079807663,
+        "message":  "[INFO]\t2026-05-06T15:03:27.663Z\td7398361-d0c5-567e-987b-e1148ab876c2\tDLQ_SUMMARY count=1 categories={\u0027shipping\u0027: 1} messageIds=[\u00273615b03f-8f44-4cd8-adaf-74752c8d973f\u0027]\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504733344901147866933369625813161169414703707193364"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079807682,
+        "message":  "[INFO]\t2026-05-06T15:03:27.682Z\td7398361-d0c5-567e-987b-e1148ab876c2\tSNS alert published to arn:aws:sns:us-east-1:866934333672:chikwex-assign17-dlq-alerts\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504733768615306639015209314991808349733572320821269"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079807696,
+        "message":  "END RequestId: d7398361-d0c5-567e-987b-e1148ab876c2\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504734080825739418443933296491864166810633404547094"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079807696,
+        "message":  "REPORT RequestId: d7398361-d0c5-567e-987b-e1148ab876c2\tDuration: 32.63 ms\tBilled Duration: 33 ms\tMemory Size: 128 MB\tMax Memory Used: 86 MB\t\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504734080825739418443933296491864166810633404547095"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079808031,
+        "message":  "START RequestId: cafa4412-9a02-534f-978a-2667c07a1c37 Version: $LATEST\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504741551575380926202685710957485504011737907986456"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079808032,
+        "message":  "[INFO]\t2026-05-06T15:03:28.032Z\tcafa4412-9a02-534f-978a-2667c07a1c37\tDLQ_ARRIVAL messageId=4fd8c572-9cd6-4fd0-b18e-d54c6aa36f2d receiveCount=4 category=inventory sentAt=1778079709540\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504741573876126124733308852493203776660099413966873"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079808032,
+        "message":  "[INFO]\t2026-05-06T15:03:28.032Z\tcafa4412-9a02-534f-978a-2667c07a1c37\tDLQ_SUMMARY count=1 categories={\u0027inventory\u0027: 1} messageIds=[\u00274fd8c572-9cd6-4fd0-b18e-d54c6aa36f2d\u0027]\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504741573876126124733308852493203776660099413966874"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079808056,
+        "message":  "[INFO]\t2026-05-06T15:03:28.056Z\tcafa4412-9a02-534f-978a-2667c07a1c37\tSNS alert published to arn:aws:sns:us-east-1:866934333672:chikwex-assign17-dlq-alerts\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504742109094010889468264249350442320220775557496859"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079808076,
+        "message":  "END RequestId: cafa4412-9a02-534f-978a-2667c07a1c37\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504742555108914860080727080064807773188005677105180"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079808076,
+        "message":  "REPORT RequestId: cafa4412-9a02-534f-978a-2667c07a1c37\tDuration: 43.55 ms\tBilled Duration: 44 ms\tMemory Size: 128 MB\tMax Memory Used: 86 MB\t\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504742555108914860080727080064807773188005677105181"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079808097,
+        "message":  "START RequestId: 88d36b72-eefc-543d-b8b8-0907b48257c7 Version: $LATEST\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504743023424564029223813052314891498803597302693918"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079808098,
+        "message":  "[INFO]\t2026-05-06T15:03:28.098Z\t88d36b72-eefc-543d-b8b8-0907b48257c7\tDLQ_ARRIVAL messageId=abc50f69-a143-4ad4-97d3-75b66a1c9711 receiveCount=4 category=notifications sentAt=1778079709578\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504743045725309227754436193850609771451958808674335"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079808098,
+        "message":  "[INFO]\t2026-05-06T15:03:28.098Z\t88d36b72-eefc-543d-b8b8-0907b48257c7\tDLQ_SUMMARY count=1 categories={\u0027notifications\u0027: 1} messageIds=[\u0027abc50f69-a143-4ad4-97d3-75b66a1c9711\u0027]\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504743045725309227754436193850609771451958808674336"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079808115,
+        "message":  "[INFO]\t2026-05-06T15:03:28.115Z\t88d36b72-eefc-543d-b8b8-0907b48257c7\tSNS alert published to arn:aws:sns:us-east-1:866934333672:chikwex-assign17-dlq-alerts\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504743424837977602775029599957820406474104410341409"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079808117,
+        "message":  "END RequestId: 88d36b72-eefc-543d-b8b8-0907b48257c7\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504743469439467999836275883029256951770827422302242"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079808117,
+        "message":  "REPORT RequestId: 88d36b72-eefc-543d-b8b8-0907b48257c7\tDuration: 19.21 ms\tBilled Duration: 20 ms\tMemory Size: 128 MB\tMax Memory Used: 86 MB\t\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504743469439467999836275883029256951770827422302243"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079808291,
+        "message":  "START RequestId: 11b1c2db-78a2-54e0-8b4c-a0ae22dc5f37 Version: $LATEST\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504747349769132544164702510244236392585729462894628"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079808292,
+        "message":  "[INFO]\t2026-05-06T15:03:28.292Z\t11b1c2db-78a2-54e0-8b4c-a0ae22dc5f37\tDLQ_ARRIVAL messageId=8ebf35f5-bfe6-4a38-b046-7d7a60058952 receiveCount=4 category=shipping sentAt=1778079709438\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504747372069877742695325651779954665234090968875045"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079808292,
+        "message":  "[INFO]\t2026-05-06T15:03:28.292Z\t11b1c2db-78a2-54e0-8b4c-a0ae22dc5f37\tDLQ_SUMMARY count=1 categories={\u0027shipping\u0027: 1} messageIds=[\u00278ebf35f5-bfe6-4a38-b046-7d7a60058952\u0027]\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504747372069877742695325651779954665234090968875046"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079808309,
+        "message":  "[INFO]\t2026-05-06T15:03:28.309Z\t11b1c2db-78a2-54e0-8b4c-a0ae22dc5f37\tSNS alert published to arn:aws:sns:us-east-1:866934333672:chikwex-assign17-dlq-alerts\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504747751182546117715919057887165300256236570542119"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079808316,
+        "message":  "END RequestId: 11b1c2db-78a2-54e0-8b4c-a0ae22dc5f37\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504747907287762507430281048637193208794767112405032"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079808316,
+        "message":  "REPORT RequestId: 11b1c2db-78a2-54e0-8b4c-a0ae22dc5f37\tDuration: 23.80 ms\tBilled Duration: 24 ms\tMemory Size: 128 MB\tMax Memory Used: 86 MB\t\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504747907287762507430281048637193208794767112405033"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079808991,
+        "message":  "START RequestId: b658cbc5-d215-5bb7-b930-a9b0889554cf Version: $LATEST\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504762960290771515600901585247027246438783649185834"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079808992,
+        "message":  "[INFO]\t2026-05-06T15:03:28.992Z\tb658cbc5-d215-5bb7-b930-a9b0889554cf\tDLQ_ARRIVAL messageId=66460f2e-a791-4b7d-b7ff-ebda82f8893f receiveCount=4 category=analytics sentAt=1778079709539\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504762982591516714131524726782745519087145155166251"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079808992,
+        "message":  "[INFO]\t2026-05-06T15:03:28.992Z\tb658cbc5-d215-5bb7-b930-a9b0889554cf\tDLQ_SUMMARY count=1 categories={\u0027analytics\u0027: 1} messageIds=[\u002766460f2e-a791-4b7d-b7ff-ebda82f8893f\u0027]\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504762982591516714131524726782745519087145155166252"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079809006,
+        "message":  "[INFO]\t2026-05-06T15:03:29.006Z\tb658cbc5-d215-5bb7-b930-a9b0889554cf\tSNS alert published to arn:aws:sns:us-east-1:866934333672:chikwex-assign17-dlq-alerts\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504763294801949493560248708282801336164206238892077"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079809016,
+        "message":  "END RequestId: b658cbc5-d215-5bb7-b930-a9b0889554cf\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504763517809401478866480123639984062647821298696238"
+    },
+    {
+        "logStreamName":  "2026/05/06/[$LATEST]fe59d7fd0e904b1ead15571fa077d048",
+        "timestamp":  1778079809016,
+        "message":  "REPORT RequestId: b658cbc5-d215-5bb7-b930-a9b0889554cf\tDuration: 23.66 ms\tBilled Duration: 24 ms\tMemory Size: 128 MB\tMax Memory Used: 86 MB\t\n",
+        "ingestionTime":  1778079814389,
+        "eventId":  "39652504763517809401478866480123639984062647821298696239"
+    }
+]

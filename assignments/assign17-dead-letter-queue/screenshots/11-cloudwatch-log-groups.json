@@ -1,0 +1,26 @@
+﻿{
+    "logGroups": [
+        {
+            "logGroupName": "/aws/lambda/chikwex-assign17-consumer",
+            "creationTime": 1778075453196,
+            "retentionInDays": 7,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:866934333672:log-group:/aws/lambda/chikwex-assign17-consumer:*",
+            "storedBytes": 0,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:866934333672:log-group:/aws/lambda/chikwex-assign17-consumer",
+            "deletionProtectionEnabled": false
+        },
+        {
+            "logGroupName": "/aws/lambda/chikwex-assign17-dlq-monitor",
+            "creationTime": 1778075453226,
+            "retentionInDays": 7,
+            "metricFilterCount": 0,
+            "arn": "arn:aws:logs:us-east-1:866934333672:log-group:/aws/lambda/chikwex-assign17-dlq-monitor:*",
+            "storedBytes": 0,
+            "logGroupClass": "STANDARD",
+            "logGroupArn": "arn:aws:logs:us-east-1:866934333672:log-group:/aws/lambda/chikwex-assign17-dlq-monitor",
+            "deletionProtectionEnabled": false
+        }
+    ]
+}

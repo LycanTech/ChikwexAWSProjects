@@ -1,0 +1,82 @@
+[
+  {
+    "label": "v1_unoptimized",
+    "function_name": "chikwex-assign16-v1-unoptimized",
+    "memory_mb": 128,
+    "avg_billed_ms": 79625,
+    "min_billed_ms": 77911,
+    "max_billed_ms": 82232,
+    "cold_start_ms": 323.46,
+    "avg_cost_usd": 0.00016609
+  },
+  {
+    "label": "v2_optimized",
+    "function_name": "chikwex-assign16-v2-optimized",
+    "memory_mb": 128,
+    "avg_billed_ms": 84361,
+    "min_billed_ms": 76052,
+    "max_billed_ms": 97509,
+    "cold_start_ms": 558.25,
+    "avg_cost_usd": 0.00017595
+  },
+  {
+    "label": "v1_unoptimized",
+    "function_name": "chikwex-assign16-v1-unoptimized",
+    "memory_mb": 256,
+    "avg_billed_ms": 43757,
+    "min_billed_ms": 43070,
+    "max_billed_ms": 44837,
+    "cold_start_ms": 286.04,
+    "avg_cost_usd": 0.00018252
+  },
+  {
+    "label": "v2_optimized",
+    "function_name": "chikwex-assign16-v2-optimized",
+    "memory_mb": 256,
+    "avg_billed_ms": 32840,
+    "min_billed_ms": 31323,
+    "max_billed_ms": 33786,
+    "cold_start_ms": 512.75,
+    "avg_cost_usd": 0.00013703
+  },
+  {
+    "label": "v1_unoptimized",
+    "function_name": "chikwex-assign16-v1-unoptimized",
+    "memory_mb": 512,
+    "avg_billed_ms": 36467,
+    "min_billed_ms": 35681,
+    "max_billed_ms": 37756,
+    "cold_start_ms": 389.96,
+    "avg_cost_usd": 0.00030409
+  },
+  {
+    "label": "v2_optimized",
+    "function_name": "chikwex-assign16-v2-optimized",
+    "memory_mb": 512,
+    "avg_billed_ms": 13557,
+    "min_billed_ms": 12565,
+    "max_billed_ms": 14880,
+    "cold_start_ms": 533.55,
+    "avg_cost_usd": 0.00011318
+  },
+  {
+    "label": "v1_unoptimized",
+    "function_name": "chikwex-assign16-v1-unoptimized",
+    "memory_mb": 1024,
+    "avg_billed_ms": 36728,
+    "min_billed_ms": 35164,
+    "max_billed_ms": 37953,
+    "cold_start_ms": 341.19,
+    "avg_cost_usd": 0.00061233
+  },
+  {
+    "label": "v2_optimized",
+    "function_name": "chikwex-assign16-v2-optimized",
+    "memory_mb": 1024,
+    "avg_billed_ms": 7759,
+    "min_billed_ms": 7245,
+    "max_billed_ms": 8424,
+    "cold_start_ms": 521.13,
+    "avg_cost_usd": 0.00012952
+  }
+]

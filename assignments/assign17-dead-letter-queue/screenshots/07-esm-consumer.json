@@ -1,0 +1,16 @@
+﻿{
+    "EventSourceMappings": [
+        {
+            "UUID": "356da78f-5bc5-4e83-b264-308967ea61de",
+            "BatchSize": 1,
+            "MaximumBatchingWindowInSeconds": 0,
+            "EventSourceArn": "arn:aws:sqs:us-east-1:866934333672:chikwex-assign17-main-queue",
+            "FunctionArn": "arn:aws:lambda:us-east-1:866934333672:function:chikwex-assign17-consumer",
+            "LastModified": "2026-05-06T09:51:52.509000-04:00",
+            "State": "Enabled",
+            "StateTransitionReason": "USER_INITIATED",
+            "FunctionResponseTypes": [],
+            "EventSourceMappingArn": "arn:aws:lambda:us-east-1:866934333672:event-source-mapping:356da78f-5bc5-4e83-b264-308967ea61de"
+        }
+    ]
+}

@@ -46,7 +46,7 @@ This assignment deploys a complete AWS network traffic analysis pipeline. VPC Fl
 ## Resources Deployed
 
 | Resource | Name / ID |
-|---|---|
+| --- | --- |
 | VPC | `vpc-068ae6787731711a3` |
 | Public Subnet | `subnet-05b92cc5168aa0481` (us-east-1a) |
 | Private Subnet | `subnet-06e89b0706ccd814c` (us-east-1b) |
@@ -130,7 +130,7 @@ chmod +x traffic_generator.sh
 ### Traffic patterns generated
 
 | Test | Protocol | Expected Flow Log Action |
-|---|---|---|
+| --- | --- | --- |
 | Ping private EC2 × 60 packets | ICMP (protocol 1) | ACCEPT |
 | SSH probe to private EC2 port 22 | TCP | ACCEPT (port allowed by SG) |
 | Connection to port 8080 | TCP | REJECT (port blocked by SG) |
@@ -160,7 +160,7 @@ This creates a partitioned external table in Parquet format with partition proje
 ### Step 3 — Run the analysis queries
 
 | Saved Query Name | What it finds |
-|---|---|
+| --- | --- |
 | `vpcflow-assign15-top10-source-ips` | Top 10 source IPs by bytes transferred |
 | `vpcflow-assign15-all-reject-actions` | All REJECT entries — blocked/refused connections |
 | `vpcflow-assign15-traffic-between-ips` | Bidirectional traffic between two specific IPs |
@@ -196,7 +196,7 @@ The private security group intentionally has **no ingress rule for port 8080**, 
 ## Cost Estimate
 
 | Component | Estimate |
-|---|---|
+| --- | --- |
 | VPC Flow Log ingestion | < $0.01 |
 | S3 storage (90-day lifecycle) | < $0.01/month |
 | Athena — all 5 queries on Parquet data | < $0.01 |
@@ -221,10 +221,32 @@ This destroys all resources including both S3 buckets (`force_destroy = true` is
 
 ## AWS Console Links
 
-| Service | Link |
-|---|---|
-| VPC | https://us-east-1.console.aws.amazon.com/vpc/home?region=us-east-1#VpcDetails:VpcId=vpc-068ae6787731711a3 |
-| EC2 Instances | https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#Instances:tag:Name=vpcflow-assign15* |
-| S3 Flow Logs | https://s3.console.aws.amazon.com/s3/buckets/vpcflow-assign15-vpc-flow-logs-866934333672 |
-| Athena Workgroup | https://us-east-1.console.aws.amazon.com/athena/home?region=us-east-1#/workgroup/vpcflow-assign15-workgroup |
-| Athena Saved Queries | https://us-east-1.console.aws.amazon.com/athena/home?region=us-east-1#/saved-queries |
+### VPC & Networking
+
+| Resource | Link |
+| --- | --- |
+| VPC (`vpc-068ae6787731711a3`) | https://us-east-1.console.aws.amazon.com/vpc/home?region=us-east-1#VpcDetails:VpcId=vpc-068ae6787731711a3 |
+| Subnets | https://us-east-1.console.aws.amazon.com/vpc/home?region=us-east-1#subnets:filter=vpc-068ae6787731711a3 |
+| VPC Flow Log (`fl-0a5633dd09ba4f30e`) | https://us-east-1.console.aws.amazon.com/vpc/home?region=us-east-1#FlowLogs:filter=vpc-068ae6787731711a3 |
+
+### EC2 Instances
+
+| Resource | Link |
+| --- | --- |
+| Public EC2 (`i-06891419e3627a8d6`) — `3.81.10.237` | https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#Instances:instanceId=i-06891419e3627a8d6 |
+| Private EC2 (`i-0cb5a9a939deed016`) — `10.15.2.35` | https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#Instances:instanceId=i-0cb5a9a939deed016 |
+
+### S3
+
+| Resource | Link |
+| --- | --- |
+| Flow Logs bucket | https://s3.console.aws.amazon.com/s3/buckets/vpcflow-assign15-vpc-flow-logs-866934333672?region=us-east-1 |
+| Athena results bucket | https://s3.console.aws.amazon.com/s3/buckets/vpcflow-assign15-athena-results-866934333672?region=us-east-1 |
+
+### Athena
+
+| Resource | Link |
+| --- | --- |
+| Workgroup (`vpcflow-assign15-workgroup`) | https://us-east-1.console.aws.amazon.com/athena/home?region=us-east-1#/workgroups/vpcflow-assign15-workgroup |
+| Query Editor | https://us-east-1.console.aws.amazon.com/athena/home?region=us-east-1#/query-editor |
+| Saved Queries | https://us-east-1.console.aws.amazon.com/athena/home?region=us-east-1#/saved-queries |

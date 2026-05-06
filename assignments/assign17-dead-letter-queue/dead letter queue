@@ -1,0 +1,28 @@
+Assignment 17: SQS Dead Letter Queue Processing
+Task:
+Build robust message processing with retry and DLQ handling.
+What to Do:
+●    Create standard SQS queue main-queue
+●    Create DLQ failed-messages
+●    Configure main queue with:
+●    Max receive count: 3
+●    DLQ redrive policy
+●    Visibility timeout: 30 seconds
+●    Create Lambda consumer that:
+●    Processes messages
+●    Randomly fails 20% of messages (simulated)
+●    Logs processing attempts
+●    Create second Lambda for DLQ monitoring:
+●    Triggers when messages in DLQ
+●    Analyzes failure pattern
+●    Logs to CloudWatch
+●    Sends SNS alert
+●    Send 100 messages to main queue
+●    Monitor how many end up in DLQ
+●    Implement replay mechanism from DLQ
+●    Add message deduplication for FIFO queue version
+Success Criteria:
+●    Failed messages move to DLQ after 3 attempts
+●    DLQ monitoring Lambda triggers correctly
+●    Can replay messages from DLQ
+●    All messages eventually processed successfully

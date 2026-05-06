@@ -1,0 +1,53 @@
+﻿{
+    "Configuration": {
+        "FunctionName": "chikwex-assign17-dlq-monitor",
+        "FunctionArn": "arn:aws:lambda:us-east-1:866934333672:function:chikwex-assign17-dlq-monitor",
+        "Runtime": "python3.12",
+        "Role": "arn:aws:iam::866934333672:role/chikwex-assign17-dlq-monitor-role",
+        "Handler": "handler.handler",
+        "CodeSize": 1179,
+        "Description": "",
+        "Timeout": 30,
+        "MemorySize": 128,
+        "LastModified": "2026-05-06T13:51:18.772+0000",
+        "CodeSha256": "J8SgWKtfbD3ij60GxtGRaojUUzoaF1LmJ9W5ojRkdrQ=",
+        "Version": "$LATEST",
+        "Environment": {
+            "Variables": {
+                "SNS_TOPIC_ARN": "arn:aws:sns:us-east-1:866934333672:chikwex-assign17-dlq-alerts",
+                "QUEUE_NAME": "chikwex-assign17-failed-messages"
+            }
+        },
+        "TracingConfig": {
+            "Mode": "PassThrough"
+        },
+        "RevisionId": "99ff80a6-982c-4a7f-8bda-cc054f55f608",
+        "State": "Active",
+        "LastUpdateStatus": "Successful",
+        "PackageType": "Zip",
+        "Architectures": [
+            "x86_64"
+        ],
+        "EphemeralStorage": {
+            "Size": 512
+        },
+        "SnapStart": {
+            "ApplyOn": "None",
+            "OptimizationStatus": "Off"
+        },
+        "RuntimeVersionConfig": {
+            "RuntimeVersionArn": "arn:aws:lambda:us-east-1::runtime:e4ab553846c4e081013ff7d1d608a5358d5b956bb5b81c83c66d2a31da8f6244"
+        },
+        "LoggingConfig": {
+            "LogFormat": "Text",
+            "LogGroup": "/aws/lambda/chikwex-assign17-dlq-monitor"
+        }
+    },
+    "Code": {
+        "RepositoryType": "S3",
+        "Location": "https://prod-iad-c1-djusa-tasks.s3.us-east-1.amazonaws.com/snapshots/866934333672/chikwex-assign17-dlq-monitor-0525d062-cd46-4007-88ef-32d490c4e0f2?versionId=w8rF9KQp.iFXKfs4pqIvshpudcLm3Efw&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJIMEYCIQDIX2ax2YgR6LrqjhjqknFF1bUEqic%2B%2Bp2jEDU9wGAU1QIhAJRhh0pR4LcSNFEpxlVubf%2Ba2f1JST5GxwSybvsOvSSBKpQCCJ%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQBBoMNDc5MjMzMDI1Mzc5IgzibtFaAK0Ed7Zt31gq6AFHrWogxg7TioF0%2F9TaIUyKA6%2F%2Bau6TEwdPoDNWwDAOGIDwkYYxXoJ7iJseHr9P48gJp780WEviDczgDRAtZpQQIKEnV7bYmbFKuHA2q04GlpflgQc3iEspDZhdzIrWqMppnI%2F3H4L6epZA0OMd9fOkdFeO1t1a0%2FQTUYzHL4RPxWInqwTX%2BDaYbJjZA8pOs5oaInepA%2FBuBxJBA6z1Mb4juCosz4GsYfCEoUitShu83KPeyQwG3qlTwezIZGlRGMJq1QDw6%2FENNW8R1mMCpB4XBkqP9PGFVb6OGmwAZGhFnTJIk5MKBUVrMKaD7c8GOowBy4ZlmZNMvgHs849Fi3xTJx58OT6z1e8nJAsn9fGx9VH2%2BA5TiBrGrQFex6cZv5cHM2uVV%2Fc4GabWUC0slZdgrxoJD8NSad0gPPDuxK66MpQSnJohkR7OHljmxN%2FLdXfY%2FOYMdL7nxTTjfZpVCGZokEnRxMo8HxLR4ELtE2sEmj1w88c1iZP8Y5KzDMs%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20260506T135422Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Credential=ASIAW7FEDUVRRB6NV6KE%2F20260506%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=cddac8d874db00b8cc568c6165f86d8b3c9a6a653b77fa2b81d3ca2af23819e6"
+    },
+    "Tags": {
+        "Name": "chikwex-assign17-dlq-monitor"
+    }
+}

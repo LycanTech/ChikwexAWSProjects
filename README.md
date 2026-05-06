@@ -20,7 +20,9 @@ A collection of hands-on AWS and DevOps assignments covering cloud infrastructur
 | 13 | [assign13-dynamodb-streams](assignments/assign13-dynamodb-streams/) | DynamoDB Streams with Lambda | DynamoDB Streams, Lambda, event-driven aggregation |
 | 14 | [assign14-eventbridge](assignments/assign14-eventbridge/) | EventBridge Automated Scheduler | EventBridge, Lambda, event routing |
 | 15 | [assign15-vpc-flow-logs](assignments/assign15-vpc-flow-logs/) | VPC Flow Logs Analysis | VPC Flow Logs, Athena, S3, network traffic analysis |
-| S3 | [s3-replication-failover](assignments/s3-replication-failover/) | Multi-Region S3 Replication & Failover | S3 CRR, versioning, delete marker replication |
+| 16 | [assign16-lambda-function-optimization-n-cost-analysis](assignments/assign16-lambda-function-optimization-n-cost-analysis/) | Lambda Optimization & Cost Analysis | Lambda, S3, DynamoDB, X-Ray, Power Tuning, connection pooling |
+| 17 | [assign17-dead-letter-queue](assignments/assign17-dead-letter-queue/) | SQS Dead Letter Queue Processing | SQS, DLQ, Lambda, SNS, retry logic, message replay |
+| S3 | [assign09-s3-replication-failover](assignments/assign09-s3-replication-failover/) | Multi-Region S3 Replication & Failover | S3 CRR, versioning, delete marker replication |
 
 ---
 
@@ -74,7 +76,15 @@ Automated task scheduling with Amazon EventBridge. Demonstrates event routing ru
 
 Network traffic analysis pipeline that stores VPC Flow Logs in S3 and queries them using Amazon Athena. Includes partitioned table schemas and sample queries for identifying top talkers, rejected connections, and anomalous traffic patterns.
 
-### S3 Replication & Failover
+### Assignment 16 — Lambda Optimization & Cost Analysis
+
+Benchmarks two Lambda versions that read 1000 S3 objects, process JSON, and write to DynamoDB. v1 (unoptimized) uses sequential reads and individual `put_item` calls. v2 (optimized) applies module-level connection pooling, concurrent reads via `ThreadPoolExecutor`, and `batch_write_item` (25 items/call). Both are power-tuned at 128 / 256 / 512 / 1024 MB with X-Ray tracing to identify the cost-optimal memory configuration.
+
+### Assignment 17 — SQS Dead Letter Queue Processing
+
+Robust SQS message processing with retry logic and DLQ handling. A consumer Lambda processes messages with a simulated 20% failure rate. Failed messages move to the DLQ after 3 attempts, triggering a monitor Lambda that analyzes failure patterns, logs results, and sends an SNS alert. Includes a replay mechanism and a FIFO queue variant with deduplication.
+
+### Assignment S3 — Multi-Region S3 Replication & Failover
 
 Cross-region S3 replication setup with automated failover. Covers Cross-Region Replication (CRR) configuration, delete marker replication, versioning, and tested RTO/RPO with observed replication lag results.
 
@@ -108,17 +118,19 @@ Refer to each assignment's README for specific prerequisites.
 
 ```
 assignments/
-├── assign03-serverless/       # Serverless order processing
-├── assign04-dr/               # Disaster recovery & HA
-├── assign05-ansible/          # Ansible infrastructure automation
-├── assign06-docker-compose/   # Multi-tier Docker application
-├── assign07-cicd/             # CI/CD pipeline
-├── assign08-capstone/         # Secure multi-VPC network
-├── assign10-autoscaling/      # Auto scaling with lifecycle hooks
-├── assign11-rds-rotation/     # RDS secret rotation
-├── assign12-cloudwatch/       # CloudWatch logs & alerting
-├── assign13-dynamodb-streams/ # DynamoDB streams aggregation
-├── assign14-eventbridge/      # EventBridge scheduler
-├── assign15-vpc-flow-logs/    # VPC flow logs analysis
-└── s3-replication-failover/   # Multi-region S3 replication
+├── assign03-serverless/            # Serverless order processing
+├── assign04-dr/                    # Disaster recovery & HA
+├── assign05-ansible/               # Ansible infrastructure automation
+├── assign06-docker-compose/        # Multi-tier Docker application
+├── assign07-cicd/                  # End-to-end DevOps pipeline (EShopz)
+├── assign08-capstone/              # Secure multi-VPC network
+├── assign09-s3-replication-failover/ # Multi-region S3 replication
+├── assign10-autoscaling/           # Auto scaling with lifecycle hooks
+├── assign11-rds-rotation/          # RDS secret rotation
+├── assign12-cloudwatch/            # CloudWatch logs & alerting
+├── assign13-dynamodb-streams/      # DynamoDB streams aggregation
+├── assign14-eventbridge/           # EventBridge scheduler
+├── assign15-vpc-flow-logs/         # VPC flow logs analysis
+├── assign16-lambda-function-optimization-n-cost-analysis/  # Lambda power tuning
+└── assign17-dead-letter-queue/     # SQS DLQ processing
 ```

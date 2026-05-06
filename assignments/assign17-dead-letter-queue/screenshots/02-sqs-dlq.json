@@ -1,0 +1,16 @@
+﻿{
+    "Attributes": {
+        "QueueArn": "arn:aws:sqs:us-east-1:866934333672:chikwex-assign17-failed-messages",
+        "ApproximateNumberOfMessages": "0",
+        "ApproximateNumberOfMessagesNotVisible": "0",
+        "ApproximateNumberOfMessagesDelayed": "0",
+        "CreatedTimestamp": "1778075453",
+        "LastModifiedTimestamp": "1778075453",
+        "VisibilityTimeout": "30",
+        "MaximumMessageSize": "262144",
+        "MessageRetentionPeriod": "1209600",
+        "DelaySeconds": "0",
+        "ReceiveMessageWaitTimeSeconds": "0",
+        "SqsManagedSseEnabled": "true"
+    }
+}

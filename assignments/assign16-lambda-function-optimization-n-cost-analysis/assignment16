@@ -1,0 +1,27 @@
+Assignment 16: Lambda Function Optimization and Cost Analysis
+Task:
+Optimize Lambda function for performance and cost.
+What to Do:
+●    Create Lambda function that:
+●    Reads 1000 objects from S3
+●    Processes JSON data
+●    Writes results to DynamoDB
+●    Initially use 128MB memory
+●    Use Lambda Power Tuning tool or manual testing:
+●    Test with 128MB, 256MB, 512MB, 1024MB
+●    Measure execution time and cost
+●    Find optimal configuration
+●    Optimize code:
+●    Add connection pooling
+●    Implement batch writes to DynamoDB
+●    Use async operations
+●    Compare performance:
+●    Before optimization vs after
+●    Different memory sizes
+●    Enable X-Ray tracing
+●    Analyze cold start vs warm start times
+●    Implement Lambda@Edge concept (if time allows)
+Success Criteria:
+●    Identify cost-optimal memory size
+●    Cold start < 3 seconds
+●    Warm execution < 1 second

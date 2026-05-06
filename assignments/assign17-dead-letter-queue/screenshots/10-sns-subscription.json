@@ -1,0 +1,11 @@
+﻿{
+    "Subscriptions": [
+        {
+            "SubscriptionArn": "arn:aws:sns:us-east-1:866934333672:chikwex-assign17-dlq-alerts:0642163a-55c3-4046-b280-d74676031d32",
+            "Owner": "866934333672",
+            "Protocol": "email",
+            "Endpoint": "chikwe.azinge@techconsulting.tech",
+            "TopicArn": "arn:aws:sns:us-east-1:866934333672:chikwex-assign17-dlq-alerts"
+        }
+    ]
+}
