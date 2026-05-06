@@ -1,0 +1,85 @@
+# ==============================================================
+# RBAC - Kubernetes Role-Based Access Control
+# ==============================================================
+
+# Service Account for microservices
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: chikwex-eshopz-sa
+  namespace: chikwex-eshopz
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::866934333672:role/chikwex-eshopz-pod-role
+---
+# Role for microservices - limited permissions
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: chikwex-eshopz-role
+  namespace: chikwex-eshopz
+rules:
+  - apiGroups: [""]
+    resources: ["configmaps", "secrets"]
+    verbs: ["get", "list"]
+  - apiGroups: [""]
+    resources: ["pods"]
+    verbs: ["get", "list"]
+  - apiGroups: [""]
+    resources: ["services"]
+    verbs: ["get", "list"]
+---
+# Bind role to service account
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: chikwex-eshopz-rolebinding
+  namespace: chikwex-eshopz
+subjects:
+  - kind: ServiceAccount
+    name: chikwex-eshopz-sa
+    namespace: chikwex-eshopz
+roleRef:
+  kind: Role
+  name: chikwex-eshopz-role
+  apiGroup: rbac.authorization.k8s.io
+---
+# Cluster Role for monitoring
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: chikwex-eshopz-monitoring-role
+rules:
+  - apiGroups: [""]
+    resources: ["nodes", "pods", "services", "endpoints"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: [""]
+    resources: ["configmaps"]
+    verbs: ["get"]
+  - nonResourceURLs: ["/metrics"]
+    verbs: ["get"]
+---
+# Developer Role - read-only access
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: chikwex-eshopz-developer
+rules:
+  - apiGroups: [""]
+    resources: ["pods", "services", "configmaps"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: ["apps"]
+    resources: ["deployments", "replicasets"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: [""]
+    resources: ["pods/log"]
+    verbs: ["get"]
+---
+# Admin Role - full namespace access
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: chikwex-eshopz-admin
+rules:
+  - apiGroups: ["", "apps", "batch", "networking.k8s.io"]
+    resources: ["*"]
+    verbs: ["*"]

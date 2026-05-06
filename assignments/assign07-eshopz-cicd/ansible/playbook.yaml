@@ -1,0 +1,74 @@
+---
+# ==============================================================
+# Ansible Playbook - EKS Node Configuration Management
+# ==============================================================
+- name: Configure EKS Worker Nodes
+  hosts: eks_nodes
+  become: true
+  vars:
+    project_name: chikwex-eshopz
+    aws_region: us-east-1
+    log_retention_days: 7
+
+  tasks:
+    - name: Install required packages
+      yum:
+        name:
+          - amazon-cloudwatch-agent
+          - aws-cli
+          - jq
+          - htop
+        state: present
+
+    - name: Configure CloudWatch agent
+      template:
+        src: templates/cloudwatch-agent-config.json.j2
+        dest: /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json
+        mode: '0644'
+      notify: restart cloudwatch agent
+
+    - name: Start CloudWatch agent
+      systemd:
+        name: amazon-cloudwatch-agent
+        state: started
+        enabled: true
+
+    - name: Configure log rotation
+      template:
+        src: templates/logrotate-containers.j2
+        dest: /etc/logrotate.d/containers
+        mode: '0644'
+
+    - name: Set kernel parameters for containers
+      sysctl:
+        name: "{{ item.name }}"
+        value: "{{ item.value }}"
+        sysctl_set: true
+        reload: true
+      loop:
+        - { name: 'net.core.somaxconn', value: '65535' }
+        - { name: 'net.ipv4.ip_local_port_range', value: '1024 65535' }
+        - { name: 'fs.file-max', value: '2097152' }
+        - { name: 'net.ipv4.tcp_max_syn_backlog', value: '65535' }
+
+    - name: Configure security limits
+      lineinfile:
+        path: /etc/security/limits.conf
+        line: "{{ item }}"
+      loop:
+        - "* soft nofile 65535"
+        - "* hard nofile 65535"
+        - "* soft nproc 65535"
+        - "* hard nproc 65535"
+
+    - name: Ensure auditd is running
+      systemd:
+        name: auditd
+        state: started
+        enabled: true
+
+  handlers:
+    - name: restart cloudwatch agent
+      systemd:
+        name: amazon-cloudwatch-agent
+        state: restarted

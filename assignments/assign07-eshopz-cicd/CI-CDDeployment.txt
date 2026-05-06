@@ -1,0 +1,48 @@
+Assignment 7: Complete End-to-End DevOps Pipeline
+Topics Covered: ALL MODULES (Comprehensive Integration)
+Scenario:
+Build a production-ready e-commerce platform with complete DevOps automation.
+Requirements:
+●    Infrastructure:
+    Multi-region deployment with DR
+    EKS cluster for microservices
+    RDS with read replicas
+    ElastiCache for session management
+    CloudFront for CDN
+●    Application Architecture:
+    5+ microservices (user, product, cart, payment, order)
+    API Gateway for external access
+    Event-driven architecture using SQS/SNS
+●    CI/CD Pipeline:
+    Automated build and test
+    Container scanning
+    Blue-green deployment to EKS
+    Automated rollback on failure
+●    Security:
+    WAF rules for API protection
+    Secrets Manager integration
+    RBAC in Kubernetes
+    VPC security best practices
+    Shield Standard/Advanced
+●    Monitoring:
+    Prometheus + Grafana
+    ELK stack for logging
+    X-Ray for distributed tracing
+    Custom CloudWatch dashboards
+●    Automation:
+    Terraform for IaC
+    Ansible for configuration management
+    GitOps workflow for Kubernetes
+●    Documentation:
+    Architecture diagrams (network, application, deployment)
+    API documentation
+    Runbooks for common operations
+    Disaster recovery procedures
+●    Deliverables:
+    Complete source code (Git repository)
+    Infrastructure as Code
+    CI/CD pipeline configuration
+    Comprehensive documentation
+    Demo presentation with live deployment
+    Performance and load testing results
+    Cost analysis and optimization report

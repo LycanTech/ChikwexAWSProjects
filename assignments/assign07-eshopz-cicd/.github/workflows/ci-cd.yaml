@@ -1,0 +1,238 @@
+name: Chikwex-EShopz CI/CD Pipeline
+
+on:
+  push:
+    branches: [main, develop]
+    paths:
+      - 'microservices/**'
+      - 'frontend/**'
+      - 'k8s/**'
+  pull_request:
+    branches: [main]
+
+env:
+  AWS_REGION: us-east-1
+  ECR_REGISTRY: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com
+  EKS_CLUSTER_NAME: chikwex-eshopz-eks
+  NAMESPACE: chikwex-eshopz
+
+jobs:
+  # ==============================================================
+  # STAGE 1: Build and Test
+  # ==============================================================
+  build-and-test:
+    name: Build & Test
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        service: [user-service, product-service, cart-service, payment-service, order-service]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: microservices/${{ matrix.service }}/package-lock.json
+
+      - name: Install dependencies
+        working-directory: microservices/${{ matrix.service }}
+        run: npm ci
+
+      - name: Run linting
+        working-directory: microservices/${{ matrix.service }}
+        run: npm run lint --if-present
+
+      - name: Run unit tests
+        working-directory: microservices/${{ matrix.service }}
+        run: npm test -- --coverage --passWithNoTests
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results-${{ matrix.service }}
+          path: microservices/${{ matrix.service }}/coverage/
+
+  # ==============================================================
+  # STAGE 1B: Build and Test Frontend
+  # ==============================================================
+  build-frontend:
+    name: Build Frontend
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        working-directory: frontend
+        run: npm install
+
+      - name: Build frontend
+        working-directory: frontend
+        run: npm run build
+
+  # ==============================================================
+  # STAGE 2: Build Docker Images & Security Scan
+  # ==============================================================
+  build-images:
+    name: Build & Scan Images
+    needs: [build-and-test, build-frontend]
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        service: [user-service, product-service, cart-service, payment-service, order-service, frontend]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Build Docker image
+        run: |
+          if [ "${{ matrix.service }}" = "frontend" ]; then
+            cd frontend
+          else
+            cd microservices/${{ matrix.service }}
+          fi
+          docker build -t ${{ env.ECR_REGISTRY }}/chikwex-eshopz/${{ matrix.service }}:${{ github.sha }} \
+                       -t ${{ env.ECR_REGISTRY }}/chikwex-eshopz/${{ matrix.service }}:latest .
+
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: ${{ env.ECR_REGISTRY }}/chikwex-eshopz/${{ matrix.service }}:${{ github.sha }}
+          format: 'table'
+          exit-code: '1'
+          ignore-unfixed: true
+          vuln-type: 'os,library'
+          severity: 'CRITICAL,HIGH'
+
+      - name: Push to ECR
+        if: github.ref == 'refs/heads/main'
+        run: |
+          docker push ${{ env.ECR_REGISTRY }}/chikwex-eshopz/${{ matrix.service }}:${{ github.sha }}
+          docker push ${{ env.ECR_REGISTRY }}/chikwex-eshopz/${{ matrix.service }}:latest
+
+  # ==============================================================
+  # STAGE 3: Deploy to EKS (Blue-Green)
+  # ==============================================================
+  deploy:
+    name: Deploy to EKS
+    needs: build-images
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment: production
+    strategy:
+      matrix:
+        service: [user-service, product-service, cart-service, payment-service, order-service, frontend]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Update kubeconfig
+        run: aws eks update-kubeconfig --name ${{ env.EKS_CLUSTER_NAME }} --region ${{ env.AWS_REGION }}
+
+      - name: Deploy green version
+        run: |
+          # Update image tag in deployment
+          kubectl set image deployment/${{ matrix.service }} \
+            ${{ matrix.service }}=${{ env.ECR_REGISTRY }}/chikwex-eshopz/${{ matrix.service }}:${{ github.sha }} \
+            -n ${{ env.NAMESPACE }}
+
+          # Wait for rollout to complete
+          kubectl rollout status deployment/${{ matrix.service }} \
+            -n ${{ env.NAMESPACE }} \
+            --timeout=300s
+
+      - name: Verify deployment health
+        run: |
+          # Check pod status
+          kubectl get pods -n ${{ env.NAMESPACE }} -l app=${{ matrix.service }}
+
+          # Run health check
+          POD=$(kubectl get pod -n ${{ env.NAMESPACE }} -l app=${{ matrix.service }} -o jsonpath='{.items[0].metadata.name}')
+          kubectl exec $POD -n ${{ env.NAMESPACE }} -- wget -qO- http://localhost:${PORT:-3001}/health || true
+
+      - name: Rollback on failure
+        if: failure()
+        run: |
+          echo "Deployment failed! Rolling back..."
+          kubectl rollout undo deployment/${{ matrix.service }} -n ${{ env.NAMESPACE }}
+          kubectl rollout status deployment/${{ matrix.service }} -n ${{ env.NAMESPACE }} --timeout=300s
+          echo "Rollback completed."
+
+  # ==============================================================
+  # STAGE 4: Integration Tests
+  # ==============================================================
+  integration-tests:
+    name: Integration Tests
+    needs: deploy
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Update kubeconfig
+        run: aws eks update-kubeconfig --name ${{ env.EKS_CLUSTER_NAME }} --region ${{ env.AWS_REGION }}
+
+      - name: Run smoke tests
+        run: |
+          # Get ALB endpoint
+          ALB_URL=$(kubectl get ingress chikwex-eshopz-ingress -n ${{ env.NAMESPACE }} -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')
+
+          echo "Testing services at: $ALB_URL"
+
+          # Health check all services
+          for service in users products cart payments orders; do
+            STATUS=$(curl -s -o /dev/null -w "%{http_code}" http://$ALB_URL/api/$service/../health || echo "000")
+            if [ "$STATUS" != "200" ]; then
+              echo "FAIL: $service health check returned $STATUS"
+              exit 1
+            fi
+            echo "PASS: $service is healthy"
+          done
+
+      - name: Notify on success
+        if: success()
+        run: echo "All integration tests passed! Deployment successful."
+
+      - name: Rollback all on failure
+        if: failure()
+        run: |
+          echo "Integration tests failed! Rolling back all services..."
+          for svc in user-service product-service cart-service payment-service order-service; do
+            kubectl rollout undo deployment/$svc -n ${{ env.NAMESPACE }} || true
+          done
+          echo "Full rollback completed."

@@ -1,0 +1,14 @@
+apiVersion: v2
+name: chikwex-eshopz
+description: A Helm chart for Chikwex-EShopz e-commerce microservices platform
+type: application
+version: 1.0.0
+appVersion: "1.0.0"
+keywords:
+  - e-commerce
+  - microservices
+  - nodejs
+  - nextjs
+maintainers:
+  - name: Chikwe Azinge
+    email: chikwe@example.com

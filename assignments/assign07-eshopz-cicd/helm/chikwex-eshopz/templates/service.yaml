@@ -1,0 +1,35 @@
+{{- range $key, $service := .Values.services }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ $service.name }}
+  namespace: {{ $.Values.global.namespace }}
+  labels:
+    app: {{ $service.name }}
+spec:
+  type: ClusterIP
+  ports:
+    - port: {{ $service.port }}
+      targetPort: {{ $service.port }}
+      protocol: TCP
+  selector:
+    app: {{ $service.name }}
+{{- end }}
+---
+# Frontend Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.frontend.name }}
+  namespace: {{ .Values.global.namespace }}
+  labels:
+    app: {{ .Values.frontend.name }}
+spec:
+  type: ClusterIP
+  ports:
+    - port: {{ .Values.frontend.port }}
+      targetPort: {{ .Values.frontend.port }}
+      protocol: TCP
+  selector:
+    app: {{ .Values.frontend.name }}

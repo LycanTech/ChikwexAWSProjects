@@ -1,0 +1,117 @@
+{{- range $key, $service := .Values.services }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ $service.name }}
+  namespace: {{ $.Values.global.namespace }}
+  labels:
+    app: {{ $service.name }}
+    environment: {{ $.Values.global.environment }}
+spec:
+  replicas: {{ $service.replicas }}
+  selector:
+    matchLabels:
+      app: {{ $service.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ $service.name }}
+        environment: {{ $.Values.global.environment }}
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "{{ $service.port }}"
+        prometheus.io/path: "/metrics"
+    spec:
+      containers:
+        - name: {{ $service.name }}
+          image: {{ $.Values.global.imageRegistry }}/{{ $service.image.repository }}:{{ $service.image.tag }}
+          imagePullPolicy: {{ $service.image.pullPolicy }}
+          ports:
+            - containerPort: {{ $service.port }}
+          env:
+            {{- range $envKey, $envValue := $service.env }}
+            - name: {{ $envKey }}
+              value: {{ $envValue | quote }}
+            {{- end }}
+            - name: DB_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: app-config
+                  key: DB_HOST
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: db-credentials
+                  key: password
+          resources:
+            requests:
+              cpu: {{ $service.resources.requests.cpu }}
+              memory: {{ $service.resources.requests.memory }}
+            limits:
+              cpu: {{ $service.resources.limits.cpu }}
+              memory: {{ $service.resources.limits.memory }}
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: {{ $service.port }}
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: {{ $service.port }}
+            initialDelaySeconds: 5
+            periodSeconds: 5
+{{- end }}
+---
+# Frontend Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.frontend.name }}
+  namespace: {{ .Values.global.namespace }}
+  labels:
+    app: {{ .Values.frontend.name }}
+    environment: {{ .Values.global.environment }}
+spec:
+  replicas: {{ .Values.frontend.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Values.frontend.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.frontend.name }}
+        environment: {{ .Values.global.environment }}
+    spec:
+      containers:
+        - name: {{ .Values.frontend.name }}
+          image: {{ .Values.global.imageRegistry }}/{{ .Values.frontend.image.repository }}:{{ .Values.frontend.image.tag }}
+          imagePullPolicy: {{ .Values.frontend.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.frontend.port }}
+          env:
+            {{- range $key, $value := .Values.frontend.env }}
+            - name: {{ $key }}
+              value: {{ $value | quote }}
+            {{- end }}
+          resources:
+            requests:
+              cpu: {{ .Values.frontend.resources.requests.cpu }}
+              memory: {{ .Values.frontend.resources.requests.memory }}
+            limits:
+              cpu: {{ .Values.frontend.resources.limits.cpu }}
+              memory: {{ .Values.frontend.resources.limits.memory }}
+          livenessProbe:
+            httpGet:
+              path: /
+              port: {{ .Values.frontend.port }}
+            initialDelaySeconds: 30
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /
+              port: {{ .Values.frontend.port }}
+            initialDelaySeconds: 5
+            periodSeconds: 5

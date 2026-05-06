@@ -1,0 +1,79 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: user-service
+  namespace: chikwex-eshopz
+  labels:
+    app: user-service
+spec:
+  type: ClusterIP
+  ports:
+    - port: 3001
+      targetPort: 3001
+      protocol: TCP
+  selector:
+    app: user-service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: product-service
+  namespace: chikwex-eshopz
+  labels:
+    app: product-service
+spec:
+  type: ClusterIP
+  ports:
+    - port: 3002
+      targetPort: 3002
+      protocol: TCP
+  selector:
+    app: product-service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cart-service
+  namespace: chikwex-eshopz
+  labels:
+    app: cart-service
+spec:
+  type: ClusterIP
+  ports:
+    - port: 3003
+      targetPort: 3003
+      protocol: TCP
+  selector:
+    app: cart-service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: payment-service
+  namespace: chikwex-eshopz
+  labels:
+    app: payment-service
+spec:
+  type: ClusterIP
+  ports:
+    - port: 3004
+      targetPort: 3004
+      protocol: TCP
+  selector:
+    app: payment-service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: order-service
+  namespace: chikwex-eshopz
+  labels:
+    app: order-service
+spec:
+  type: ClusterIP
+  ports:
+    - port: 3005
+      targetPort: 3005
+      protocol: TCP
+  selector:
+    app: order-service

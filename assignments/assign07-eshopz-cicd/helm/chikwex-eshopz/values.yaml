@@ -1,0 +1,159 @@
+# Default values for chikwex-eshopz
+# This is a YAML-formatted file.
+
+global:
+  namespace: chikwex-eshopz
+  environment: production
+  imageRegistry: 866934333672.dkr.ecr.us-east-1.amazonaws.com/chikwex-eshopz
+
+# Microservices configuration
+services:
+  userService:
+    name: user-service
+    replicas: 2
+    image:
+      repository: user-service
+      tag: latest
+      pullPolicy: Always
+    port: 3001
+    resources:
+      requests:
+        cpu: 100m
+        memory: 128Mi
+      limits:
+        cpu: 250m
+        memory: 256Mi
+    env:
+      NODE_ENV: production
+      PORT: "3001"
+
+  productService:
+    name: product-service
+    replicas: 2
+    image:
+      repository: product-service
+      tag: latest
+      pullPolicy: Always
+    port: 3002
+    resources:
+      requests:
+        cpu: 100m
+        memory: 128Mi
+      limits:
+        cpu: 250m
+        memory: 256Mi
+    env:
+      NODE_ENV: production
+      PORT: "3002"
+
+  cartService:
+    name: cart-service
+    replicas: 2
+    image:
+      repository: cart-service
+      tag: latest
+      pullPolicy: Always
+    port: 3003
+    resources:
+      requests:
+        cpu: 100m
+        memory: 128Mi
+      limits:
+        cpu: 250m
+        memory: 256Mi
+    env:
+      NODE_ENV: production
+      PORT: "3003"
+
+  paymentService:
+    name: payment-service
+    replicas: 2
+    image:
+      repository: payment-service
+      tag: latest
+      pullPolicy: Always
+    port: 3004
+    resources:
+      requests:
+        cpu: 100m
+        memory: 128Mi
+      limits:
+        cpu: 250m
+        memory: 256Mi
+    env:
+      NODE_ENV: production
+      PORT: "3004"
+
+  orderService:
+    name: order-service
+    replicas: 2
+    image:
+      repository: order-service
+      tag: latest
+      pullPolicy: Always
+    port: 3005
+    resources:
+      requests:
+        cpu: 100m
+        memory: 128Mi
+      limits:
+        cpu: 250m
+        memory: 256Mi
+    env:
+      NODE_ENV: production
+      PORT: "3005"
+
+# Frontend configuration
+frontend:
+  name: frontend
+  replicas: 2
+  image:
+    repository: frontend
+    tag: latest
+    pullPolicy: Always
+  port: 3000
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 250m
+      memory: 256Mi
+  env:
+    NODE_ENV: production
+    PORT: "3000"
+
+# Ingress configuration
+ingress:
+  enabled: true
+  className: alb
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/healthcheck-path: /health
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
+
+# HPA configuration
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 70
+  targetMemoryUtilizationPercentage: 80
+
+# ConfigMap values
+config:
+  dbHost: chikwex-eshopz-db.cluster-xxx.us-east-1.rds.amazonaws.com
+  dbPort: "5432"
+  dbName: chikwex_eshopz
+  redisHost: chikwex-eshopz-redis.xxx.cache.amazonaws.com
+  redisPort: "6379"
+  logLevel: info
+
+# Secrets (should be overridden in production)
+secrets:
+  dbUsername: admin
+  dbPassword: changeme
+  jwtSecret: your-jwt-secret-here
+  stripeKey: sk_test_xxx

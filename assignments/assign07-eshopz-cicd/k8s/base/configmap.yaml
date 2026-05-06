@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+  namespace: chikwex-eshopz
+data:
+  redis-host: "master.chikwex-eshopz-redis.m25p71.use1.cache.amazonaws.com"
+  db-name: "eshopz"
+  db-port: "5432"
+  node-env: "production"
+  log-level: "info"
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: db-credentials
+  namespace: chikwex-eshopz
+type: Opaque
+stringData:
+  host: "chikwex-eshopz-db.cluster-cefo7yhuwfxg.us-east-1.rds.amazonaws.com"
+  password: "YourSecurePassword123!"
+  username: "dbadmin"
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: app-secrets
+  namespace: chikwex-eshopz
+type: Opaque
+stringData:
+  jwt-secret: "ChikwexEShopzJWT2024SecretKey!"
