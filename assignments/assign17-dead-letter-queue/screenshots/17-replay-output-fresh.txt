@@ -1,0 +1,39 @@
+# Replay Script Output - assign17 Dead Letter Queue (fresh run 2026-05-18)
+
+## Setup
+DLQ monitor ESM disabled so messages accumulate in DLQ for replay demo.
+Sent 50 messages → ~15 failed all 3 attempts → DLQ depth: 15.
+
+## Replay execution
+
+Before replay - DLQ depth: 15  main queue depth: 0
+Draining DLQ: https://sqs.us-east-1.amazonaws.com/866934333672/chikwex-assign17-failed-messages
+  fetched 5 so far...
+  fetched 8 so far...
+  fetched 9 so far...
+  fetched 12 so far...
+  fetched 15 so far...
+Fetched 15 messages from DLQ.
+  OK replayed 691b18fa-b388-4e9f-ad4f-3d458e6d93e6
+  OK replayed b814a4ec-4342-4190-a460-f2d58dd2dabe
+  OK replayed 28d25cb6-3135-4fbe-8cde-106c3b3f6627
+  OK replayed ae85394e-7a52-49d6-9111-6570cc8d701e
+  OK replayed 15dbe3b0-cd0c-4c14-8b5b-01a82f4ea92d
+  OK replayed 67f8ab9e-5c3a-4bbb-995f-30a14e6ccfc6
+  OK replayed 82e363d9-db90-45c3-b42b-6eb036ca37bb
+  OK replayed bd4fdb65-7e3f-4655-a210-a7d3907c8316
+  OK replayed 9c55d57e-c19c-4ffd-ba52-ea8b3ab1f677
+  OK replayed db3cfdb8-442d-4f96-a4fa-2d5bac10b5b4
+  OK replayed afa2a976-20e4-4c9d-b6b1-8b2e93fc1d7e
+  OK replayed 79cd7187-a10c-4207-b911-349636953f08
+  OK replayed 63f145f3-0b81-4a6a-9df7-7ba30ca58d22
+  OK replayed 4d4ce26e-ec93-4008-94de-4fc3a231a3da
+  OK replayed 7ecace47-b77e-4c64-b8a8-abb4749cd6eb
+
+Replay complete in 1.23s
+  Replayed: 15  Failed: 0
+After replay - DLQ depth: 0  main queue depth: 13
+
+## Result
+All 15 DLQ messages successfully replayed to main-queue for reprocessing.
+Consumer Lambda will re-process them (same messages will fail again due to seeded RNG).

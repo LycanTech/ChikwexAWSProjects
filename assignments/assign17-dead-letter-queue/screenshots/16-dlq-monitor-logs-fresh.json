@@ -1,0 +1,358 @@
+﻿[
+    {
+        "t": 1779127136164,
+        "m": "INIT_START Runtime Version: python:3.12.mainlinev2.v7\tRuntime Version ARN: arn:aws:lambda:us-east-1::runtime:e4ab553846c4e081013ff7d1d608a5358d5b956bb5b81c83c66d2a31da8f6244\n"
+    },
+    {
+        "t": 1779127136380,
+        "m": "INIT_START Runtime Version: python:3.12.mainlinev2.v7\tRuntime Version ARN: arn:aws:lambda:us-east-1::runtime:e4ab553846c4e081013ff7d1d608a5358d5b956bb5b81c83c66d2a31da8f6244\n"
+    },
+    {
+        "t": 1779127136497,
+        "m": "[INFO]\t2026-05-18T17:58:56.497Z\t\tFound credentials in environment variables.\n"
+    },
+    {
+        "t": 1779127136630,
+        "m": "START RequestId: 972edfac-1370-5d38-a35f-bd2946e99b3a Version: $LATEST\n"
+    },
+    {
+        "t": 1779127136630,
+        "m": "[INFO]\t2026-05-18T17:58:56.630Z\t972edfac-1370-5d38-a35f-bd2946e99b3a\tDLQ_ARRIVAL messageId=db1d01b5-a719-4174-a179-95136ecee779 receiveCount=4 category=payments sentAt=1779127045062\n"
+    },
+    {
+        "t": 1779127136631,
+        "m": "[INFO]\t2026-05-18T17:58:56.630Z\t972edfac-1370-5d38-a35f-bd2946e99b3a\tDLQ_SUMMARY count=1 categories={'payments': 1} messageIds=['db1d01b5-a719-4174-a179-95136ecee779']\n"
+    },
+    {
+        "t": 1779127136688,
+        "m": "[INFO]\t2026-05-18T17:58:56.688Z\t\tFound credentials in environment variables.\n"
+    },
+    {
+        "t": 1779127136816,
+        "m": "START RequestId: ba185e07-11c1-5d68-8fb9-3c8244591f8e Version: $LATEST\n"
+    },
+    {
+        "t": 1779127136817,
+        "m": "[INFO]\t2026-05-18T17:58:56.817Z\tba185e07-11c1-5d68-8fb9-3c8244591f8e\tDLQ_ARRIVAL messageId=c4c3440b-6014-41a7-a51d-88b7547a21c7 receiveCount=4 category=payments sentAt=1779127045251\n"
+    },
+    {
+        "t": 1779127136817,
+        "m": "[INFO]\t2026-05-18T17:58:56.817Z\tba185e07-11c1-5d68-8fb9-3c8244591f8e\tDLQ_SUMMARY count=1 categories={'payments': 1} messageIds=['c4c3440b-6014-41a7-a51d-88b7547a21c7']\n"
+    },
+    {
+        "t": 1779127136924,
+        "m": "[INFO]\t2026-05-18T17:58:56.924Z\t972edfac-1370-5d38-a35f-bd2946e99b3a\tSNS alert published to arn:aws:sns:us-east-1:866934333672:chikwex-assign17-dlq-alerts\n"
+    },
+    {
+        "t": 1779127136935,
+        "m": "END RequestId: 972edfac-1370-5d38-a35f-bd2946e99b3a\n"
+    },
+    {
+        "t": 1779127136935,
+        "m": "REPORT RequestId: 972edfac-1370-5d38-a35f-bd2946e99b3a\tDuration: 305.13 ms\tBilled Duration: 768 ms\tMemory Size: 128 MB\tMax Memory Used: 86 MB\tInit Duration: 462.06 ms\t\n"
+    },
+    {
+        "t": 1779127137088,
+        "m": "[INFO]\t2026-05-18T17:58:57.088Z\tba185e07-11c1-5d68-8fb9-3c8244591f8e\tSNS alert published to arn:aws:sns:us-east-1:866934333672:chikwex-assign17-dlq-alerts\n"
+    },
+    {
+        "t": 1779127137099,
+        "m": "END RequestId: ba185e07-11c1-5d68-8fb9-3c8244591f8e\n"
+    },
+    {
+        "t": 1779127137099,
+        "m": "REPORT RequestId: ba185e07-11c1-5d68-8fb9-3c8244591f8e\tDuration: 281.94 ms\tBilled Duration: 715 ms\tMemory Size: 128 MB\tMax Memory Used: 86 MB\tInit Duration: 432.69 ms\t\n"
+    },
+    {
+        "t": 1779127142137,
+        "m": "START RequestId: 6df8894f-0c35-5ee0-99d0-ebca599448e2 Version: $LATEST\n"
+    },
+    {
+        "t": 1779127142138,
+        "m": "[INFO]\t2026-05-18T17:59:02.138Z\t6df8894f-0c35-5ee0-99d0-ebca599448e2\tDLQ_ARRIVAL messageId=d6619408-01fb-4b48-b89e-a3813bc5e3bd receiveCount=4 category=analytics sentAt=1779127045143\n"
+    },
+    {
+        "t": 1779127142138,
+        "m": "[INFO]\t2026-05-18T17:59:02.138Z\t6df8894f-0c35-5ee0-99d0-ebca599448e2\tDLQ_SUMMARY count=1 categories={'analytics': 1} messageIds=['d6619408-01fb-4b48-b89e-a3813bc5e3bd']\n"
+    },
+    {
+        "t": 1779127142158,
+        "m": "[INFO]\t2026-05-18T17:59:02.158Z\t6df8894f-0c35-5ee0-99d0-ebca599448e2\tSNS alert published to arn:aws:sns:us-east-1:866934333672:chikwex-assign17-dlq-alerts\n"
+    },
+    {
+        "t": 1779127142178,
+        "m": "END RequestId: 6df8894f-0c35-5ee0-99d0-ebca599448e2\n"
+    },
+    {
+        "t": 1779127142179,
+        "m": "REPORT RequestId: 6df8894f-0c35-5ee0-99d0-ebca599448e2\tDuration: 40.59 ms\tBilled Duration: 41 ms\tMemory Size: 128 MB\tMax Memory Used: 86 MB\t\n"
+    },
+    {
+        "t": 1779127145334,
+        "m": "START RequestId: 42964804-49bd-5c3e-b50d-2a811c1c6ed8 Version: $LATEST\n"
+    },
+    {
+        "t": 1779127145335,
+        "m": "[INFO]\t2026-05-18T17:59:05.334Z\t42964804-49bd-5c3e-b50d-2a811c1c6ed8\tDLQ_ARRIVAL messageId=cceabe3e-9a8f-4f5b-b40a-7f8cdb96dbf3 receiveCount=4 category=payments sentAt=1779127045251\n"
+    },
+    {
+        "t": 1779127145335,
+        "m": "[INFO]\t2026-05-18T17:59:05.335Z\t42964804-49bd-5c3e-b50d-2a811c1c6ed8\tDLQ_SUMMARY count=1 categories={'payments': 1} messageIds=['cceabe3e-9a8f-4f5b-b40a-7f8cdb96dbf3']\n"
+    },
+    {
+        "t": 1779127145350,
+        "m": "[INFO]\t2026-05-18T17:59:05.350Z\t42964804-49bd-5c3e-b50d-2a811c1c6ed8\tSNS alert published to arn:aws:sns:us-east-1:866934333672:chikwex-assign17-dlq-alerts\n"
+    },
+    {
+        "t": 1779127145359,
+        "m": "END RequestId: 42964804-49bd-5c3e-b50d-2a811c1c6ed8\n"
+    },
+    {
+        "t": 1779127145359,
+        "m": "REPORT RequestId: 42964804-49bd-5c3e-b50d-2a811c1c6ed8\tDuration: 23.94 ms\tBilled Duration: 24 ms\tMemory Size: 128 MB\tMax Memory Used: 86 MB\t\n"
+    },
+    {
+        "t": 1779127145660,
+        "m": "START RequestId: 4f9a43fc-dd47-51fc-a647-217988e107fe Version: $LATEST\n"
+    },
+    {
+        "t": 1779127145661,
+        "m": "[INFO]\t2026-05-18T17:59:05.661Z\t4f9a43fc-dd47-51fc-a647-217988e107fe\tDLQ_ARRIVAL messageId=0e5744b3-3b3a-4511-96ff-269782a33ac5 receiveCount=4 category=inventory sentAt=1779127045305\n"
+    },
+    {
+        "t": 1779127145661,
+        "m": "[INFO]\t2026-05-18T17:59:05.661Z\t4f9a43fc-dd47-51fc-a647-217988e107fe\tDLQ_SUMMARY count=1 categories={'inventory': 1} messageIds=['0e5744b3-3b3a-4511-96ff-269782a33ac5']\n"
+    },
+    {
+        "t": 1779127145690,
+        "m": "[INFO]\t2026-05-18T17:59:05.690Z\t4f9a43fc-dd47-51fc-a647-217988e107fe\tSNS alert published to arn:aws:sns:us-east-1:866934333672:chikwex-assign17-dlq-alerts\n"
+    },
+    {
+        "t": 1779127145698,
+        "m": "END RequestId: 4f9a43fc-dd47-51fc-a647-217988e107fe\n"
+    },
+    {
+        "t": 1779127145698,
+        "m": "REPORT RequestId: 4f9a43fc-dd47-51fc-a647-217988e107fe\tDuration: 37.52 ms\tBilled Duration: 38 ms\tMemory Size: 128 MB\tMax Memory Used: 86 MB\t\n"
+    },
+    {
+        "t": 1779127145739,
+        "m": "START RequestId: 97b22c77-7e81-57a3-9304-4ef22b28b545 Version: $LATEST\n"
+    },
+    {
+        "t": 1779127145739,
+        "m": "[INFO]\t2026-05-18T17:59:05.739Z\t97b22c77-7e81-57a3-9304-4ef22b28b545\tDLQ_ARRIVAL messageId=269dcd2a-a908-4ebc-b5d9-cea23d12d3c4 receiveCount=4 category=payments sentAt=1779127045351\n"
+    },
+    {
+        "t": 1779127145739,
+        "m": "[INFO]\t2026-05-18T17:59:05.739Z\t97b22c77-7e81-57a3-9304-4ef22b28b545\tDLQ_SUMMARY count=1 categories={'payments': 1} messageIds=['269dcd2a-a908-4ebc-b5d9-cea23d12d3c4']\n"
+    },
+    {
+        "t": 1779127145758,
+        "m": "[INFO]\t2026-05-18T17:59:05.758Z\t97b22c77-7e81-57a3-9304-4ef22b28b545\tSNS alert published to arn:aws:sns:us-east-1:866934333672:chikwex-assign17-dlq-alerts\n"
+    },
+    {
+        "t": 1779127145778,
+        "m": "END RequestId: 97b22c77-7e81-57a3-9304-4ef22b28b545\n"
+    },
+    {
+        "t": 1779127145779,
+        "m": "REPORT RequestId: 97b22c77-7e81-57a3-9304-4ef22b28b545\tDuration: 39.42 ms\tBilled Duration: 40 ms\tMemory Size: 128 MB\tMax Memory Used: 86 MB\t\n"
+    },
+    {
+        "t": 1779127145891,
+        "m": "START RequestId: 77006424-a574-5cbe-bb75-06a1f0dd4abc Version: $LATEST\n"
+    },
+    {
+        "t": 1779127145891,
+        "m": "[INFO]\t2026-05-18T17:59:05.891Z\t77006424-a574-5cbe-bb75-06a1f0dd4abc\tDLQ_ARRIVAL messageId=8f4e1b0a-074f-43ff-9e1f-9f4a77d4bc06 receiveCount=4 category=inventory sentAt=1779127045417\n"
+    },
+    {
+        "t": 1779127145891,
+        "m": "[INFO]\t2026-05-18T17:59:05.891Z\t77006424-a574-5cbe-bb75-06a1f0dd4abc\tDLQ_ARRIVAL messageId=33163d13-5c4f-4370-9612-220f4de372c8 receiveCount=4 category=payments sentAt=1779127045456\n"
+    },
+    {
+        "t": 1779127145891,
+        "m": "[INFO]\t2026-05-18T17:59:05.891Z\t77006424-a574-5cbe-bb75-06a1f0dd4abc\tDLQ_SUMMARY count=2 categories={'inventory': 1, 'payments': 1} messageIds=['8f4e1b0a-074f-43ff-9e1f-9f4a77d4bc06', '33163d13-5c4f-4370-9612-220f4de372c8']\n"
+    },
+    {
+        "t": 1779127145911,
+        "m": "[INFO]\t2026-05-18T17:59:05.911Z\t77006424-a574-5cbe-bb75-06a1f0dd4abc\tSNS alert published to arn:aws:sns:us-east-1:866934333672:chikwex-assign17-dlq-alerts\n"
+    },
+    {
+        "t": 1779127145918,
+        "m": "END RequestId: 77006424-a574-5cbe-bb75-06a1f0dd4abc\n"
+    },
+    {
+        "t": 1779127145918,
+        "m": "REPORT RequestId: 77006424-a574-5cbe-bb75-06a1f0dd4abc\tDuration: 27.05 ms\tBilled Duration: 28 ms\tMemory Size: 128 MB\tMax Memory Used: 86 MB\t\n"
+    },
+    {
+        "t": 1779127146012,
+        "m": "START RequestId: 7f9523d9-d719-530a-b359-415c82b031ec Version: $LATEST\n"
+    },
+    {
+        "t": 1779127146013,
+        "m": "[INFO]\t2026-05-18T17:59:06.013Z\t7f9523d9-d719-530a-b359-415c82b031ec\tDLQ_ARRIVAL messageId=95435f3b-f607-45d8-b4e3-36d7efd8f31b receiveCount=4 category=payments sentAt=1779127045508\n"
+    },
+    {
+        "t": 1779127146013,
+        "m": "[INFO]\t2026-05-18T17:59:06.013Z\t7f9523d9-d719-530a-b359-415c82b031ec\tDLQ_SUMMARY count=1 categories={'payments': 1} messageIds=['95435f3b-f607-45d8-b4e3-36d7efd8f31b']\n"
+    },
+    {
+        "t": 1779127146027,
+        "m": "[INFO]\t2026-05-18T17:59:06.027Z\t7f9523d9-d719-530a-b359-415c82b031ec\tSNS alert published to arn:aws:sns:us-east-1:866934333672:chikwex-assign17-dlq-alerts\n"
+    },
+    {
+        "t": 1779127146031,
+        "m": "START RequestId: 545d9f1d-6e48-5b31-8da6-fd983be12d33 Version: $LATEST\n"
+    },
+    {
+        "t": 1779127146032,
+        "m": "[INFO]\t2026-05-18T17:59:06.032Z\t545d9f1d-6e48-5b31-8da6-fd983be12d33\tDLQ_ARRIVAL messageId=b939c06a-2c29-473f-a47c-b7ea729512c8 receiveCount=4 category=orders sentAt=1779127045353\n"
+    },
+    {
+        "t": 1779127146032,
+        "m": "[INFO]\t2026-05-18T17:59:06.032Z\t545d9f1d-6e48-5b31-8da6-fd983be12d33\tDLQ_SUMMARY count=1 categories={'orders': 1} messageIds=['b939c06a-2c29-473f-a47c-b7ea729512c8']\n"
+    },
+    {
+        "t": 1779127146038,
+        "m": "END RequestId: 7f9523d9-d719-530a-b359-415c82b031ec\n"
+    },
+    {
+        "t": 1779127146038,
+        "m": "REPORT RequestId: 7f9523d9-d719-530a-b359-415c82b031ec\tDuration: 25.76 ms\tBilled Duration: 26 ms\tMemory Size: 128 MB\tMax Memory Used: 86 MB\t\n"
+    },
+    {
+        "t": 1779127146139,
+        "m": "START RequestId: ec4ed74a-1582-505d-a3f5-b5cf4028e65f Version: $LATEST\n"
+    },
+    {
+        "t": 1779127146140,
+        "m": "[INFO]\t2026-05-18T17:59:06.140Z\tec4ed74a-1582-505d-a3f5-b5cf4028e65f\tDLQ_ARRIVAL messageId=944c57ba-a07d-42c4-9f86-1a05488bc688 receiveCount=4 category=orders sentAt=1779127045508\n"
+    },
+    {
+        "t": 1779127146140,
+        "m": "[INFO]\t2026-05-18T17:59:06.140Z\tec4ed74a-1582-505d-a3f5-b5cf4028e65f\tDLQ_SUMMARY count=1 categories={'orders': 1} messageIds=['944c57ba-a07d-42c4-9f86-1a05488bc688']\n"
+    },
+    {
+        "t": 1779127146170,
+        "m": "[INFO]\t2026-05-18T17:59:06.170Z\tec4ed74a-1582-505d-a3f5-b5cf4028e65f\tSNS alert published to arn:aws:sns:us-east-1:866934333672:chikwex-assign17-dlq-alerts\n"
+    },
+    {
+        "t": 1779127146179,
+        "m": "END RequestId: ec4ed74a-1582-505d-a3f5-b5cf4028e65f\n"
+    },
+    {
+        "t": 1779127146179,
+        "m": "REPORT RequestId: ec4ed74a-1582-505d-a3f5-b5cf4028e65f\tDuration: 38.97 ms\tBilled Duration: 39 ms\tMemory Size: 128 MB\tMax Memory Used: 86 MB\t\n"
+    },
+    {
+        "t": 1779127146221,
+        "m": "[INFO]\t2026-05-18T17:59:06.221Z\t545d9f1d-6e48-5b31-8da6-fd983be12d33\tSNS alert published to arn:aws:sns:us-east-1:866934333672:chikwex-assign17-dlq-alerts\n"
+    },
+    {
+        "t": 1779127146255,
+        "m": "END RequestId: 545d9f1d-6e48-5b31-8da6-fd983be12d33\n"
+    },
+    {
+        "t": 1779127146255,
+        "m": "REPORT RequestId: 545d9f1d-6e48-5b31-8da6-fd983be12d33\tDuration: 223.49 ms\tBilled Duration: 224 ms\tMemory Size: 128 MB\tMax Memory Used: 87 MB\t\n"
+    },
+    {
+        "t": 1779127146685,
+        "m": "START RequestId: 9b9d5e00-4d71-5149-95bd-3c8518db83af Version: $LATEST\n"
+    },
+    {
+        "t": 1779127146686,
+        "m": "[INFO]\t2026-05-18T17:59:06.686Z\t9b9d5e00-4d71-5149-95bd-3c8518db83af\tDLQ_ARRIVAL messageId=8ae316e0-8799-4961-9ae7-6c42b7aec53b receiveCount=4 category=payments sentAt=1779127045551\n"
+    },
+    {
+        "t": 1779127146686,
+        "m": "[INFO]\t2026-05-18T17:59:06.686Z\t9b9d5e00-4d71-5149-95bd-3c8518db83af\tDLQ_SUMMARY count=1 categories={'payments': 1} messageIds=['8ae316e0-8799-4961-9ae7-6c42b7aec53b']\n"
+    },
+    {
+        "t": 1779127146699,
+        "m": "[INFO]\t2026-05-18T17:59:06.699Z\t9b9d5e00-4d71-5149-95bd-3c8518db83af\tSNS alert published to arn:aws:sns:us-east-1:866934333672:chikwex-assign17-dlq-alerts\n"
+    },
+    {
+        "t": 1779127146715,
+        "m": "END RequestId: 9b9d5e00-4d71-5149-95bd-3c8518db83af\n"
+    },
+    {
+        "t": 1779127146715,
+        "m": "REPORT RequestId: 9b9d5e00-4d71-5149-95bd-3c8518db83af\tDuration: 29.39 ms\tBilled Duration: 30 ms\tMemory Size: 128 MB\tMax Memory Used: 87 MB\t\n"
+    },
+    {
+        "t": 1779127147051,
+        "m": "START RequestId: c8d56bd8-d3d6-5fcb-b14f-095d867c89c9 Version: $LATEST\n"
+    },
+    {
+        "t": 1779127147052,
+        "m": "[INFO]\t2026-05-18T17:59:07.052Z\tc8d56bd8-d3d6-5fcb-b14f-095d867c89c9\tDLQ_ARRIVAL messageId=90ff0143-ce0b-4f28-bee9-ae89034a19b4 receiveCount=4 category=inventory sentAt=1779127045552\n"
+    },
+    {
+        "t": 1779127147052,
+        "m": "[INFO]\t2026-05-18T17:59:07.052Z\tc8d56bd8-d3d6-5fcb-b14f-095d867c89c9\tDLQ_SUMMARY count=1 categories={'inventory': 1} messageIds=['90ff0143-ce0b-4f28-bee9-ae89034a19b4']\n"
+    },
+    {
+        "t": 1779127147075,
+        "m": "[INFO]\t2026-05-18T17:59:07.075Z\tc8d56bd8-d3d6-5fcb-b14f-095d867c89c9\tSNS alert published to arn:aws:sns:us-east-1:866934333672:chikwex-assign17-dlq-alerts\n"
+    },
+    {
+        "t": 1779127147077,
+        "m": "END RequestId: c8d56bd8-d3d6-5fcb-b14f-095d867c89c9\n"
+    },
+    {
+        "t": 1779127147077,
+        "m": "REPORT RequestId: c8d56bd8-d3d6-5fcb-b14f-095d867c89c9\tDuration: 25.02 ms\tBilled Duration: 26 ms\tMemory Size: 128 MB\tMax Memory Used: 87 MB\t\n"
+    },
+    {
+        "t": 1779127147292,
+        "m": "START RequestId: 02e6b7e8-3d7e-5c9e-8282-d56d68d52a9c Version: $LATEST\n"
+    },
+    {
+        "t": 1779127147293,
+        "m": "[INFO]\t2026-05-18T17:59:07.293Z\t02e6b7e8-3d7e-5c9e-8282-d56d68d52a9c\tDLQ_ARRIVAL messageId=6bc944ae-3c40-4655-9db9-5b8f04d26c23 receiveCount=4 category=inventory sentAt=1779127045510\n"
+    },
+    {
+        "t": 1779127147293,
+        "m": "[INFO]\t2026-05-18T17:59:07.293Z\t02e6b7e8-3d7e-5c9e-8282-d56d68d52a9c\tDLQ_SUMMARY count=1 categories={'inventory': 1} messageIds=['6bc944ae-3c40-4655-9db9-5b8f04d26c23']\n"
+    },
+    {
+        "t": 1779127147315,
+        "m": "[INFO]\t2026-05-18T17:59:07.315Z\t02e6b7e8-3d7e-5c9e-8282-d56d68d52a9c\tSNS alert published to arn:aws:sns:us-east-1:866934333672:chikwex-assign17-dlq-alerts\n"
+    },
+    {
+        "t": 1779127147316,
+        "m": "END RequestId: 02e6b7e8-3d7e-5c9e-8282-d56d68d52a9c\n"
+    },
+    {
+        "t": 1779127147316,
+        "m": "REPORT RequestId: 02e6b7e8-3d7e-5c9e-8282-d56d68d52a9c\tDuration: 23.43 ms\tBilled Duration: 24 ms\tMemory Size: 128 MB\tMax Memory Used: 87 MB\t\n"
+    },
+    {
+        "t": 1779127147373,
+        "m": "START RequestId: c83a57e5-0454-549c-9cf0-356051fff29e Version: $LATEST\n"
+    },
+    {
+        "t": 1779127147374,
+        "m": "[INFO]\t2026-05-18T17:59:07.374Z\tc83a57e5-0454-549c-9cf0-356051fff29e\tDLQ_ARRIVAL messageId=d02ce882-2f52-4247-acaf-e20407c42517 receiveCount=4 category=notifications sentAt=1779127045552\n"
+    },
+    {
+        "t": 1779127147374,
+        "m": "[INFO]\t2026-05-18T17:59:07.374Z\tc83a57e5-0454-549c-9cf0-356051fff29e\tDLQ_SUMMARY count=1 categories={'notifications': 1} messageIds=['d02ce882-2f52-4247-acaf-e20407c42517']\n"
+    },
+    {
+        "t": 1779127147458,
+        "m": "[INFO]\t2026-05-18T17:59:07.458Z\tc83a57e5-0454-549c-9cf0-356051fff29e\tSNS alert published to arn:aws:sns:us-east-1:866934333672:chikwex-assign17-dlq-alerts\n"
+    },
+    {
+        "t": 1779127147459,
+        "m": "END RequestId: c83a57e5-0454-549c-9cf0-356051fff29e\n"
+    },
+    {
+        "t": 1779127147459,
+        "m": "REPORT RequestId: c83a57e5-0454-549c-9cf0-356051fff29e\tDuration: 85.55 ms\tBilled Duration: 86 ms\tMemory Size: 128 MB\tMax Memory Used: 87 MB\t\n"
+    }
+]

@@ -200,6 +200,38 @@ Look for `DLQ_ARRIVAL` and `DLQ_SUMMARY` lines showing failure counts by categor
 
 ---
 
+## Observed Test Results
+
+### Run 1 — 2026-05-06 (initial deployment)
+
+| Metric | Observed |
+| --- | --- |
+| Messages sent | 100 |
+| Failed all 3 attempts → DLQ | 22 |
+| DLQ_ARRIVAL events logged | 22 |
+| SNS alerts published | 22 |
+| Messages replayed from DLQ | 10 |
+
+Evidence: `screenshots/12-consumer-lambda-logs.json`, `screenshots/13-dlq-monitor-lambda-logs.json`, `screenshots/14-replay-output.txt`
+
+### Run 2 — 2026-05-18 (re-run to refresh expired logs)
+
+| Metric | Observed |
+| --- | --- |
+| Messages sent | 150 (100 + 50) |
+| ATTEMPT log lines captured | 81 |
+| SUCCESS log lines | 34 |
+| FAIL log lines | 8 (sampled) |
+| DLQ_ARRIVAL events logged | 15 |
+| SNS alerts published | 14 |
+| Messages replayed from DLQ | 15 (DLQ 15 → 0) |
+
+Evidence: `screenshots/15-consumer-lambda-logs-fresh.json`, `screenshots/16-dlq-monitor-logs-fresh.json`, `screenshots/17-replay-output-fresh.txt`
+
+![SQS Monitoring Metrics](screenshots/Screenshot-monitoring.png)
+
+---
+
 ## AWS Console Links
 
 | Resource | Link |

@@ -18,7 +18,7 @@ All CLI captures taken on 2026-05-06.
 | `10-sns-subscription.json` | Email subscription | `chikwe.azinge@techconsulting.tech` (pending confirmation) |
 | `11-cloudwatch-log-groups.json` | Log groups | Both Lambda log groups with 7-day retention |
 
-## Live test evidence (captured after sending 100 messages)
+## Live test evidence (captured after sending 100 messages — 2026-05-06)
 
 | File | What it shows |
 | --- | --- |
@@ -26,16 +26,25 @@ All CLI captures taken on 2026-05-06.
 | `13-dlq-monitor-lambda-logs.json` | 140 CloudWatch events: 22 DLQ_ARRIVAL + 22 SNS alerts published |
 | `14-replay-output.txt` | replay.py output showing DLQ drained (10→0) and messages re-queued to main queue |
 
-## Test summary
+## Fresh live test evidence (captured 2026-05-18 — re-run to refresh expired logs)
+
+| File | What it shows |
+| --- | --- |
+| `15-consumer-lambda-logs-fresh.json` | 200 CloudWatch events: 81 ATTEMPT, 34 SUCCESS, 8 FAIL lines (20% fail rate confirmed) |
+| `16-dlq-monitor-logs-fresh.json` | 200 CloudWatch events: 15 DLQ_ARRIVAL + 14 DLQ_SUMMARY + 14 SNS alerts |
+| `17-replay-output-fresh.txt` | replay.py output showing DLQ drained (15→0) and 15 messages re-queued to main queue |
+
+## Test summary (fresh run 2026-05-18)
 
 | Metric | Observed |
 | --- | --- |
-| Messages sent | 100 |
-| Successful on first attempt | ~80 |
-| Failed all 3 attempts → DLQ | 22 |
-| DLQ_ARRIVAL events logged | 22 |
-| SNS alerts published | 22 |
-| Messages replayed from DLQ | 10 (per run) |
+| Messages sent | 150 (100 + 50) |
+| ATTEMPT log lines | 81 (sample of 200 max) |
+| SUCCESS log lines | 34 |
+| FAIL log lines | 8 (sample) |
+| DLQ_ARRIVAL events logged | 15 |
+| SNS alerts published | 14 |
+| Messages replayed from DLQ | 15 (all, DLQ → 0) |
 
 ## Console screenshots to take manually
 

@@ -1,0 +1,802 @@
+﻿[
+    {
+        "t": 1779127045268,
+        "m": "INIT_START Runtime Version: python:3.12.mainlinev2.v7\tRuntime Version ARN: arn:aws:lambda:us-east-1::runtime:e4ab553846c4e081013ff7d1d608a5358d5b956bb5b81c83c66d2a31da8f6244\n"
+    },
+    {
+        "t": 1779127045294,
+        "m": "INIT_START Runtime Version: python:3.12.mainlinev2.v7\tRuntime Version ARN: arn:aws:lambda:us-east-1::runtime:e4ab553846c4e081013ff7d1d608a5358d5b956bb5b81c83c66d2a31da8f6244\n"
+    },
+    {
+        "t": 1779127045358,
+        "m": "START RequestId: 69fbce81-8fb0-55ca-856a-ac04da83a3d1 Version: $LATEST\n"
+    },
+    {
+        "t": 1779127045359,
+        "m": "[INFO]\t2026-05-18T17:57:25.359Z\t69fbce81-8fb0-55ca-856a-ac04da83a3d1\tATTEMPT messageId=5d92f606-6182-4662-b8b3-74692e3eb960 attempt=1 body={\"id\": \"msg-000009\", \"category\": \"shipping\", \"payload\": \"test-payload-9\", \"timestamp\": \"2026-05-18T17:57:22.152768+00:00\n"
+    },
+    {
+        "t": 1779127045359,
+        "m": "[INFO]\t2026-05-18T17:57:25.359Z\t69fbce81-8fb0-55ca-856a-ac04da83a3d1\tSUCCESS messageId=5d92f606-6182-4662-b8b3-74692e3eb960 attempt=1 data={'id': 'msg-000009', 'category': 'shipping', 'payload': 'test-payload-9', 'timestamp': '2026-05-18T17:57:22.152768+00:00\n"
+    },
+    {
+        "t": 1779127045374,
+        "m": "END RequestId: 69fbce81-8fb0-55ca-856a-ac04da83a3d1\n"
+    },
+    {
+        "t": 1779127045375,
+        "m": "REPORT RequestId: 69fbce81-8fb0-55ca-856a-ac04da83a3d1\tDuration: 16.02 ms\tBilled Duration: 103 ms\tMemory Size: 128 MB\tMax Memory Used: 37 MB\tInit Duration: 86.06 ms\t\n"
+    },
+    {
+        "t": 1779127045384,
+        "m": "START RequestId: 7d65b8eb-68cc-54a9-aa7c-da6e3d8e8c10 Version: $LATEST\n"
+    },
+    {
+        "t": 1779127045385,
+        "m": "[INFO]\t2026-05-18T17:57:25.384Z\t7d65b8eb-68cc-54a9-aa7c-da6e3d8e8c10\tATTEMPT messageId=1dfbfd44-3a04-400b-8a34-7b00d50b40e4 attempt=1 body={\"id\": \"msg-000010\", \"category\": \"notifications\", \"payload\": \"test-payload-10\", \"timestamp\": \"2026-05-18T17:57:22.152781\n"
+    },
+    {
+        "t": 1779127045385,
+        "m": "[INFO]\t2026-05-18T17:57:25.385Z\t7d65b8eb-68cc-54a9-aa7c-da6e3d8e8c10\tSUCCESS messageId=1dfbfd44-3a04-400b-8a34-7b00d50b40e4 attempt=1 data={'id': 'msg-000010', 'category': 'notifications', 'payload': 'test-payload-10', 'timestamp': '2026-05-18T17:57:22.152781\n"
+    },
+    {
+        "t": 1779127045387,
+        "m": "END RequestId: 7d65b8eb-68cc-54a9-aa7c-da6e3d8e8c10\n"
+    },
+    {
+        "t": 1779127045395,
+        "m": "REPORT RequestId: 7d65b8eb-68cc-54a9-aa7c-da6e3d8e8c10\tDuration: 2.27 ms\tBilled Duration: 90 ms\tMemory Size: 128 MB\tMax Memory Used: 37 MB\tInit Duration: 86.79 ms\t\n"
+    },
+    {
+        "t": 1779127045698,
+        "m": "START RequestId: e2f9b591-da5d-5f3a-85fd-d7148f18a921 Version: $LATEST\n"
+    },
+    {
+        "t": 1779127045699,
+        "m": "[INFO]\t2026-05-18T17:57:25.698Z\te2f9b591-da5d-5f3a-85fd-d7148f18a921\tATTEMPT messageId=31225619-df08-4a49-868c-66042fbdbf41 attempt=1 body={\"id\": \"msg-000003\", \"category\": \"shipping\", \"payload\": \"test-payload-3\", \"timestamp\": \"2026-05-18T17:57:22.152194+00:00\n"
+    },
+    {
+        "t": 1779127045699,
+        "m": "[INFO]\t2026-05-18T17:57:25.699Z\te2f9b591-da5d-5f3a-85fd-d7148f18a921\tSUCCESS messageId=31225619-df08-4a49-868c-66042fbdbf41 attempt=1 data={'id': 'msg-000003', 'category': 'shipping', 'payload': 'test-payload-3', 'timestamp': '2026-05-18T17:57:22.152194+00:00\n"
+    },
+    {
+        "t": 1779127045715,
+        "m": "END RequestId: e2f9b591-da5d-5f3a-85fd-d7148f18a921\n"
+    },
+    {
+        "t": 1779127045715,
+        "m": "REPORT RequestId: e2f9b591-da5d-5f3a-85fd-d7148f18a921\tDuration: 1.79 ms\tBilled Duration: 2 ms\tMemory Size: 128 MB\tMax Memory Used: 37 MB\t\n"
+    },
+    {
+        "t": 1779127045754,
+        "m": "START RequestId: 7fa020a6-3d25-59fe-ad28-422368609147 Version: $LATEST\n"
+    },
+    {
+        "t": 1779127045755,
+        "m": "[INFO]\t2026-05-18T17:57:25.755Z\t7fa020a6-3d25-59fe-ad28-422368609147\tATTEMPT messageId=db1d01b5-a719-4174-a179-95136ecee779 attempt=1 body={\"id\": \"msg-000007\", \"category\": \"payments\", \"payload\": \"test-payload-7\", \"timestamp\": \"2026-05-18T17:57:22.152746+00:00\n"
+    },
+    {
+        "t": 1779127045755,
+        "m": "[WARNING]\t2026-05-18T17:57:25.755Z\t7fa020a6-3d25-59fe-ad28-422368609147\tFAIL messageId=db1d01b5-a719-4174-a179-95136ecee779 attempt=1 � simulated processing error\n"
+    },
+    {
+        "t": 1779127045756,
+        "m": "[ERROR] Exception: Simulated failure for message db1d01b5-a719-4174-a179-95136ecee779 (attempt 1)\nTraceback (most recent call last):\n��File \"/var/task/handler.py\", line 47, in handler\n����raise Exception("
+    },
+    {
+        "t": 1779127045775,
+        "m": "END RequestId: 7fa020a6-3d25-59fe-ad28-422368609147\n"
+    },
+    {
+        "t": 1779127045775,
+        "m": "REPORT RequestId: 7fa020a6-3d25-59fe-ad28-422368609147\tDuration: 2.72 ms\tBilled Duration: 3 ms\tMemory Size: 128 MB\tMax Memory Used: 37 MB\t\n"
+    },
+    {
+        "t": 1779127045917,
+        "m": "START RequestId: 33c31e54-5b37-51bd-bfeb-7cd10e72a7a6 Version: $LATEST\n"
+    },
+    {
+        "t": 1779127045917,
+        "m": "[INFO]\t2026-05-18T17:57:25.917Z\t33c31e54-5b37-51bd-bfeb-7cd10e72a7a6\tATTEMPT messageId=b78c110a-999a-43c4-aed6-94e9b581f626 attempt=1 body={\"id\": \"msg-000019\", \"category\": \"payments\", \"payload\": \"test-payload-19\", \"timestamp\": \"2026-05-18T17:57:22.152864+00:0\n"
+    },
+    {
+        "t": 1779127045918,
+        "m": "[INFO]\t2026-05-18T17:57:25.918Z\t33c31e54-5b37-51bd-bfeb-7cd10e72a7a6\tSUCCESS messageId=b78c110a-999a-43c4-aed6-94e9b581f626 attempt=1 data={'id': 'msg-000019', 'category': 'payments', 'payload': 'test-payload-19', 'timestamp': '2026-05-18T17:57:22.152864+00:0\n"
+    },
+    {
+        "t": 1779127045919,
+        "m": "END RequestId: 33c31e54-5b37-51bd-bfeb-7cd10e72a7a6\n"
+    },
+    {
+        "t": 1779127045919,
+        "m": "REPORT RequestId: 33c31e54-5b37-51bd-bfeb-7cd10e72a7a6\tDuration: 1.67 ms\tBilled Duration: 2 ms\tMemory Size: 128 MB\tMax Memory Used: 37 MB\t\n"
+    },
+    {
+        "t": 1779127046027,
+        "m": "START RequestId: a4127358-268c-51b2-b965-11dd73caf7a9 Version: $LATEST\n"
+    },
+    {
+        "t": 1779127046027,
+        "m": "[INFO]\t2026-05-18T17:57:26.027Z\ta4127358-268c-51b2-b965-11dd73caf7a9\tATTEMPT messageId=19a9c55b-31b2-4834-89fe-35369f87ff29 attempt=1 body={\"id\": \"msg-000020\", \"category\": \"inventory\", \"payload\": \"test-payload-20\", \"timestamp\": \"2026-05-18T17:57:22.152872+00:\n"
+    },
+    {
+        "t": 1779127046027,
+        "m": "[INFO]\t2026-05-18T17:57:26.027Z\ta4127358-268c-51b2-b965-11dd73caf7a9\tSUCCESS messageId=19a9c55b-31b2-4834-89fe-35369f87ff29 attempt=1 data={'id': 'msg-000020', 'category': 'inventory', 'payload': 'test-payload-20', 'timestamp': '2026-05-18T17:57:22.152872+00:\n"
+    },
+    {
+        "t": 1779127046029,
+        "m": "END RequestId: a4127358-268c-51b2-b965-11dd73caf7a9\n"
+    },
+    {
+        "t": 1779127046029,
+        "m": "REPORT RequestId: a4127358-268c-51b2-b965-11dd73caf7a9\tDuration: 1.72 ms\tBilled Duration: 2 ms\tMemory Size: 128 MB\tMax Memory Used: 37 MB\t\n"
+    },
+    {
+        "t": 1779127046129,
+        "m": "START RequestId: eda171a6-0878-560d-8e14-13235d3e2016 Version: $LATEST\n"
+    },
+    {
+        "t": 1779127046129,
+        "m": "[INFO]\t2026-05-18T17:57:26.129Z\teda171a6-0878-560d-8e14-13235d3e2016\tATTEMPT messageId=5fcb708d-b48d-48c3-9fdc-e834a4bf1be2 attempt=1 body={\"id\": \"msg-000008\", \"category\": \"inventory\", \"payload\": \"test-payload-8\", \"timestamp\": \"2026-05-18T17:57:22.152756+00:0\n"
+    },
+    {
+        "t": 1779127046129,
+        "m": "[INFO]\t2026-05-18T17:57:26.129Z\teda171a6-0878-560d-8e14-13235d3e2016\tSUCCESS messageId=5fcb708d-b48d-48c3-9fdc-e834a4bf1be2 attempt=1 data={'id': 'msg-000008', 'category': 'inventory', 'payload': 'test-payload-8', 'timestamp': '2026-05-18T17:57:22.152756+00:0\n"
+    },
+    {
+        "t": 1779127046131,
+        "m": "END RequestId: eda171a6-0878-560d-8e14-13235d3e2016\n"
+    },
+    {
+        "t": 1779127046131,
+        "m": "REPORT RequestId: eda171a6-0878-560d-8e14-13235d3e2016\tDuration: 1.58 ms\tBilled Duration: 2 ms\tMemory Size: 128 MB\tMax Memory Used: 37 MB\t\n"
+    },
+    {
+        "t": 1779127046170,
+        "m": "START RequestId: 6a43f728-4e41-5686-83a6-95ad1b07e09d Version: $LATEST\n"
+    },
+    {
+        "t": 1779127046170,
+        "m": "[INFO]\t2026-05-18T17:57:26.170Z\t6a43f728-4e41-5686-83a6-95ad1b07e09d\tATTEMPT messageId=a491a9ba-c1c2-4680-9ad2-875577d8af6f attempt=1 body={\"id\": \"msg-000004\", \"category\": \"notifications\", \"payload\": \"test-payload-4\", \"timestamp\": \"2026-05-18T17:57:22.152700+\n"
+    },
+    {
+        "t": 1779127046170,
+        "m": "[INFO]\t2026-05-18T17:57:26.170Z\t6a43f728-4e41-5686-83a6-95ad1b07e09d\tSUCCESS messageId=a491a9ba-c1c2-4680-9ad2-875577d8af6f attempt=1 data={'id': 'msg-000004', 'category': 'notifications', 'payload': 'test-payload-4', 'timestamp': '2026-05-18T17:57:22.152700+\n"
+    },
+    {
+        "t": 1779127046175,
+        "m": "END RequestId: 6a43f728-4e41-5686-83a6-95ad1b07e09d\n"
+    },
+    {
+        "t": 1779127046175,
+        "m": "REPORT RequestId: 6a43f728-4e41-5686-83a6-95ad1b07e09d\tDuration: 5.04 ms\tBilled Duration: 6 ms\tMemory Size: 128 MB\tMax Memory Used: 37 MB\t\n"
+    },
+    {
+        "t": 1779127046197,
+        "m": "START RequestId: 7a02a78f-8c08-59ed-8675-c50ad94ebff6 Version: $LATEST\n"
+    },
+    {
+        "t": 1779127046198,
+        "m": "[INFO]\t2026-05-18T17:57:26.198Z\t7a02a78f-8c08-59ed-8675-c50ad94ebff6\tATTEMPT messageId=c4c3440b-6014-41a7-a51d-88b7547a21c7 attempt=1 body={\"id\": \"msg-000031\", \"category\": \"payments\", \"payload\": \"test-payload-31\", \"timestamp\": \"2026-05-18T17:57:22.155098+00:0\n"
+    },
+    {
+        "t": 1779127046198,
+        "m": "[WARNING]\t2026-05-18T17:57:26.198Z\t7a02a78f-8c08-59ed-8675-c50ad94ebff6\tFAIL messageId=c4c3440b-6014-41a7-a51d-88b7547a21c7 attempt=1 � simulated processing error\n"
+    },
+    {
+        "t": 1779127046198,
+        "m": "[ERROR] Exception: Simulated failure for message c4c3440b-6014-41a7-a51d-88b7547a21c7 (attempt 1)\nTraceback (most recent call last):\n��File \"/var/task/handler.py\", line 47, in handler\n����raise Exception("
+    },
+    {
+        "t": 1779127046215,
+        "m": "END RequestId: 7a02a78f-8c08-59ed-8675-c50ad94ebff6\n"
+    },
+    {
+        "t": 1779127046215,
+        "m": "REPORT RequestId: 7a02a78f-8c08-59ed-8675-c50ad94ebff6\tDuration: 1.98 ms\tBilled Duration: 2 ms\tMemory Size: 128 MB\tMax Memory Used: 37 MB\t\n"
+    },
+    {
+        "t": 1779127052095,
+        "m": "START RequestId: 52ac13fd-2da4-5cc7-a91c-717878e82adc Version: $LATEST\n"
+    },
+    {
+        "t": 1779127052096,
+        "m": "[INFO]\t2026-05-18T17:57:32.096Z\t52ac13fd-2da4-5cc7-a91c-717878e82adc\tATTEMPT messageId=d6619408-01fb-4b48-b89e-a3813bc5e3bd attempt=1 body={\"id\": \"msg-000017\", \"category\": \"analytics\", \"payload\": \"test-payload-17\", \"timestamp\": \"2026-05-18T17:57:22.152847+00:\n"
+    },
+    {
+        "t": 1779127052096,
+        "m": "[WARNING]\t2026-05-18T17:57:32.096Z\t52ac13fd-2da4-5cc7-a91c-717878e82adc\tFAIL messageId=d6619408-01fb-4b48-b89e-a3813bc5e3bd attempt=1 � simulated processing error\n"
+    },
+    {
+        "t": 1779127052096,
+        "m": "[ERROR] Exception: Simulated failure for message d6619408-01fb-4b48-b89e-a3813bc5e3bd (attempt 1)\nTraceback (most recent call last):\n��File \"/var/task/handler.py\", line 47, in handler\n����raise Exception("
+    },
+    {
+        "t": 1779127052098,
+        "m": "END RequestId: 52ac13fd-2da4-5cc7-a91c-717878e82adc\n"
+    },
+    {
+        "t": 1779127052098,
+        "m": "REPORT RequestId: 52ac13fd-2da4-5cc7-a91c-717878e82adc\tDuration: 1.99 ms\tBilled Duration: 2 ms\tMemory Size: 128 MB\tMax Memory Used: 37 MB\t\n"
+    },
+    {
+        "t": 1779127052190,
+        "m": "START RequestId: ad5fc838-768e-537c-99a0-aabd23c26bc5 Version: $LATEST\n"
+    },
+    {
+        "t": 1779127052191,
+        "m": "[INFO]\t2026-05-18T17:57:32.191Z\tad5fc838-768e-537c-99a0-aabd23c26bc5\tATTEMPT messageId=5140af87-3888-4e8e-9f5c-4bc749c861fc attempt=1 body={\"id\": \"msg-000011\", \"category\": \"analytics\", \"payload\": \"test-payload-11\", \"timestamp\": \"2026-05-18T17:57:22.152790+00:\n"
+    },
+    {
+        "t": 1779127052191,
+        "m": "[INFO]\t2026-05-18T17:57:32.191Z\tad5fc838-768e-537c-99a0-aabd23c26bc5\tSUCCESS messageId=5140af87-3888-4e8e-9f5c-4bc749c861fc attempt=1 data={'id': 'msg-000011', 'category': 'analytics', 'payload': 'test-payload-11', 'timestamp': '2026-05-18T17:57:22.152790+00:\n"
+    },
+    {
+        "t": 1779127052192,
+        "m": "END RequestId: ad5fc838-768e-537c-99a0-aabd23c26bc5\n"
+    },
+    {
+        "t": 1779127052193,
+        "m": "REPORT RequestId: ad5fc838-768e-537c-99a0-aabd23c26bc5\tDuration: 1.83 ms\tBilled Duration: 2 ms\tMemory Size: 128 MB\tMax Memory Used: 37 MB\t\n"
+    },
+    {
+        "t": 1779127053815,
+        "m": "START RequestId: ac73051f-6e96-50c4-9ce1-679a3bdb96df Version: $LATEST\n"
+    },
+    {
+        "t": 1779127053815,
+        "m": "[INFO]\t2026-05-18T17:57:33.815Z\tac73051f-6e96-50c4-9ce1-679a3bdb96df\tATTEMPT messageId=46863eba-6963-4656-b969-b1170fbfcf9d attempt=1 body={\"id\": \"msg-000018\", \"category\": \"orders\", \"payload\": \"test-payload-18\", \"timestamp\": \"2026-05-18T17:57:22.152856+00:00\"\n"
+    },
+    {
+        "t": 1779127053815,
+        "m": "[INFO]\t2026-05-18T17:57:33.815Z\tac73051f-6e96-50c4-9ce1-679a3bdb96df\tSUCCESS messageId=46863eba-6963-4656-b969-b1170fbfcf9d attempt=1 data={'id': 'msg-000018', 'category': 'orders', 'payload': 'test-payload-18', 'timestamp': '2026-05-18T17:57:22.152856+00:00'\n"
+    },
+    {
+        "t": 1779127053817,
+        "m": "END RequestId: ac73051f-6e96-50c4-9ce1-679a3bdb96df\n"
+    },
+    {
+        "t": 1779127053817,
+        "m": "REPORT RequestId: ac73051f-6e96-50c4-9ce1-679a3bdb96df\tDuration: 1.87 ms\tBilled Duration: 2 ms\tMemory Size: 128 MB\tMax Memory Used: 37 MB\t\n"
+    },
+    {
+        "t": 1779127053894,
+        "m": "START RequestId: 328ccd94-0e19-5dd0-844c-af115b54e569 Version: $LATEST\n"
+    },
+    {
+        "t": 1779127053895,
+        "m": "[INFO]\t2026-05-18T17:57:33.895Z\t328ccd94-0e19-5dd0-844c-af115b54e569\tATTEMPT messageId=5d9741fc-7068-45d5-8d88-af2149b4e70b attempt=1 body={\"id\": \"msg-000032\", \"category\": \"inventory\", \"payload\": \"test-payload-32\", \"timestamp\": \"2026-05-18T17:57:22.155109+00:\n"
+    },
+    {
+        "t": 1779127053895,
+        "m": "[INFO]\t2026-05-18T17:57:33.895Z\t328ccd94-0e19-5dd0-844c-af115b54e569\tSUCCESS messageId=5d9741fc-7068-45d5-8d88-af2149b4e70b attempt=1 data={'id': 'msg-000032', 'category': 'inventory', 'payload': 'test-payload-32', 'timestamp': '2026-05-18T17:57:22.155109+00:\n"
+    },
+    {
+        "t": 1779127053896,
+        "m": "END RequestId: 328ccd94-0e19-5dd0-844c-af115b54e569\n"
+    },
+    {
+        "t": 1779127053896,
+        "m": "REPORT RequestId: 328ccd94-0e19-5dd0-844c-af115b54e569\tDuration: 1.76 ms\tBilled Duration: 2 ms\tMemory Size: 128 MB\tMax Memory Used: 37 MB\t\n"
+    },
+    {
+        "t": 1779127054499,
+        "m": "START RequestId: 6584fe63-913a-59dc-9404-9ce6c474efc7 Version: $LATEST\n"
+    },
+    {
+        "t": 1779127054500,
+        "m": "[INFO]\t2026-05-18T17:57:34.500Z\t6584fe63-913a-59dc-9404-9ce6c474efc7\tATTEMPT messageId=d40469aa-ea8e-4b35-90d4-f368afc5f63d attempt=1 body={\"id\": \"msg-000001\", \"category\": \"payments\", \"payload\": \"test-payload-1\", \"timestamp\": \"2026-05-18T17:57:22.151961+00:00\n"
+    },
+    {
+        "t": 1779127054500,
+        "m": "[INFO]\t2026-05-18T17:57:34.500Z\t6584fe63-913a-59dc-9404-9ce6c474efc7\tSUCCESS messageId=d40469aa-ea8e-4b35-90d4-f368afc5f63d attempt=1 data={'id': 'msg-000001', 'category': 'payments', 'payload': 'test-payload-1', 'timestamp': '2026-05-18T17:57:22.151961+00:00\n"
+    },
+    {
+        "t": 1779127054501,
+        "m": "END RequestId: 6584fe63-913a-59dc-9404-9ce6c474efc7\n"
+    },
+    {
+        "t": 1779127054501,
+        "m": "REPORT RequestId: 6584fe63-913a-59dc-9404-9ce6c474efc7\tDuration: 1.59 ms\tBilled Duration: 2 ms\tMemory Size: 128 MB\tMax Memory Used: 37 MB\t\n"
+    },
+    {
+        "t": 1779127054607,
+        "m": "START RequestId: 74746f03-16ac-5f29-99b7-0d8643e26790 Version: $LATEST\n"
+    },
+    {
+        "t": 1779127054608,
+        "m": "[INFO]\t2026-05-18T17:57:34.607Z\t74746f03-16ac-5f29-99b7-0d8643e26790\tATTEMPT messageId=fb16c6fb-f826-4f7c-8e22-37562d6885fe attempt=1 body={\"id\": \"msg-000027\", \"category\": \"shipping\", \"payload\": \"test-payload-27\", \"timestamp\": \"2026-05-18T17:57:22.152980+00:0\n"
+    },
+    {
+        "t": 1779127054608,
+        "m": "[INFO]\t2026-05-18T17:57:34.608Z\t74746f03-16ac-5f29-99b7-0d8643e26790\tSUCCESS messageId=fb16c6fb-f826-4f7c-8e22-37562d6885fe attempt=1 data={'id': 'msg-000027', 'category': 'shipping', 'payload': 'test-payload-27', 'timestamp': '2026-05-18T17:57:22.152980+00:0\n"
+    },
+    {
+        "t": 1779127054609,
+        "m": "END RequestId: 74746f03-16ac-5f29-99b7-0d8643e26790\n"
+    },
+    {
+        "t": 1779127054609,
+        "m": "REPORT RequestId: 74746f03-16ac-5f29-99b7-0d8643e26790\tDuration: 1.58 ms\tBilled Duration: 2 ms\tMemory Size: 128 MB\tMax Memory Used: 37 MB\t\n"
+    },
+    {
+        "t": 1779127054944,
+        "m": "START RequestId: b3105e22-7d0a-56d1-b23a-3ca7284480ca Version: $LATEST\n"
+    },
+    {
+        "t": 1779127054944,
+        "m": "[INFO]\t2026-05-18T17:57:34.944Z\tb3105e22-7d0a-56d1-b23a-3ca7284480ca\tATTEMPT messageId=6345a506-94df-44c5-9208-57881dfba786 attempt=1 body={\"id\": \"msg-000012\", \"category\": \"orders\", \"payload\": \"test-payload-12\", \"timestamp\": \"2026-05-18T17:57:22.152803+00:00\"\n"
+    },
+    {
+        "t": 1779127054944,
+        "m": "[INFO]\t2026-05-18T17:57:34.944Z\tb3105e22-7d0a-56d1-b23a-3ca7284480ca\tSUCCESS messageId=6345a506-94df-44c5-9208-57881dfba786 attempt=1 data={'id': 'msg-000012', 'category': 'orders', 'payload': 'test-payload-12', 'timestamp': '2026-05-18T17:57:22.152803+00:00'\n"
+    },
+    {
+        "t": 1779127054946,
+        "m": "END RequestId: b3105e22-7d0a-56d1-b23a-3ca7284480ca\n"
+    },
+    {
+        "t": 1779127054946,
+        "m": "REPORT RequestId: b3105e22-7d0a-56d1-b23a-3ca7284480ca\tDuration: 1.79 ms\tBilled Duration: 2 ms\tMemory Size: 128 MB\tMax Memory Used: 37 MB\t\n"
+    },
+    {
+        "t": 1779127055008,
+        "m": "START RequestId: 2ecc26c4-13f8-5d89-9103-444146b66530 Version: $LATEST\n"
+    },
+    {
+        "t": 1779127055009,
+        "m": "[INFO]\t2026-05-18T17:57:35.009Z\t2ecc26c4-13f8-5d89-9103-444146b66530\tATTEMPT messageId=429fc607-aa17-41a3-9884-1dc549e5257b attempt=1 body={\"id\": \"msg-000025\", \"category\": \"payments\", \"payload\": \"test-payload-25\", \"timestamp\": \"2026-05-18T17:57:22.152914+00:0\n"
+    },
+    {
+        "t": 1779127055009,
+        "m": "[INFO]\t2026-05-18T17:57:35.009Z\t2ecc26c4-13f8-5d89-9103-444146b66530\tSUCCESS messageId=429fc607-aa17-41a3-9884-1dc549e5257b attempt=1 data={'id': 'msg-000025', 'category': 'payments', 'payload': 'test-payload-25', 'timestamp': '2026-05-18T17:57:22.152914+00:0\n"
+    },
+    {
+        "t": 1779127055010,
+        "m": "END RequestId: 2ecc26c4-13f8-5d89-9103-444146b66530\n"
+    },
+    {
+        "t": 1779127055010,
+        "m": "REPORT RequestId: 2ecc26c4-13f8-5d89-9103-444146b66530\tDuration: 1.53 ms\tBilled Duration: 2 ms\tMemory Size: 128 MB\tMax Memory Used: 37 MB\t\n"
+    },
+    {
+        "t": 1779127055123,
+        "m": "START RequestId: 5b6429a4-0843-5385-a18b-4b215d0c959e Version: $LATEST\n"
+    },
+    {
+        "t": 1779127055124,
+        "m": "[INFO]\t2026-05-18T17:57:35.124Z\t5b6429a4-0843-5385-a18b-4b215d0c959e\tATTEMPT messageId=01d88098-d31c-40a0-914a-50f4667c9d3e attempt=1 body={\"id\": \"msg-000026\", \"category\": \"inventory\", \"payload\": \"test-payload-26\", \"timestamp\": \"2026-05-18T17:57:22.152967+00:\n"
+    },
+    {
+        "t": 1779127055124,
+        "m": "[INFO]\t2026-05-18T17:57:35.124Z\t5b6429a4-0843-5385-a18b-4b215d0c959e\tSUCCESS messageId=01d88098-d31c-40a0-914a-50f4667c9d3e attempt=1 data={'id': 'msg-000026', 'category': 'inventory', 'payload': 'test-payload-26', 'timestamp': '2026-05-18T17:57:22.152967+00:\n"
+    },
+    {
+        "t": 1779127055135,
+        "m": "END RequestId: 5b6429a4-0843-5385-a18b-4b215d0c959e\n"
+    },
+    {
+        "t": 1779127055135,
+        "m": "REPORT RequestId: 5b6429a4-0843-5385-a18b-4b215d0c959e\tDuration: 1.63 ms\tBilled Duration: 2 ms\tMemory Size: 128 MB\tMax Memory Used: 37 MB\t\n"
+    },
+    {
+        "t": 1779127055222,
+        "m": "START RequestId: 77d44e48-ba37-5c68-9ddb-2ccdef78ca73 Version: $LATEST\n"
+    },
+    {
+        "t": 1779127055222,
+        "m": "[INFO]\t2026-05-18T17:57:35.222Z\t77d44e48-ba37-5c68-9ddb-2ccdef78ca73\tATTEMPT messageId=69025e3d-be81-40dd-8462-dd463dd53111 attempt=1 body={\"id\": \"msg-000028\", \"category\": \"notifications\", \"payload\": \"test-payload-28\", \"timestamp\": \"2026-05-18T17:57:22.154427\n"
+    },
+    {
+        "t": 1779127055222,
+        "m": "[INFO]\t2026-05-18T17:57:35.222Z\t77d44e48-ba37-5c68-9ddb-2ccdef78ca73\tSUCCESS messageId=69025e3d-be81-40dd-8462-dd463dd53111 attempt=1 data={'id': 'msg-000028', 'category': 'notifications', 'payload': 'test-payload-28', 'timestamp': '2026-05-18T17:57:22.154427\n"
+    },
+    {
+        "t": 1779127055224,
+        "m": "END RequestId: 77d44e48-ba37-5c68-9ddb-2ccdef78ca73\n"
+    },
+    {
+        "t": 1779127055224,
+        "m": "REPORT RequestId: 77d44e48-ba37-5c68-9ddb-2ccdef78ca73\tDuration: 1.71 ms\tBilled Duration: 2 ms\tMemory Size: 128 MB\tMax Memory Used: 37 MB\t\n"
+    },
+    {
+        "t": 1779127055236,
+        "m": "START RequestId: 7f2d0022-efc7-5f37-ad57-62a7ba88478e Version: $LATEST\n"
+    },
+    {
+        "t": 1779127055236,
+        "m": "[INFO]\t2026-05-18T17:57:35.236Z\t7f2d0022-efc7-5f37-ad57-62a7ba88478e\tATTEMPT messageId=02b5fa09-d9a4-4369-8b6b-d8946f67ae1b attempt=1 body={\"id\": \"msg-000057\", \"category\": \"shipping\", \"payload\": \"test-payload-57\", \"timestamp\": \"2026-05-18T17:57:22.155975+00:0\n"
+    },
+    {
+        "t": 1779127055237,
+        "m": "[INFO]\t2026-05-18T17:57:35.237Z\t7f2d0022-efc7-5f37-ad57-62a7ba88478e\tSUCCESS messageId=02b5fa09-d9a4-4369-8b6b-d8946f67ae1b attempt=1 data={'id': 'msg-000057', 'category': 'shipping', 'payload': 'test-payload-57', 'timestamp': '2026-05-18T17:57:22.155975+00:0\n"
+    },
+    {
+        "t": 1779127055238,
+        "m": "END RequestId: 7f2d0022-efc7-5f37-ad57-62a7ba88478e\n"
+    },
+    {
+        "t": 1779127055238,
+        "m": "REPORT RequestId: 7f2d0022-efc7-5f37-ad57-62a7ba88478e\tDuration: 1.68 ms\tBilled Duration: 2 ms\tMemory Size: 128 MB\tMax Memory Used: 37 MB\t\n"
+    },
+    {
+        "t": 1779127055281,
+        "m": "START RequestId: 0fd9f049-30e9-551c-806b-92cc65a6b307 Version: $LATEST\n"
+    },
+    {
+        "t": 1779127055281,
+        "m": "[INFO]\t2026-05-18T17:57:35.281Z\t0fd9f049-30e9-551c-806b-92cc65a6b307\tATTEMPT messageId=cceabe3e-9a8f-4f5b-b40a-7f8cdb96dbf3 attempt=1 body={\"id\": \"msg-000037\", \"category\": \"payments\", \"payload\": \"test-payload-37\", \"timestamp\": \"2026-05-18T17:57:22.155164+00:0\n"
+    },
+    {
+        "t": 1779127055281,
+        "m": "[WARNING]\t2026-05-18T17:57:35.281Z\t0fd9f049-30e9-551c-806b-92cc65a6b307\tFAIL messageId=cceabe3e-9a8f-4f5b-b40a-7f8cdb96dbf3 attempt=1 � simulated processing error\n"
+    },
+    {
+        "t": 1779127055281,
+        "m": "[ERROR] Exception: Simulated failure for message cceabe3e-9a8f-4f5b-b40a-7f8cdb96dbf3 (attempt 1)\nTraceback (most recent call last):\n��File \"/var/task/handler.py\", line 47, in handler\n����raise Exception("
+    },
+    {
+        "t": 1779127055283,
+        "m": "END RequestId: 0fd9f049-30e9-551c-806b-92cc65a6b307\n"
+    },
+    {
+        "t": 1779127055283,
+        "m": "REPORT RequestId: 0fd9f049-30e9-551c-806b-92cc65a6b307\tDuration: 2.01 ms\tBilled Duration: 3 ms\tMemory Size: 128 MB\tMax Memory Used: 37 MB\t\n"
+    },
+    {
+        "t": 1779127055313,
+        "m": "START RequestId: 0a116ace-bbe2-50df-b546-084beead36c4 Version: $LATEST\n"
+    },
+    {
+        "t": 1779127055313,
+        "m": "[INFO]\t2026-05-18T17:57:35.313Z\t0a116ace-bbe2-50df-b546-084beead36c4\tATTEMPT messageId=025796d4-92c6-45bd-85eb-965b49614ac2 attempt=1 body={\"id\": \"msg-000002\", \"category\": \"inventory\", \"payload\": \"test-payload-2\", \"timestamp\": \"2026-05-18T17:57:22.152036+00:0\n"
+    },
+    {
+        "t": 1779127055313,
+        "m": "[INFO]\t2026-05-18T17:57:35.313Z\t0a116ace-bbe2-50df-b546-084beead36c4\tSUCCESS messageId=025796d4-92c6-45bd-85eb-965b49614ac2 attempt=1 data={'id': 'msg-000002', 'category': 'inventory', 'payload': 'test-payload-2', 'timestamp': '2026-05-18T17:57:22.152036+00:0\n"
+    },
+    {
+        "t": 1779127055315,
+        "m": "END RequestId: 0a116ace-bbe2-50df-b546-084beead36c4\n"
+    },
+    {
+        "t": 1779127055315,
+        "m": "REPORT RequestId: 0a116ace-bbe2-50df-b546-084beead36c4\tDuration: 2.07 ms\tBilled Duration: 3 ms\tMemory Size: 128 MB\tMax Memory Used: 37 MB\t\n"
+    },
+    {
+        "t": 1779127055339,
+        "m": "START RequestId: 550ec1e3-0cfb-5810-a3b7-a36659b45e0b Version: $LATEST\n"
+    },
+    {
+        "t": 1779127055340,
+        "m": "[INFO]\t2026-05-18T17:57:35.339Z\t550ec1e3-0cfb-5810-a3b7-a36659b45e0b\tATTEMPT messageId=ad630b7b-9ad1-4a21-a136-a90ff5ce62f3 attempt=1 body={\"id\": \"msg-000038\", \"category\": \"inventory\", \"payload\": \"test-payload-38\", \"timestamp\": \"2026-05-18T17:57:22.155624+00:\n"
+    },
+    {
+        "t": 1779127055340,
+        "m": "[INFO]\t2026-05-18T17:57:35.340Z\t550ec1e3-0cfb-5810-a3b7-a36659b45e0b\tSUCCESS messageId=ad630b7b-9ad1-4a21-a136-a90ff5ce62f3 attempt=1 data={'id': 'msg-000038', 'category': 'inventory', 'payload': 'test-payload-38', 'timestamp': '2026-05-18T17:57:22.155624+00:\n"
+    },
+    {
+        "t": 1779127055341,
+        "m": "END RequestId: 550ec1e3-0cfb-5810-a3b7-a36659b45e0b\n"
+    },
+    {
+        "t": 1779127055352,
+        "m": "START RequestId: 127bf2a1-0c0e-55e4-924e-90245941ed5d Version: $LATEST\n"
+    },
+    {
+        "t": 1779127055353,
+        "m": "[INFO]\t2026-05-18T17:57:35.353Z\t127bf2a1-0c0e-55e4-924e-90245941ed5d\tATTEMPT messageId=d824ef89-6e7d-4fd2-9a41-3e0d91fa9900 attempt=1 body={\"id\": \"msg-000005\", \"category\": \"analytics\", \"payload\": \"test-payload-5\", \"timestamp\": \"2026-05-18T17:57:22.152723+00:0\n"
+    },
+    {
+        "t": 1779127055353,
+        "m": "[INFO]\t2026-05-18T17:57:35.353Z\t127bf2a1-0c0e-55e4-924e-90245941ed5d\tSUCCESS messageId=d824ef89-6e7d-4fd2-9a41-3e0d91fa9900 attempt=1 data={'id': 'msg-000005', 'category': 'analytics', 'payload': 'test-payload-5', 'timestamp': '2026-05-18T17:57:22.152723+00:0\n"
+    },
+    {
+        "t": 1779127055354,
+        "m": "END RequestId: 127bf2a1-0c0e-55e4-924e-90245941ed5d\n"
+    },
+    {
+        "t": 1779127055354,
+        "m": "REPORT RequestId: 127bf2a1-0c0e-55e4-924e-90245941ed5d\tDuration: 1.61 ms\tBilled Duration: 2 ms\tMemory Size: 128 MB\tMax Memory Used: 37 MB\t\n"
+    },
+    {
+        "t": 1779127055355,
+        "m": "REPORT RequestId: 550ec1e3-0cfb-5810-a3b7-a36659b45e0b\tDuration: 1.84 ms\tBilled Duration: 2 ms\tMemory Size: 128 MB\tMax Memory Used: 37 MB\t\n"
+    },
+    {
+        "t": 1779127055358,
+        "m": "START RequestId: 5516cb6a-a4bc-5bcd-ba85-a9eff1f3fdd6 Version: $LATEST\n"
+    },
+    {
+        "t": 1779127055359,
+        "m": "[INFO]\t2026-05-18T17:57:35.358Z\t5516cb6a-a4bc-5bcd-ba85-a9eff1f3fdd6\tATTEMPT messageId=2d85d214-3102-4df0-a9cb-d0c132ad9e38 attempt=1 body={\"id\": \"msg-000058\", \"category\": \"notifications\", \"payload\": \"test-payload-58\", \"timestamp\": \"2026-05-18T17:57:22.156010\n"
+    },
+    {
+        "t": 1779127055359,
+        "m": "[INFO]\t2026-05-18T17:57:35.359Z\t5516cb6a-a4bc-5bcd-ba85-a9eff1f3fdd6\tSUCCESS messageId=2d85d214-3102-4df0-a9cb-d0c132ad9e38 attempt=1 data={'id': 'msg-000058', 'category': 'notifications', 'payload': 'test-payload-58', 'timestamp': '2026-05-18T17:57:22.156010\n"
+    },
+    {
+        "t": 1779127055372,
+        "m": "START RequestId: 9f302b81-2eff-5c01-8408-49047bb0da1a Version: $LATEST\n"
+    },
+    {
+        "t": 1779127055373,
+        "m": "[INFO]\t2026-05-18T17:57:35.373Z\t9f302b81-2eff-5c01-8408-49047bb0da1a\tATTEMPT messageId=0db1ed77-aa1c-49af-96ff-bc2f1ae51ba3 attempt=1 body={\"id\": \"msg-000013\", \"category\": \"payments\", \"payload\": \"test-payload-13\", \"timestamp\": \"2026-05-18T17:57:22.152813+00:0\n"
+    },
+    {
+        "t": 1779127055373,
+        "m": "[INFO]\t2026-05-18T17:57:35.373Z\t9f302b81-2eff-5c01-8408-49047bb0da1a\tSUCCESS messageId=0db1ed77-aa1c-49af-96ff-bc2f1ae51ba3 attempt=1 data={'id': 'msg-000013', 'category': 'payments', 'payload': 'test-payload-13', 'timestamp': '2026-05-18T17:57:22.152813+00:0\n"
+    },
+    {
+        "t": 1779127055374,
+        "m": "END RequestId: 5516cb6a-a4bc-5bcd-ba85-a9eff1f3fdd6\n"
+    },
+    {
+        "t": 1779127055374,
+        "m": "REPORT RequestId: 5516cb6a-a4bc-5bcd-ba85-a9eff1f3fdd6\tDuration: 15.70 ms\tBilled Duration: 16 ms\tMemory Size: 128 MB\tMax Memory Used: 37 MB\t\n"
+    },
+    {
+        "t": 1779127055376,
+        "m": "END RequestId: 9f302b81-2eff-5c01-8408-49047bb0da1a\n"
+    },
+    {
+        "t": 1779127055376,
+        "m": "REPORT RequestId: 9f302b81-2eff-5c01-8408-49047bb0da1a\tDuration: 3.03 ms\tBilled Duration: 4 ms\tMemory Size: 128 MB\tMax Memory Used: 37 MB\t\n"
+    },
+    {
+        "t": 1779127055415,
+        "m": "START RequestId: 8f75f978-2828-5f65-8917-9bfd7d671b13 Version: $LATEST\n"
+    },
+    {
+        "t": 1779127055415,
+        "m": "[INFO]\t2026-05-18T17:57:35.415Z\t8f75f978-2828-5f65-8917-9bfd7d671b13\tATTEMPT messageId=5824d47f-fd49-47c9-97f2-6871a91cf17a attempt=1 body={\"id\": \"msg-000014\", \"category\": \"inventory\", \"payload\": \"test-payload-14\", \"timestamp\": \"2026-05-18T17:57:22.152822+00:\n"
+    },
+    {
+        "t": 1779127055416,
+        "m": "[INFO]\t2026-05-18T17:57:35.416Z\t8f75f978-2828-5f65-8917-9bfd7d671b13\tSUCCESS messageId=5824d47f-fd49-47c9-97f2-6871a91cf17a attempt=1 data={'id': 'msg-000014', 'category': 'inventory', 'payload': 'test-payload-14', 'timestamp': '2026-05-18T17:57:22.152822+00:\n"
+    },
+    {
+        "t": 1779127055417,
+        "m": "END RequestId: 8f75f978-2828-5f65-8917-9bfd7d671b13\n"
+    },
+    {
+        "t": 1779127055417,
+        "m": "REPORT RequestId: 8f75f978-2828-5f65-8917-9bfd7d671b13\tDuration: 1.93 ms\tBilled Duration: 2 ms\tMemory Size: 128 MB\tMax Memory Used: 37 MB\t\n"
+    },
+    {
+        "t": 1779127055420,
+        "m": "START RequestId: 666efdd5-a6de-5a79-bc10-9f50f39122c0 Version: $LATEST\n"
+    },
+    {
+        "t": 1779127055421,
+        "m": "[INFO]\t2026-05-18T17:57:35.421Z\t666efdd5-a6de-5a79-bc10-9f50f39122c0\tATTEMPT messageId=7c182677-c87c-4c64-b6bf-0675ae768dd7 attempt=1 body={\"id\": \"msg-000006\", \"category\": \"orders\", \"payload\": \"test-payload-6\", \"timestamp\": \"2026-05-18T17:57:22.152736+00:00\",\n"
+    },
+    {
+        "t": 1779127055421,
+        "m": "[INFO]\t2026-05-18T17:57:35.421Z\t666efdd5-a6de-5a79-bc10-9f50f39122c0\tSUCCESS messageId=7c182677-c87c-4c64-b6bf-0675ae768dd7 attempt=1 data={'id': 'msg-000006', 'category': 'orders', 'payload': 'test-payload-6', 'timestamp': '2026-05-18T17:57:22.152736+00:00',\n"
+    },
+    {
+        "t": 1779127055433,
+        "m": "END RequestId: 666efdd5-a6de-5a79-bc10-9f50f39122c0\n"
+    },
+    {
+        "t": 1779127055433,
+        "m": "REPORT RequestId: 666efdd5-a6de-5a79-bc10-9f50f39122c0\tDuration: 1.82 ms\tBilled Duration: 2 ms\tMemory Size: 128 MB\tMax Memory Used: 37 MB\t\n"
+    },
+    {
+        "t": 1779127055436,
+        "m": "START RequestId: 6d4a9ba9-3876-5fe0-b5ab-f92c6d39cb96 Version: $LATEST\n"
+    },
+    {
+        "t": 1779127055436,
+        "m": "[INFO]\t2026-05-18T17:57:35.436Z\t6d4a9ba9-3876-5fe0-b5ab-f92c6d39cb96\tATTEMPT messageId=3ae6ee37-0367-4b30-8674-e8abbf585e3f attempt=1 body={\"id\": \"msg-000045\", \"category\": \"shipping\", \"payload\": \"test-payload-45\", \"timestamp\": \"2026-05-18T17:57:22.155782+00:0\n"
+    },
+    {
+        "t": 1779127055436,
+        "m": "[INFO]\t2026-05-18T17:57:35.436Z\t6d4a9ba9-3876-5fe0-b5ab-f92c6d39cb96\tSUCCESS messageId=3ae6ee37-0367-4b30-8674-e8abbf585e3f attempt=1 data={'id': 'msg-000045', 'category': 'shipping', 'payload': 'test-payload-45', 'timestamp': '2026-05-18T17:57:22.155782+00:0\n"
+    },
+    {
+        "t": 1779127055437,
+        "m": "START RequestId: 194b3a3b-a5c7-5e17-bb13-58bef0880a61 Version: $LATEST\n"
+    },
+    {
+        "t": 1779127055438,
+        "m": "[INFO]\t2026-05-18T17:57:35.438Z\t194b3a3b-a5c7-5e17-bb13-58bef0880a61\tATTEMPT messageId=9d3aa30e-7fdc-4c2f-83ea-996523bedcae attempt=1 body={\"id\": \"msg-000039\", \"category\": \"shipping\", \"payload\": \"test-payload-39\", \"timestamp\": \"2026-05-18T17:57:22.155695+00:0\n"
+    },
+    {
+        "t": 1779127055438,
+        "m": "[INFO]\t2026-05-18T17:57:35.438Z\t194b3a3b-a5c7-5e17-bb13-58bef0880a61\tSUCCESS messageId=9d3aa30e-7fdc-4c2f-83ea-996523bedcae attempt=1 data={'id': 'msg-000039', 'category': 'shipping', 'payload': 'test-payload-39', 'timestamp': '2026-05-18T17:57:22.155695+00:0\n"
+    },
+    {
+        "t": 1779127055455,
+        "m": "END RequestId: 6d4a9ba9-3876-5fe0-b5ab-f92c6d39cb96\n"
+    },
+    {
+        "t": 1779127055455,
+        "m": "REPORT RequestId: 6d4a9ba9-3876-5fe0-b5ab-f92c6d39cb96\tDuration: 1.63 ms\tBilled Duration: 2 ms\tMemory Size: 128 MB\tMax Memory Used: 37 MB\t\n"
+    },
+    {
+        "t": 1779127055455,
+        "m": "END RequestId: 194b3a3b-a5c7-5e17-bb13-58bef0880a61\n"
+    },
+    {
+        "t": 1779127055455,
+        "m": "REPORT RequestId: 194b3a3b-a5c7-5e17-bb13-58bef0880a61\tDuration: 17.46 ms\tBilled Duration: 18 ms\tMemory Size: 128 MB\tMax Memory Used: 37 MB\t\n"
+    },
+    {
+        "t": 1779127055460,
+        "m": "START RequestId: 941796b0-6611-5e16-bc9d-f435335e8b0b Version: $LATEST\n"
+    },
+    {
+        "t": 1779127055461,
+        "m": "START RequestId: b04e6b67-0e54-5659-8550-09e25b1b2ee0 Version: $LATEST\n"
+    },
+    {
+        "t": 1779127055461,
+        "m": "[INFO]\t2026-05-18T17:57:35.461Z\tb04e6b67-0e54-5659-8550-09e25b1b2ee0\tATTEMPT messageId=ca9b5394-ed83-4aa5-a225-c3c375e658e1 attempt=1 body={\"id\": \"msg-000065\", \"category\": \"analytics\", \"payload\": \"test-payload-65\", \"timestamp\": \"2026-05-18T17:57:22.156100+00:\n"
+    },
+    {
+        "t": 1779127055462,
+        "m": "[INFO]\t2026-05-18T17:57:35.462Z\tb04e6b67-0e54-5659-8550-09e25b1b2ee0\tSUCCESS messageId=ca9b5394-ed83-4aa5-a225-c3c375e658e1 attempt=1 data={'id': 'msg-000065', 'category': 'analytics', 'payload': 'test-payload-65', 'timestamp': '2026-05-18T17:57:22.156100+00:\n"
+    },
+    {
+        "t": 1779127055473,
+        "m": "[INFO]\t2026-05-18T17:57:35.473Z\t941796b0-6611-5e16-bc9d-f435335e8b0b\tATTEMPT messageId=e1104962-81c2-43bf-bbe6-9a88524bf1d4 attempt=1 body={\"id\": \"msg-000015\", \"category\": \"shipping\", \"payload\": \"test-payload-15\", \"timestamp\": \"2026-05-18T17:57:22.152831+00:0\n"
+    },
+    {
+        "t": 1779127055474,
+        "m": "[INFO]\t2026-05-18T17:57:35.474Z\t941796b0-6611-5e16-bc9d-f435335e8b0b\tSUCCESS messageId=e1104962-81c2-43bf-bbe6-9a88524bf1d4 attempt=1 data={'id': 'msg-000015', 'category': 'shipping', 'payload': 'test-payload-15', 'timestamp': '2026-05-18T17:57:22.152831+00:0\n"
+    },
+    {
+        "t": 1779127055475,
+        "m": "END RequestId: 941796b0-6611-5e16-bc9d-f435335e8b0b\n"
+    },
+    {
+        "t": 1779127055475,
+        "m": "REPORT RequestId: 941796b0-6611-5e16-bc9d-f435335e8b0b\tDuration: 15.30 ms\tBilled Duration: 16 ms\tMemory Size: 128 MB\tMax Memory Used: 37 MB\t\n"
+    },
+    {
+        "t": 1779127055476,
+        "m": "END RequestId: b04e6b67-0e54-5659-8550-09e25b1b2ee0\n"
+    },
+    {
+        "t": 1779127055476,
+        "m": "REPORT RequestId: b04e6b67-0e54-5659-8550-09e25b1b2ee0\tDuration: 14.35 ms\tBilled Duration: 15 ms\tMemory Size: 128 MB\tMax Memory Used: 37 MB\t\n"
+    },
+    {
+        "t": 1779127055482,
+        "m": "START RequestId: cd9e5992-de21-5765-9f9e-3b178b6e6278 Version: $LATEST\n"
+    },
+    {
+        "t": 1779127055483,
+        "m": "INIT_START Runtime Version: python:3.12.mainlinev2.v7\tRuntime Version ARN: arn:aws:lambda:us-east-1::runtime:e4ab553846c4e081013ff7d1d608a5358d5b956bb5b81c83c66d2a31da8f6244\n"
+    },
+    {
+        "t": 1779127055493,
+        "m": "START RequestId: 66345208-6179-58c7-b2ff-308d3436707e Version: $LATEST\n"
+    },
+    {
+        "t": 1779127055494,
+        "m": "[INFO]\t2026-05-18T17:57:35.494Z\t66345208-6179-58c7-b2ff-308d3436707e\tATTEMPT messageId=01f7941d-8670-4af0-a95d-ac1ac7ba21df attempt=1 body={\"id\": \"msg-000043\", \"category\": \"payments\", \"payload\": \"test-payload-43\", \"timestamp\": \"2026-05-18T17:57:22.155759+00:0\n"
+    },
+    {
+        "t": 1779127055494,
+        "m": "[INFO]\t2026-05-18T17:57:35.494Z\t66345208-6179-58c7-b2ff-308d3436707e\tSUCCESS messageId=01f7941d-8670-4af0-a95d-ac1ac7ba21df attempt=1 data={'id': 'msg-000043', 'category': 'payments', 'payload': 'test-payload-43', 'timestamp': '2026-05-18T17:57:22.155759+00:0\n"
+    },
+    {
+        "t": 1779127055495,
+        "m": "[INFO]\t2026-05-18T17:57:35.495Z\tcd9e5992-de21-5765-9f9e-3b178b6e6278\tATTEMPT messageId=deea77d4-0b71-4b44-83e9-f1ebb6a0aed6 attempt=1 body={\"id\": \"msg-000046\", \"category\": \"notifications\", \"payload\": \"test-payload-46\", \"timestamp\": \"2026-05-18T17:57:22.155798\n"
+    },
+    {
+        "t": 1779127055495,
+        "m": "[INFO]\t2026-05-18T17:57:35.495Z\tcd9e5992-de21-5765-9f9e-3b178b6e6278\tSUCCESS messageId=deea77d4-0b71-4b44-83e9-f1ebb6a0aed6 attempt=1 data={'id': 'msg-000046', 'category': 'notifications', 'payload': 'test-payload-46', 'timestamp': '2026-05-18T17:57:22.155798\n"
+    },
+    {
+        "t": 1779127055495,
+        "m": "END RequestId: 66345208-6179-58c7-b2ff-308d3436707e\n"
+    },
+    {
+        "t": 1779127055495,
+        "m": "REPORT RequestId: 66345208-6179-58c7-b2ff-308d3436707e\tDuration: 1.80 ms\tBilled Duration: 2 ms\tMemory Size: 128 MB\tMax Memory Used: 37 MB\t\n"
+    },
+    {
+        "t": 1779127055497,
+        "m": "END RequestId: cd9e5992-de21-5765-9f9e-3b178b6e6278\n"
+    },
+    {
+        "t": 1779127055497,
+        "m": "REPORT RequestId: cd9e5992-de21-5765-9f9e-3b178b6e6278\tDuration: 13.88 ms\tBilled Duration: 14 ms\tMemory Size: 128 MB\tMax Memory Used: 37 MB\t\n"
+    },
+    {
+        "t": 1779127055514,
+        "m": "START RequestId: b45f4186-331f-5765-90ef-230366507278 Version: $LATEST\n"
+    },
+    {
+        "t": 1779127055515,
+        "m": "START RequestId: cc96ff04-1bbd-5df4-84d0-9d814ef228e9 Version: $LATEST\n"
+    },
+    {
+        "t": 1779127055515,
+        "m": "[INFO]\t2026-05-18T17:57:35.515Z\tb45f4186-331f-5765-90ef-230366507278\tATTEMPT messageId=7ef33580-63ef-4eb4-9398-81b64a90fa4b attempt=1 body={\"id\": \"msg-000044\", \"category\": \"inventory\", \"payload\": \"test-payload-44\", \"timestamp\": \"2026-05-18T17:57:22.155771+00:\n"
+    },
+    {
+        "t": 1779127055515,
+        "m": "[INFO]\t2026-05-18T17:57:35.515Z\tb45f4186-331f-5765-90ef-230366507278\tSUCCESS messageId=7ef33580-63ef-4eb4-9398-81b64a90fa4b attempt=1 data={'id': 'msg-000044', 'category': 'inventory', 'payload': 'test-payload-44', 'timestamp': '2026-05-18T17:57:22.155771+00:\n"
+    },
+    {
+        "t": 1779127055516,
+        "m": "[INFO]\t2026-05-18T17:57:35.516Z\tcc96ff04-1bbd-5df4-84d0-9d814ef228e9\tATTEMPT messageId=8a9e1dd7-2ce5-486a-928d-14022951d784 attempt=1 body={\"id\": \"msg-000029\", \"category\": \"analytics\", \"payload\": \"test-payload-29\", \"timestamp\": \"2026-05-18T17:57:22.154886+00:\n"
+    },
+    {
+        "t": 1779127055516,
+        "m": "[INFO]\t2026-05-18T17:57:35.516Z\tcc96ff04-1bbd-5df4-84d0-9d814ef228e9\tSUCCESS messageId=8a9e1dd7-2ce5-486a-928d-14022951d784 attempt=1 data={'id': 'msg-000029', 'category': 'analytics', 'payload': 'test-payload-29', 'timestamp': '2026-05-18T17:57:22.154886+00:\n"
+    },
+    {
+        "t": 1779127055518,
+        "m": "END RequestId: cc96ff04-1bbd-5df4-84d0-9d814ef228e9\n"
+    },
+    {
+        "t": 1779127055518,
+        "m": "REPORT RequestId: cc96ff04-1bbd-5df4-84d0-9d814ef228e9\tDuration: 2.10 ms\tBilled Duration: 3 ms\tMemory Size: 128 MB\tMax Memory Used: 37 MB\t\n"
+    },
+    {
+        "t": 1779127055534,
+        "m": "END RequestId: b45f4186-331f-5765-90ef-230366507278\n"
+    },
+    {
+        "t": 1779127055534,
+        "m": "REPORT RequestId: b45f4186-331f-5765-90ef-230366507278\tDuration: 18.96 ms\tBilled Duration: 19 ms\tMemory Size: 128 MB\tMax Memory Used: 37 MB\t\n"
+    },
+    {
+        "t": 1779127055536,
+        "m": "START RequestId: bc580ee9-9ef2-5106-bdfa-6c6ccbbd571d Version: $LATEST\n"
+    },
+    {
+        "t": 1779127055536,
+        "m": "[INFO]\t2026-05-18T17:57:35.536Z\tbc580ee9-9ef2-5106-bdfa-6c6ccbbd571d\tATTEMPT messageId=3fda032a-ee83-4f1d-9da4-1c4b64aad292 attempt=1 body={\"id\": \"msg-000051\", \"category\": \"shipping\", \"payload\": \"test-payload-51\", \"timestamp\": \"2026-05-18T17:57:22.155879+00:0\n"
+    },
+    {
+        "t": 1779127055537,
+        "m": "[INFO]\t2026-05-18T17:57:35.537Z\tbc580ee9-9ef2-5106-bdfa-6c6ccbbd571d\tSUCCESS messageId=3fda032a-ee83-4f1d-9da4-1c4b64aad292 attempt=1 data={'id': 'msg-000051', 'category': 'shipping', 'payload': 'test-payload-51', 'timestamp': '2026-05-18T17:57:22.155879+00:0\n"
+    },
+    {
+        "t": 1779127055538,
+        "m": "START RequestId: 2f54827c-e3fe-5c27-99d4-e0f9b6b1fc3a Version: $LATEST\n"
+    },
+    {
+        "t": 1779127055539,
+        "m": "[INFO]\t2026-05-18T17:57:35.539Z\t2f54827c-e3fe-5c27-99d4-e0f9b6b1fc3a\tATTEMPT messageId=530013ea-b11f-442d-a0ac-dafe503b6733 attempt=1 body={\"id\": \"msg-000061\", \"category\": \"payments\", \"payload\": \"test-payload-61\", \"timestamp\": \"2026-05-18T17:57:22.156048+00:0\n"
+    },
+    {
+        "t": 1779127055539,
+        "m": "[INFO]\t2026-05-18T17:57:35.539Z\t2f54827c-e3fe-5c27-99d4-e0f9b6b1fc3a\tSUCCESS messageId=530013ea-b11f-442d-a0ac-dafe503b6733 attempt=1 data={'id': 'msg-000061', 'category': 'payments', 'payload': 'test-payload-61', 'timestamp': '2026-05-18T17:57:22.156048+00:0\n"
+    },
+    {
+        "t": 1779127055555,
+        "m": "END RequestId: bc580ee9-9ef2-5106-bdfa-6c6ccbbd571d\n"
+    },
+    {
+        "t": 1779127055555,
+        "m": "REPORT RequestId: bc580ee9-9ef2-5106-bdfa-6c6ccbbd571d\tDuration: 1.75 ms\tBilled Duration: 2 ms\tMemory Size: 128 MB\tMax Memory Used: 37 MB\t\n"
+    },
+    {
+        "t": 1779127055555,
+        "m": "END RequestId: 2f54827c-e3fe-5c27-99d4-e0f9b6b1fc3a\n"
+    },
+    {
+        "t": 1779127055555,
+        "m": "REPORT RequestId: 2f54827c-e3fe-5c27-99d4-e0f9b6b1fc3a\tDuration: 15.86 ms\tBilled Duration: 16 ms\tMemory Size: 128 MB\tMax Memory Used: 37 MB\t\n"
+    },
+    {
+        "t": 1779127055559,
+        "m": "START RequestId: d18ad477-abde-5252-b8ed-b6f2fe91474f Version: $LATEST\n"
+    },
+    {
+        "t": 1779127055559,
+        "m": "START RequestId: af269833-e8b7-5306-ace8-fab6bdf8d61b Version: $LATEST\n"
+    },
+    {
+        "t": 1779127055560,
+        "m": "[INFO]\t2026-05-18T17:57:35.560Z\td18ad477-abde-5252-b8ed-b6f2fe91474f\tATTEMPT messageId=35f6c736-b54b-47c6-b9b1-09c17b2df904 attempt=1 body={\"id\": \"msg-000052\", \"category\": \"notifications\", \"payload\": \"test-payload-52\", \"timestamp\": \"2026-05-18T17:57:22.155898\n"
+    }
+]
