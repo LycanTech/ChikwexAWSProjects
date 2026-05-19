@@ -1,0 +1,26 @@
+Assignment 18: IAM Policy Testing and Validation
+Task:
+Create and test restrictive IAM policies with proper boundaries.
+What to Do:
+●    Create IAM user developer-test
+●    Create custom policy that allows:
+●    Read-only access to S3 buckets with tag "Team: Dev"
+●    Launch EC2 instances only t2.micro/t3.micro
+●    Create/delete only in specific VPC
+●    No access to production resources
+●    Use IAM Policy Simulator to test:
+●    Can list S3 buckets
+●    Cannot delete S3 objects
+●    Can launch t2.micro instance
+●    Cannot launch t2.large instance
+●    Create SCP (Service Control Policy) for test OU:
+●    Deny all regions except us-east-1 and eu-west-1
+●    Deny deletion of CloudTrail
+●    Test policy with Access Analyzer
+●    Create permission boundary
+●    Test assume role with session policies
+Success Criteria:
+●    Policies enforce correct restrictions
+●    Policy Simulator confirms permissions
+●    User cannot exceed boundaries
+●    Access Analyzer shows no public access
