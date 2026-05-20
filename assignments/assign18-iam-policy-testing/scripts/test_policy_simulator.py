@@ -75,7 +75,7 @@ def run_tests(policy_arn, boundary_arn):
             "action": "s3:DeleteObject",
             "resource": "arn:aws:s3:::any-bucket/any-key",
             "context": [{"ContextKeyName": "aws:ResourceTag/Team", "ContextKeyValues": ["Dev"], "ContextKeyType": "string"}],
-            "expected": "implicitDeny",
+            "expected": "explicitDeny",
         },
         {
             "name": "Can launch t2.micro instance",

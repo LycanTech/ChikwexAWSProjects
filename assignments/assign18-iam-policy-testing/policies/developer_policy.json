@@ -87,7 +87,7 @@
       ],
       "Resource": "*",
       "Condition": {
-        "StringEquals": {
+        "ArnLike": {
           "ec2:Vpc": "arn:aws:ec2:*:*:vpc/${dev_vpc_id}"
         }
       }

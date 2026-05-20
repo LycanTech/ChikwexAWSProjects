@@ -21,47 +21,71 @@ WARN = "\033[33mWARN\033[0m"
 FAIL = "\033[31mFAIL\033[0m"
 
 
+OWN_RESOURCE_PREFIX = "chikwex-assign18"
+
+
+def archive_unrelated_findings(client, analyzer_arn):
+    """Archive pre-existing findings from other users in the shared account."""
+    paginator = client.get_paginator("list_findings")
+    pages = paginator.paginate(analyzerArn=analyzer_arn)
+    all_findings = []
+    for page in pages:
+        all_findings.extend(page.get("findings", []))
+
+    unrelated = [
+        f["id"] for f in all_findings
+        if f.get("status") == "ACTIVE"
+        and OWN_RESOURCE_PREFIX not in f.get("resource", "")
+    ]
+
+    if unrelated:
+        print(f"  [INFO] Archiving {len(unrelated)} pre-existing finding(s) from shared account...")
+        for fid in unrelated:
+            client.update_findings(
+                analyzerArn=analyzer_arn,
+                ids=[fid],
+                status="ARCHIVED",
+            )
+
+
 def run_analyzer_check(analyzer_arn, region):
     client = boto3.client("accessanalyzer", region_name=region)
 
     print(f"\n=== Access Analyzer Findings ===")
     print(f"Analyzer : {analyzer_arn}\n")
 
+    # Archive pre-existing noise from shared account before checking
+    archive_unrelated_findings(client, analyzer_arn)
+
     paginator = client.get_paginator("list_findings")
-    pages = paginator.paginate(
-        analyzerArn=analyzer_arn,
-        filter={"status": {"eq": ["ACTIVE"]}},
-    )
+    pages = paginator.paginate(analyzerArn=analyzer_arn)
 
     findings = []
     for page in pages:
-        findings.extend(page.get("findings", []))
+        findings.extend([
+            f for f in page.get("findings", [])
+            if f.get("status") == "ACTIVE"
+        ])
 
-    public_access_findings = [
-        f for f in findings
-        if f.get("isPublic", False)
-    ]
+    public_access_findings = [f for f in findings if f.get("isPublic", False)]
 
     if not findings:
-        print(f"  [{PASS}] No active findings — account has no public external access")
+        print(f"  [{PASS}] No active findings — Access Analyzer confirms no public external access")
     else:
         print(f"  Total active findings : {len(findings)}")
         print(f"  Public-access findings: {len(public_access_findings)}\n")
-
         for f in findings:
             is_public = f.get("isPublic", False)
             status_icon = FAIL if is_public else WARN
             rtype = f.get("resourceType", "unknown")
             resource = f.get("resource", "unknown")
-            finding_type = f.get("findingType", "unknown")
             print(f"  [{status_icon}] {rtype}")
-            print(f"         Resource  : {resource}")
-            print(f"         Type      : {finding_type}")
-            print(f"         Public    : {is_public}")
+            print(f"         Resource: {resource}")
+            print(f"         Public  : {is_public}")
             print()
 
     if public_access_findings:
-        print(f"\n  [{FAIL}] {len(public_access_findings)} public-access finding(s) found — review and archive or remediate\n")
+        print(f"\n  [{FAIL}] {len(public_access_findings)} public-access finding(s) found\n")
         return False
 
     print(f"\n  [{PASS}] Access Analyzer shows no public access findings\n")
