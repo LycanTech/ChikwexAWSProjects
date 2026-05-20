@@ -6,28 +6,48 @@ End-to-end IAM policy design, enforcement, and validation for a developer person
 
 ---
 
+## Deployed Resources
+
+| Resource | ARN / ID |
+|---|---|
+| IAM User | `arn:aws:iam::866934333672:user/developer-test` |
+| Developer Policy | `arn:aws:iam::866934333672:policy/chikwex-assign18-developer-policy` |
+| Permission Boundary | `arn:aws:iam::866934333672:policy/chikwex-assign18-permission-boundary` |
+| IAM Role | `arn:aws:iam::866934333672:role/chikwex-assign18-developer-role` |
+| Access Analyzer | `arn:aws:access-analyzer:us-east-1:866934333672:analyzer/chikwex-assign18-account-analyzer` |
+| SNS Alert Topic | `arn:aws:sns:us-east-1:866934333672:chikwex-assign18-analyzer-alerts` |
+| EventBridge Rule | `chikwex-assign18-analyzer-finding` |
+| Dev VPC (restricted) | `vpc-0cb15b4ac6d08c041` |
+| Region | `us-east-1` |
+
+---
+
 ## Architecture
 
 ```text
 ┌──────────────────────────────────────────────────────────────────────┐
-│                         AWS Account (test OU)                        │
+│                    AWS Account 866934333672 (us-east-1)              │
 │                                                                      │
 │   SCP ──► Deny non us-east-1/eu-west-1 regions                      │
-│        ──► Deny CloudTrail deletion                                   │
+│        ──► Deny CloudTrail deletion / StopLogging                    │
+│        ──► Deny GuardDuty disable                                    │
 │                                                                      │
-│   ┌─────────────────────────┐                                        │
-│   │  IAM User: developer-test│                                       │
-│   │  PermissionBoundary ──► caps S3 read, EC2 micro, no IAM write   │
-│   │  AttachedPolicy ─────► developer-policy (custom)                │
-│   └────────────┬────────────┘                                        │
-│                │ sts:AssumeRole                                      │
-│   ┌────────────▼────────────┐                                        │
-│   │  IAM Role: developer-role│                                       │
-│   │  + session policy        │  (further restricts to describe-only) │
-│   └─────────────────────────┘                                        │
+│   ┌──────────────────────────────────────────┐                       │
+│   │  IAM User: developer-test                │                       │
+│   │  PermissionBoundary: chikwex-assign18-   │                       │
+│   │    permission-boundary                   │                       │
+│   │  AttachedPolicy: chikwex-assign18-       │                       │
+│   │    developer-policy                      │                       │
+│   └───────────────────┬──────────────────────┘                       │
+│                       │ sts:AssumeRole                               │
+│   ┌───────────────────▼──────────────────────┐                       │
+│   │  IAM Role: chikwex-assign18-developer-   │                       │
+│   │  role + inline session policy            │                       │
+│   │  (restricts to S3/EC2 describe-only)     │                       │
+│   └──────────────────────────────────────────┘                       │
 │                                                                      │
-│   IAM Access Analyzer (ACCOUNT)                                      │
-│        └──► EventBridge ──► SNS ──► Email alert                     │
+│   IAM Access Analyzer: chikwex-assign18-account-analyzer (ACCOUNT)  │
+│        └──► EventBridge ──► SNS ──► chikwe.azinge@techconsulting.tech│
 └──────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -42,8 +62,8 @@ End-to-end IAM policy design, enforcement, and validation for a developer person
 | `s3:GetObject`, `s3:ListBucket` | Yes | Resource tag `Team: Dev` |
 | `s3:ListAllMyBuckets` | Yes | — |
 | `s3:PutObject`, `s3:DeleteObject` | **No** | Explicit Deny |
-| `ec2:RunInstances` | Yes | `InstanceType` = t2.micro or t3.micro |
-| `ec2:TerminateInstances`, `ec2:CreateSecurityGroup` | Yes | Within dev VPC only |
+| `ec2:RunInstances` | Yes | `InstanceType` = t2.micro or t3.micro only |
+| `ec2:TerminateInstances`, `ec2:CreateSecurityGroup` | Yes | Within `vpc-0cb15b4ac6d08c041` only |
 | Any action on `Environment: production` tagged resource | **No** | Explicit Deny |
 
 ### Permission Boundary (`policies/permission_boundary.json`)
@@ -64,11 +84,11 @@ Applied to the test OU in AWS Organizations:
 | `guardduty:DeleteDetector` | Deny |
 | Root account usage | Deny |
 
-Exception: `OrganizationAccountAccessRole` and `AWSControlTowerExecution` are exempt from region restriction to allow management operations.
+Exception carve-outs: `OrganizationAccountAccessRole` and `AWSControlTowerExecution` are exempt from the region restriction to allow management operations.
 
 ### Session Policy (`policies/session_policy.json`)
 
-Injected at `sts:AssumeRole` time. Limits the assumed-role session to:
+Injected at `sts:AssumeRole` time. Further restricts the assumed-role session to:
 - `s3:GetObject`, `s3:ListBucket`, `s3:ListAllMyBuckets`
 - `ec2:DescribeInstances`, `ec2:DescribeVpcs`, `ec2:DescribeSubnets`, `ec2:DescribeSecurityGroups`
 
@@ -87,7 +107,7 @@ assign18-iam-policy-testing/
 │   ├── outputs.tf
 │   └── terraform.tfvars
 ├── policies/
-│   ├── developer_policy.json    # Custom developer policy (templatefile for VPC ID)
+│   ├── developer_policy.json    # Custom developer policy (ArnLike for VPC condition)
 │   ├── permission_boundary.json # Absolute permission ceiling
 │   ├── scp_restrictions.json    # SCP for test OU
 │   └── session_policy.json      # Session policy used when assuming role
@@ -96,7 +116,7 @@ assign18-iam-policy-testing/
 │   ├── test_assume_role.py      # Assumes role + session policy, runs 4 live tests
 │   └── run_access_analyzer.py   # Queries findings + validates policy document
 └── screenshots/
-    └── (evidence captured during deployment)
+    └── (evidence captured from AWS Console)
 ```
 
 ---
@@ -106,17 +126,9 @@ assign18-iam-policy-testing/
 ### Prerequisites
 - AWS CLI configured with admin credentials
 - Terraform >= 1.5
-- Python 3.9+ with `boto3` installed (`pip install boto3`)
-- An existing VPC ID to use as the dev VPC
+- Python 3.9+ with `boto3` (`pip install boto3`)
 
-### 1 — Update VPC ID
-
-Edit [terraform/terraform.tfvars](terraform/terraform.tfvars):
-```
-dev_vpc_id = "vpc-0abcdef1234567890"
-```
-
-### 2 — Apply Terraform
+### Apply Terraform
 
 ```bash
 cd terraform
@@ -125,33 +137,27 @@ terraform plan
 terraform apply
 ```
 
-Key outputs after apply:
+Actual outputs from deployment:
 
 ```
-developer_user_arn      = arn:aws:iam::123456789012:user/developer-test
-developer_role_arn      = arn:aws:iam::123456789012:role/chikwex-assign18-developer-role
-developer_policy_arn    = arn:aws:iam::123456789012:policy/chikwex-assign18-developer-policy
-permission_boundary_arn = arn:aws:iam::123456789012:policy/chikwex-assign18-permission-boundary
-access_analyzer_arn     = arn:aws:access-analyzer:us-east-1:123456789012:analyzer/chikwex-assign18-account-analyzer
+developer_user_arn      = arn:aws:iam::866934333672:user/developer-test
+developer_role_arn      = arn:aws:iam::866934333672:role/chikwex-assign18-developer-role
+developer_policy_arn    = arn:aws:iam::866934333672:policy/chikwex-assign18-developer-policy
+permission_boundary_arn = arn:aws:iam::866934333672:policy/chikwex-assign18-permission-boundary
+access_analyzer_arn     = arn:aws:access-analyzer:us-east-1:866934333672:analyzer/chikwex-assign18-account-analyzer
+sns_topic_arn           = arn:aws:sns:us-east-1:866934333672:chikwex-assign18-analyzer-alerts
 ```
 
-Retrieve credentials (sensitive):
-```bash
-terraform output -raw access_key_id
-terraform output -raw secret_access_key
-```
-
-### 3 — Apply SCP (Manual — requires AWS Organizations)
+### Apply SCP (Manual — requires AWS Organizations)
 
 ```bash
-# Create the SCP in your organization
 aws organizations create-policy \
   --name "chikwex-assign18-region-cloudtrail-deny" \
   --type SERVICE_CONTROL_POLICY \
   --content file://policies/scp_restrictions.json \
   --description "Deny non-approved regions and CloudTrail deletion"
 
-# Attach to your test OU (replace ou-xxxx-xxxxxxxx with your OU ID)
+# Attach to test OU
 aws organizations attach-policy \
   --policy-id p-xxxxxxxxxx \
   --target-id ou-xxxx-xxxxxxxx
@@ -159,73 +165,51 @@ aws organizations attach-policy \
 
 ---
 
-## Testing
+## Test Results
 
-### IAM Policy Simulator
+### IAM Policy Simulator — 6/6 PASS
 
 ```bash
-# Get policy ARNs from terraform output
-POLICY_ARN=$(cd terraform && terraform output -raw developer_policy_arn)
-BOUNDARY_ARN=$(cd terraform && terraform output -raw permission_boundary_arn)
-
 python scripts/test_policy_simulator.py \
-  --policy-arn "$POLICY_ARN" \
-  --boundary-arn "$BOUNDARY_ARN"
+  --policy-arn arn:aws:iam::866934333672:policy/chikwex-assign18-developer-policy \
+  --boundary-arn arn:aws:iam::866934333672:policy/chikwex-assign18-permission-boundary
 ```
 
-Expected output:
 ```
 === IAM Policy Simulator Results ===
 
   [PASS] Can list S3 buckets
+         action=s3:ListAllMyBuckets  expected=allowed  got=allowed
   [PASS] Cannot delete S3 objects
+         action=s3:DeleteObject  expected=explicitDeny  got=explicitDeny
   [PASS] Can launch t2.micro instance
+         action=ec2:RunInstances  expected=allowed  got=allowed
   [PASS] Cannot launch t2.large instance
+         action=ec2:RunInstances  expected=implicitDeny  got=implicitDeny
   [PASS] Cannot access production-tagged resource
+         action=s3:GetObject  expected=explicitDeny  got=explicitDeny
   [PASS] S3 read allowed on Team:Dev tagged bucket
+         action=s3:GetObject  expected=allowed  got=allowed
 
 Results: 6 passed, 0 failed
 ```
 
-### Assume Role + Session Policy
+### Access Analyzer — PASS
 
 ```bash
-ROLE_ARN=$(cd terraform && terraform output -raw developer_role_arn)
-
-# Run as developer-test user (configure profile or env vars with developer-test credentials)
-AWS_PROFILE=developer-test python scripts/test_assume_role.py \
-  --role-arn "$ROLE_ARN"
-```
-
-Expected output:
-```
-=== Assume-Role + Session Policy Results ===
-
-  [PASS] s3:ListAllMyBuckets (should ALLOW)  →  ALLOWED
-  [PASS] ec2:DescribeInstances (should ALLOW) →  ALLOWED
-  [PASS] s3:DeleteObject (should DENY)        →  DENIED
-  [PASS] ec2:RunInstances t2.large (should DENY) →  DENIED
-
-Results: 4 passed, 0 failed
-```
-
-### Access Analyzer
-
-```bash
-ANALYZER_ARN=$(cd terraform && terraform output -raw access_analyzer_arn)
-POLICY_ARN=$(cd terraform && terraform output -raw developer_policy_arn)
-
 python scripts/run_access_analyzer.py \
-  --analyzer-arn "$ANALYZER_ARN" \
-  --policy-arn "$POLICY_ARN"
+  --analyzer-arn arn:aws:access-analyzer:us-east-1:866934333672:analyzer/chikwex-assign18-account-analyzer \
+  --policy-arn arn:aws:iam::866934333672:policy/chikwex-assign18-developer-policy
 ```
 
-Expected output:
 ```
 === Access Analyzer Findings ===
-  [PASS] No active findings — account has no public external access
+
+  [PASS] No active findings — Access Analyzer confirms no public external access
+  [PASS] Access Analyzer shows no public access findings
 
 === Policy Validation (chikwex-assign18-developer-policy) ===
+
   [PASS] No policy validation findings — policy is well-formed
 ```
 
@@ -233,14 +217,29 @@ Expected output:
 
 ## Policy Simulator Test Cases
 
-| Test | Action | Expected | Reason |
+| Test | Action | Expected | Result |
 |---|---|---|---|
-| List S3 buckets | `s3:ListAllMyBuckets` | Allow | Explicitly allowed, no condition |
-| Delete S3 object | `s3:DeleteObject` | Deny | Explicit Deny in developer policy |
-| Launch t2.micro | `ec2:RunInstances` + t2.micro | Allow | InstanceType condition satisfied |
-| Launch t2.large | `ec2:RunInstances` + t2.large | Deny | InstanceType condition not met |
-| Access prod resource | `s3:GetObject` + Environment=production | Deny | Explicit Deny on production tag |
-| Read Dev-tagged S3 | `s3:GetObject` + Team=Dev | Allow | Tag condition satisfied |
+| List S3 buckets | `s3:ListAllMyBuckets` | Allow | PASS |
+| Delete S3 object | `s3:DeleteObject` | Explicit Deny | PASS |
+| Launch t2.micro | `ec2:RunInstances` + t2.micro | Allow | PASS |
+| Launch t2.large | `ec2:RunInstances` + t2.large | Deny | PASS |
+| Access prod resource | `s3:GetObject` + Environment=production | Explicit Deny | PASS |
+| Read Dev-tagged S3 | `s3:GetObject` + Team=Dev | Allow | PASS |
+
+---
+
+## AWS Console Links
+
+| Resource | Console URL |
+|---|---|
+| IAM User | `https://us-east-1.console.aws.amazon.com/iam/home#/users/details/developer-test` |
+| Developer Policy | `https://us-east-1.console.aws.amazon.com/iam/home#/policies/arn:aws:iam::866934333672:policy/chikwex-assign18-developer-policy` |
+| Permission Boundary | `https://us-east-1.console.aws.amazon.com/iam/home#/policies/arn:aws:iam::866934333672:policy/chikwex-assign18-permission-boundary` |
+| IAM Role | `https://us-east-1.console.aws.amazon.com/iam/home#/roles/details/chikwex-assign18-developer-role` |
+| Policy Simulator | `https://policysim.aws.amazon.com/home/index.jsp?#users/developer-test` |
+| Access Analyzer | `https://us-east-1.console.aws.amazon.com/access-analyzer/home?region=us-east-1#/analyzer/chikwex-assign18-account-analyzer` |
+| SNS Topic | `https://us-east-1.console.aws.amazon.com/sns/v3/home?region=us-east-1#/topic/arn:aws:sns:us-east-1:866934333672:chikwex-assign18-analyzer-alerts` |
+| EventBridge Rule | `https://us-east-1.console.aws.amazon.com/events/home?region=us-east-1#/eventbus/default/rules/chikwex-assign18-analyzer-finding` |
 
 ---
 
@@ -248,11 +247,11 @@ Expected output:
 
 | Criterion | Status |
 |---|---|
-| Policies enforce correct restrictions | Verified via Policy Simulator |
+| Policies enforce correct restrictions | Verified via Policy Simulator (6/6 PASS) |
 | Policy Simulator confirms permissions | 6/6 test cases pass |
 | User cannot exceed boundaries | Permission boundary blocks IAM escalation and production access |
-| Access Analyzer shows no public access | Confirmed — ACCOUNT analyzer reports no active findings |
-| Session policy restricts assumed-role session | Assume-role tests confirm describe-only scope |
+| Access Analyzer shows no public access | Confirmed — ACCOUNT analyzer reports 0 active findings |
+| Session policy restricts assumed-role session | Session policy limits scope to S3/EC2 describe-only |
 
 ---
 
@@ -263,4 +262,4 @@ cd terraform
 terraform destroy
 ```
 
-Detach and delete the SCP manually in AWS Organizations console or CLI before destroy if attached.
+Detach and delete the SCP in AWS Organizations before running destroy if it was applied.
