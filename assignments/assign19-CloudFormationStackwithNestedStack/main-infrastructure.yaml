@@ -1,0 +1,114 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Main Infrastructure Stack - Orchestrates network, security, and compute nested stacks
+
+Parameters:
+  Environment:
+    Type: String
+    Default: dev
+    AllowedValues:
+      - dev
+      - prod
+    Description: >
+      Deployment environment.
+      dev  -> t2.micro, single instance, one public subnet.
+      prod -> t3.medium, two instances across two subnets.
+
+  TemplatesBucketName:
+    Type: String
+    Description: S3 bucket name where nested stack templates have been uploaded
+
+Metadata:
+  AWS::CloudFormation::Interface:
+    ParameterGroups:
+      - Label:
+          default: Environment
+        Parameters: [Environment]
+      - Label:
+          default: Template Storage
+        Parameters: [TemplatesBucketName]
+    ParameterLabels:
+      Environment:
+        default: Environment (dev / prod)
+      TemplatesBucketName:
+        default: S3 Bucket for Nested Templates
+
+Conditions:
+  IsProd: !Equals [!Ref Environment, prod]
+
+Resources:
+  # 1. Network layer
+  ChikwexNetworkStack:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: !Sub 'https://s3.amazonaws.com/${TemplatesBucketName}/network-stack.yaml'
+      Parameters:
+        Environment: !Ref Environment
+      TimeoutInMinutes: 10
+      Tags:
+        - Key: Name
+          Value: !Sub "chikwex-${Environment}-network-stack"
+        - Key: Environment
+          Value: !Ref Environment
+
+  # 2. Security layer (receives VpcId from network stack)
+  ChikwexSecurityStack:
+    Type: AWS::CloudFormation::Stack
+    DependsOn: ChikwexNetworkStack
+    Properties:
+      TemplateURL: !Sub 'https://s3.amazonaws.com/${TemplatesBucketName}/security-stack.yaml'
+      Parameters:
+        Environment: !Ref Environment
+        VpcId: !GetAtt ChikwexNetworkStack.Outputs.VpcId
+      TimeoutInMinutes: 10
+      Tags:
+        - Key: Name
+          Value: !Sub "chikwex-${Environment}-security-stack"
+        - Key: Environment
+          Value: !Ref Environment
+
+  # 3. Compute layer (receives subnet IDs + security group from the layers above)
+  ChikwexComputeStack:
+    Type: AWS::CloudFormation::Stack
+    DependsOn:
+      - ChikwexNetworkStack
+      - ChikwexSecurityStack
+    Properties:
+      TemplateURL: !Sub 'https://s3.amazonaws.com/${TemplatesBucketName}/compute-stack.yaml'
+      Parameters:
+        Environment: !Ref Environment
+        PublicSubnet1Id: !GetAtt ChikwexNetworkStack.Outputs.PublicSubnet1Id
+        # PublicSubnet2Id is '' in dev (network stack always exports the key)
+        PublicSubnet2Id: !GetAtt ChikwexNetworkStack.Outputs.PublicSubnet2Id
+        SecurityGroupId: !GetAtt ChikwexSecurityStack.Outputs.WebServerSecurityGroupId
+      TimeoutInMinutes: 15
+      Tags:
+        - Key: Name
+          Value: !Sub "chikwex-${Environment}-compute-stack"
+        - Key: Environment
+          Value: !Ref Environment
+
+Outputs:
+  NetworkStackId:
+    Description: Network nested stack ARN
+    Value: !Ref ChikwexNetworkStack
+
+  SecurityStackId:
+    Description: Security nested stack ARN
+    Value: !Ref ChikwexSecurityStack
+
+  ComputeStackId:
+    Description: Compute nested stack ARN
+    Value: !Ref ChikwexComputeStack
+
+  VpcId:
+    Description: VPC ID
+    Value: !GetAtt ChikwexNetworkStack.Outputs.VpcId
+
+  WebServer1PublicIp:
+    Description: Web Server 1 public IP address
+    Value: !GetAtt ChikwexComputeStack.Outputs.WebServer1PublicIp
+
+  WebServer2PublicIp:
+    Condition: IsProd
+    Description: Web Server 2 public IP address (prod only)
+    Value: !GetAtt ChikwexComputeStack.Outputs.WebServer2PublicIp

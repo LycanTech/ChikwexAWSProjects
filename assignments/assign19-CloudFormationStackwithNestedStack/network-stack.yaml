@@ -1,0 +1,113 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Network Stack - VPC, Subnets, and Internet Gateway
+
+Parameters:
+  Environment:
+    Type: String
+    AllowedValues: [dev, prod]
+    Description: Deployment environment
+
+Conditions:
+  IsProd: !Equals [!Ref Environment, prod]
+
+Resources:
+  ChikwexVPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.0.0.0/16
+      EnableDnsSupport: true
+      EnableDnsHostnames: true
+      Tags:
+        - Key: Name
+          Value: !Sub "chikwex-${Environment}-vpc"
+        - Key: Environment
+          Value: !Ref Environment
+
+  ChikwexInternetGateway:
+    Type: AWS::EC2::InternetGateway
+    Properties:
+      Tags:
+        - Key: Name
+          Value: !Sub "chikwex-${Environment}-igw"
+
+  ChikwexVPCGatewayAttachment:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties:
+      VpcId: !Ref ChikwexVPC
+      InternetGatewayId: !Ref ChikwexInternetGateway
+
+  ChikwexPublicSubnet1:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref ChikwexVPC
+      CidrBlock: 10.0.1.0/24
+      AvailabilityZone: !Select [0, !GetAZs '']
+      MapPublicIpOnLaunch: true
+      Tags:
+        - Key: Name
+          Value: !Sub "chikwex-${Environment}-public-subnet-1"
+        - Key: Environment
+          Value: !Ref Environment
+
+  ChikwexPublicSubnet2:
+    Type: AWS::EC2::Subnet
+    Condition: IsProd
+    Properties:
+      VpcId: !Ref ChikwexVPC
+      CidrBlock: 10.0.2.0/24
+      AvailabilityZone: !Select [1, !GetAZs '']
+      MapPublicIpOnLaunch: true
+      Tags:
+        - Key: Name
+          Value: !Sub "chikwex-${Environment}-public-subnet-2"
+        - Key: Environment
+          Value: !Ref Environment
+
+  ChikwexPublicRouteTable:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId: !Ref ChikwexVPC
+      Tags:
+        - Key: Name
+          Value: !Sub "chikwex-${Environment}-public-rt"
+
+  ChikwexPublicRoute:
+    Type: AWS::EC2::Route
+    DependsOn: ChikwexVPCGatewayAttachment
+    Properties:
+      RouteTableId: !Ref ChikwexPublicRouteTable
+      DestinationCidrBlock: 0.0.0.0/0
+      GatewayId: !Ref ChikwexInternetGateway
+
+  ChikwexSubnet1RouteTableAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref ChikwexPublicSubnet1
+      RouteTableId: !Ref ChikwexPublicRouteTable
+
+  ChikwexSubnet2RouteTableAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Condition: IsProd
+    Properties:
+      SubnetId: !Ref ChikwexPublicSubnet2
+      RouteTableId: !Ref ChikwexPublicRouteTable
+
+Outputs:
+  VpcId:
+    Description: VPC ID
+    Value: !Ref ChikwexVPC
+    Export:
+      Name: !Sub "${AWS::StackName}-VpcId"
+
+  PublicSubnet1Id:
+    Description: Public Subnet 1 ID
+    Value: !Ref ChikwexPublicSubnet1
+    Export:
+      Name: !Sub "${AWS::StackName}-PublicSubnet1Id"
+
+  # Always exported; empty string in dev so parent stack can always GetAtt this output
+  PublicSubnet2Id:
+    Description: Public Subnet 2 ID (prod) or empty string (dev)
+    Value: !If [IsProd, !Ref ChikwexPublicSubnet2, '']
+    Export:
+      Name: !Sub "${AWS::StackName}-PublicSubnet2Id"

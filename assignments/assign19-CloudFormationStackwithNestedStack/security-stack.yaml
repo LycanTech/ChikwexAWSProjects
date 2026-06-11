@@ -1,0 +1,126 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Security Stack - Security Groups and Network ACLs
+
+Parameters:
+  Environment:
+    Type: String
+    AllowedValues: [dev, prod]
+  VpcId:
+    Type: String
+    Description: VPC ID passed from the network stack
+
+Resources:
+  ChikwexWebServerSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: !Sub "chikwex-${Environment} web server security group"
+      VpcId: !Ref VpcId
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+          Description: HTTP
+        - IpProtocol: tcp
+          FromPort: 443
+          ToPort: 443
+          CidrIp: 0.0.0.0/0
+          Description: HTTPS
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
+          Description: SSH
+      SecurityGroupEgress:
+        - IpProtocol: -1
+          CidrIp: 0.0.0.0/0
+          Description: Allow all outbound
+      Tags:
+        - Key: Name
+          Value: !Sub "chikwex-${Environment}-web-sg"
+        - Key: Environment
+          Value: !Ref Environment
+
+  ChikwexPublicNetworkAcl:
+    Type: AWS::EC2::NetworkAcl
+    Properties:
+      VpcId: !Ref VpcId
+      Tags:
+        - Key: Name
+          Value: !Sub "chikwex-${Environment}-public-nacl"
+
+  ChikwexNaclInboundHTTP:
+    Type: AWS::EC2::NetworkAclEntry
+    Properties:
+      NetworkAclId: !Ref ChikwexPublicNetworkAcl
+      RuleNumber: 100
+      Protocol: 6
+      RuleAction: allow
+      Egress: false
+      CidrBlock: 0.0.0.0/0
+      PortRange:
+        From: 80
+        To: 80
+
+  ChikwexNaclInboundHTTPS:
+    Type: AWS::EC2::NetworkAclEntry
+    Properties:
+      NetworkAclId: !Ref ChikwexPublicNetworkAcl
+      RuleNumber: 110
+      Protocol: 6
+      RuleAction: allow
+      Egress: false
+      CidrBlock: 0.0.0.0/0
+      PortRange:
+        From: 443
+        To: 443
+
+  ChikwexNaclInboundSSH:
+    Type: AWS::EC2::NetworkAclEntry
+    Properties:
+      NetworkAclId: !Ref ChikwexPublicNetworkAcl
+      RuleNumber: 120
+      Protocol: 6
+      RuleAction: allow
+      Egress: false
+      CidrBlock: 0.0.0.0/0
+      PortRange:
+        From: 22
+        To: 22
+
+  # Allows return traffic for outbound connections initiated from the instance
+  ChikwexNaclInboundEphemeral:
+    Type: AWS::EC2::NetworkAclEntry
+    Properties:
+      NetworkAclId: !Ref ChikwexPublicNetworkAcl
+      RuleNumber: 130
+      Protocol: 6
+      RuleAction: allow
+      Egress: false
+      CidrBlock: 0.0.0.0/0
+      PortRange:
+        From: 1024
+        To: 65535
+
+  ChikwexNaclOutboundAll:
+    Type: AWS::EC2::NetworkAclEntry
+    Properties:
+      NetworkAclId: !Ref ChikwexPublicNetworkAcl
+      RuleNumber: 100
+      Protocol: -1
+      RuleAction: allow
+      Egress: true
+      CidrBlock: 0.0.0.0/0
+
+Outputs:
+  WebServerSecurityGroupId:
+    Description: Web Server Security Group ID
+    Value: !Ref ChikwexWebServerSecurityGroup
+    Export:
+      Name: !Sub "${AWS::StackName}-WebServerSGId"
+
+  PublicNetworkAclId:
+    Description: Public Network ACL ID
+    Value: !Ref ChikwexPublicNetworkAcl
+    Export:
+      Name: !Sub "${AWS::StackName}-PublicNaclId"

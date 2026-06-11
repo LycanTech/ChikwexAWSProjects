@@ -1,0 +1,34 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: >
+  Deliberate-failure stack used to verify CloudFormation rollback behaviour.
+  ChikwexRollbackTestVPC and ChikwexRollbackTestSubnet create successfully;
+  ChikwexFailingInstance references an invalid AMI, causing the stack to fail
+  and roll back all resources.
+
+Resources:
+  ChikwexRollbackTestVPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.99.0.0/16
+      Tags:
+        - Key: Name
+          Value: chikwex-rollback-test-vpc
+
+  ChikwexRollbackTestSubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref ChikwexRollbackTestVPC
+      CidrBlock: 10.99.1.0/24
+      AvailabilityZone: !Select [0, !GetAZs '']
+      Tags:
+        - Key: Name
+          Value: chikwex-rollback-test-subnet
+
+  # This resource will fail — ami-00000000000000000 is not a valid AMI.
+  # CloudFormation will roll back and delete the VPC and subnet above.
+  ChikwexFailingInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-00000000000000000
+      InstanceType: t2.micro
+      SubnetId: !Ref ChikwexRollbackTestSubnet

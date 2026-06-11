@@ -1,0 +1,23 @@
+Assignment 19: CloudFormation Stack with Nested Stacks
+Task:
+Create modular infrastructure using CloudFormation nested stacks.
+What to Do:
+●    Create parent stack main-infrastructure.yaml
+●    Create nested stacks:
+●    network-stack.yaml (VPC, subnets, IGW)
+●    security-stack.yaml (Security groups, NACLs)
+●    compute-stack.yaml (EC2 instances)
+●    Use outputs from network stack as inputs to compute stack
+●    Implement parameters for environment (dev/prod)
+●    Add conditions for different environments:
+●    Dev: t2.micro, single instance
+●    Prod: t3.medium, multiple instances
+●    Deploy stack with parameters
+●    Test update by changing instance type
+●    Implement rollback configuration
+●    Test deliberate failure and verify rollback
+Success Criteria:
+●    Nested stacks deploy in correct order
+●    Outputs passed correctly between stacks
+●    Stack updates without replacing everything
+●    Rollback works on failure

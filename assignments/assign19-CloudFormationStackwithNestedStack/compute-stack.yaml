@@ -1,0 +1,96 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Compute Stack - EC2 Instances with environment-based sizing
+
+Parameters:
+  Environment:
+    Type: String
+    AllowedValues: [dev, prod]
+  PublicSubnet1Id:
+    Type: String
+    Description: Public Subnet 1 ID from network stack
+  PublicSubnet2Id:
+    Type: String
+    Default: ''
+    Description: Public Subnet 2 ID from network stack (prod only; empty for dev)
+  SecurityGroupId:
+    Type: String
+    Description: Web server security group ID from security stack
+
+Conditions:
+  IsProd: !Equals [!Ref Environment, prod]
+
+Resources:
+  # Dev: t2.micro | Prod: t3.medium
+  ChikwexWebServer1:
+    Type: AWS::EC2::Instance
+    Properties:
+      # Latest Amazon Linux 2 AMI resolved at deploy time
+      ImageId: '{{resolve:ssm:/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2}}'
+      InstanceType: !If [IsProd, t3.medium, t2.micro]
+      SubnetId: !Ref PublicSubnet1Id
+      SecurityGroupIds:
+        - !Ref SecurityGroupId
+      Tags:
+        - Key: Name
+          Value: !Sub "chikwex-${Environment}-web-server-1"
+        - Key: Environment
+          Value: !Ref Environment
+      UserData:
+        Fn::Base64: !Sub |
+          #!/bin/bash
+          yum update -y
+          yum install -y httpd
+          systemctl start httpd
+          systemctl enable httpd
+          echo "<h1>Chikwex Web Server 1 — ${Environment} environment</h1>" > /var/www/html/index.html
+
+  # Only provisioned in prod
+  ChikwexWebServer2:
+    Type: AWS::EC2::Instance
+    Condition: IsProd
+    Properties:
+      ImageId: '{{resolve:ssm:/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2}}'
+      InstanceType: t3.medium
+      SubnetId: !Ref PublicSubnet2Id
+      SecurityGroupIds:
+        - !Ref SecurityGroupId
+      Tags:
+        - Key: Name
+          Value: !Sub "chikwex-${Environment}-web-server-2"
+        - Key: Environment
+          Value: !Ref Environment
+      UserData:
+        Fn::Base64: !Sub |
+          #!/bin/bash
+          yum update -y
+          yum install -y httpd
+          systemctl start httpd
+          systemctl enable httpd
+          echo "<h1>Chikwex Web Server 2 — ${Environment} environment</h1>" > /var/www/html/index.html
+
+Outputs:
+  WebServer1InstanceId:
+    Description: Web Server 1 Instance ID
+    Value: !Ref ChikwexWebServer1
+    Export:
+      Name: !Sub "${AWS::StackName}-WebServer1Id"
+
+  WebServer1PublicIp:
+    Description: Web Server 1 Public IP
+    Value: !GetAtt ChikwexWebServer1.PublicIp
+    Export:
+      Name: !Sub "${AWS::StackName}-WebServer1PublicIp"
+
+  WebServer2InstanceId:
+    Condition: IsProd
+    Description: Web Server 2 Instance ID (prod only)
+    Value: !Ref ChikwexWebServer2
+    Export:
+      Name: !Sub "${AWS::StackName}-WebServer2Id"
+
+  WebServer2PublicIp:
+    Condition: IsProd
+    Description: Web Server 2 Public IP (prod only)
+    Value: !GetAtt ChikwexWebServer2.PublicIp
+    Export:
+      Name: !Sub "${AWS::StackName}-WebServer2PublicIp"
